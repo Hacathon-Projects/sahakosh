@@ -11,7 +11,7 @@ class Routes {
     final arguments = routeSettings.arguments;
     switch (routeSettings.name) {
       case RouteConstant.userLoginRoute:
-        return MaterialPageRoute(builder: (context) => LoginScreen());
+        return MaterialPageRoute(builder: (context) => LoginAsStartupScreen());
       case RouteConstant.userRegisterRoute:
         return MaterialPageRoute(builder: (context) => LoginAsInvestorScreen());
       default:
