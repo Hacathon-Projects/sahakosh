@@ -3,20 +3,20 @@ import 'package:flutter/material.dart';
 class AppTheme {
   static theme() {
     return ThemeData(
-      // Define the default brightness and colors.
-      brightness: Brightness.dark,
+      brightness: Brightness.light,
       primaryColor: Colors.lightBlue[800],
-
-      // Define the default font family.
       fontFamily: 'Georgia',
-
-      // Define the default `TextTheme`. Use this to specify the default
-      // text styling for headlines, titles, bodies of text, and more.
       textTheme: const TextTheme(
-        displayLarge: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-        titleLarge: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic, fontFamily: 'latolight'),
-        bodyMedium: TextStyle(fontSize: 14.0, fontFamily: 'robotolight'),
-      ),
+          displayLarge: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
+          titleLarge: TextStyle(fontSize: 22.0, fontFamily: 'latobold', fontWeight: FontWeight.w300, color: Color(0xFF141515)),
+          bodyMedium: TextStyle(fontSize: 18.0, fontFamily: 'robotolight', fontWeight: FontWeight.w300),
+          bodyLarge: TextStyle(color: Color(0xFF3C3A3A))),
+    );
+  }
+
+  static buttonTheme() {
+    return const ButtonThemeData(
+      buttonColor: Color(0xFFCCDBDC),
     );
   }
 }
