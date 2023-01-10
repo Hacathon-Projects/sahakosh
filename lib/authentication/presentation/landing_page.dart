@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:sahakosh/authentication/application/auth_service.dart';
 import 'package:sahakosh/widgets/curvepainter.dart';
 
 class LandingScreen extends StatelessWidget {
@@ -10,7 +11,9 @@ class LandingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        children: [
+        children: [ 
+
+       
           Container(
             child: CustomPaint(
               painter: CurvePainter(),

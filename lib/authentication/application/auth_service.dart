@@ -1,7 +1,7 @@
 class AuthService { 
 
 
-  static void login() { 
-    
+  static void login( {required String name}) { 
+
   }
 }
