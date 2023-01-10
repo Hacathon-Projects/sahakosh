@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
-class StartupServiceProvider with ChangeNotifier { 
-
+class AuthProvider with ChangeNotifier {
   bool _loading = false;
   bool get loading => _loading;
 
@@ -23,4 +22,20 @@ class StartupServiceProvider with ChangeNotifier {
 
     return result;
   }
+  Future<String> registerInvestor() async {
+    String result = 'OK';
+
+    return result;
+  }
+  Future<String> loginStartup() async {
+    String result = 'OK';
+
+    return result;
+  }
+  Future<String> registerStartup() async {
+    String result = 'OK';
+
+    return result;
+  }
+ 
 }
