@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:sahakosh/core/components/curvepainter.dart';
+import 'package:sahakosh/widgets/curvepainter.dart';
 
 class LandingScreen extends StatelessWidget {
   const LandingScreen({super.key});

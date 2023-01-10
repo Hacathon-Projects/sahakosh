@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sahakosh/core/routes/route.dart';
 
-import 'authentication/LandingScreen.dart';
+import 'authentication/presentation/landing_page.dart';
+
 
 void main() {
   runApp(const MyApp());
