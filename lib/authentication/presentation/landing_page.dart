@@ -26,16 +26,26 @@ class _LandingScreenState extends State<LandingScreen> {
                 child: Stack(
                   children: <Widget>[
                     Positioned(
-                      child: Container(
-                        margin: const EdgeInsets.only(top: 50),
-                        child: const Center(
-                          child: Text(
-                            "Be a part of\nChange",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 30,
-                                fontWeight: FontWeight.bold),
+                      child: Center(
+                        child: Container(
+                          margin: const EdgeInsets.only(top: 80),
+                          child: Column(
+                            children: [
+                              const Text(
+                                "Be a part of\nChange",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 30,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              const SizedBox(height: 20),
+                              Image.asset(
+                                'assets/images/logo.png',
+                                height: 80,
+                                width: 80,
+                              ),
+                            ],
                           ),
                         ),
                       ),
