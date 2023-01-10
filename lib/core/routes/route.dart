@@ -2,8 +2,8 @@ import 'dart:js';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:sahakosh/Screens/LoginScreen.dart';
-import 'package:sahakosh/Screens/RegisterScreen.dart';
+import 'package:sahakosh/screens/LoginScreen.dart';
+import 'package:sahakosh/screens/RegisterScreen.dart';
 import 'package:sahakosh/core/routes/404.dart';
 import 'package:sahakosh/core/routes/routes_constant.dart';
 
