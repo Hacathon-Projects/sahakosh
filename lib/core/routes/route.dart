@@ -6,8 +6,6 @@ import 'package:sahakosh/core/routes/routes_constant.dart';
 import '../../authentication/presentation/login_as_investor.dart';
 import '../../authentication/presentation/login_as_startup.dart';
 
-
-
 class Routes {
   static Route<dynamic> generateRoute(RouteSettings routeSettings) {
     final arguments = routeSettings.arguments;
@@ -15,7 +13,7 @@ class Routes {
       case RouteConstant.userLoginRoute:
         return MaterialPageRoute(builder: (context) => LoginScreen());
       case RouteConstant.userRegisterRoute:
-        return MaterialPageRoute(builder: (context) => RegisterScreen());
+        return MaterialPageRoute(builder: (context) => LoginAsInvestorScreen());
       default:
         return MaterialPageRoute(builder: (context) => PageNotFound());
     }

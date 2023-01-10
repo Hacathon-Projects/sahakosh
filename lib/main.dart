@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:sahakosh/authentication/presentation/login_as_investor.dart';
 import 'package:sahakosh/core/routes/route.dart';
 
 import 'authentication/presentation/landing_page.dart';
-
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       onGenerateRoute: Routes.generateRoute,
-      home: LandingScreen(),
+      home: LoginAsInvestorScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
