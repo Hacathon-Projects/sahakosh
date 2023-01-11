@@ -1,7 +1,4 @@
-import 'package:sahakosh/authentication/application/auth_base.dart';
-
-class AuthService extends AuthBase {
-  
+abstract class AuthBase {
   static void loginAsStartup({
     required String name,
     required String password,
@@ -21,4 +18,9 @@ class AuthService extends AuthBase {
     required String password,
     required String email,
   }) {}
+}
+
+abstract class AuthDBServiceBase {
+  void storeStartupData();
+  void storeInvestorData();
 }

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sahakosh/core/routes/route.dart';
 
-import 'authentication/presentation/landing_page.dart';
-
+import 'core/routes/routes_constant.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       onGenerateRoute: Routes.generateRoute,
-      home: LandingScreen(),
+      initialRoute: RouteConstant.landingScreen,
       debugShowCheckedModeBanner: false,
     );
   }
