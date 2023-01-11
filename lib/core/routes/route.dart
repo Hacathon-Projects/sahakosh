@@ -3,6 +3,9 @@ import 'package:sahakosh/authentication/presentation/create_account_screen.dart'
 import 'package:sahakosh/authentication/presentation/landing_screen.dart';
 import 'package:sahakosh/core/routes/404.dart';
 import 'package:sahakosh/core/routes/routes_constant.dart';
+import 'package:sahakosh/investor_ui/presentation/step_1.dart';
+import 'package:sahakosh/investor_ui/presentation/step_2.dart';
+import 'package:sahakosh/investor_ui/presentation/step_2.dart';
 import 'package:sahakosh/startup_ui/presentation/step_1.dart';
 import 'package:sahakosh/startup_ui/presentation/step_2.dart';
 import 'package:sahakosh/startup_ui/presentation/step_3.dart';
@@ -24,6 +27,12 @@ class Routes {
       case RouteConstant.investorLoginRoute:
         return MaterialPageRoute(
             builder: (context) => const LoginAsInvestorScreen());
+      case RouteConstant.investorRegisterStep1Route:
+        return MaterialPageRoute(
+            builder: (context) => const InvestorRegisterStep1Route());
+      case RouteConstant.investorRegisterStep2Route:
+        return MaterialPageRoute(
+            builder: (context) => const InvestorRegisterStep2Route());
 
       // Startup auth
       case RouteConstant.startupLoginRoute:
