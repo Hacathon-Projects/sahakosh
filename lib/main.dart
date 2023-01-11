@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sahakosh/core/routes/route.dart';
-import 'package:sahakosh/investor_ui/presentation/detail_invest.dart';
-import 'package:sahakosh/investor_ui/presentation/inverstor_home.dart';
+
+import 'core/routes/routes_constant.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       onGenerateRoute: Routes.generateRoute,
-      home: InvestorHome(),
+      initialRoute: RouteConstant.landingScreen,
       debugShowCheckedModeBanner: false,
     );
   }
