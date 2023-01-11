@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:sahakosh/core/routes/routes_constant.dart';
 import 'package:sahakosh/widgets/button.dart';
@@ -61,8 +62,14 @@ class _LandingScreenState extends State<LandingScreen> {
                   children: <Widget>[
                     MyButton(
                         text: 'Login as Investor',
-                        onTap: () => Navigator.of(context).pushReplacementNamed(
-                            RouteConstant.investorLoginRoute)),
+                        onTap: () async {
+                          await FirebaseAuth.instance
+                              .createUserWithEmailAndPassword(
+                                  email: "rabin@gmail.com",
+                                  password: "rabin_11");
+                          // Navigator.of(context).pushReplacementNamed(
+                          //     RouteConstant.investorLoginRoute);
+                        }),
                     const SizedBox(height: 30),
                     MyButton(
                         text: 'Login as Startup',
