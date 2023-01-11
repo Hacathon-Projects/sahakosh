@@ -51,8 +51,8 @@ class _LoginAsStartupScreenState extends State<LoginAsStartupScreen> {
                 height: 70,
               ),
               InkWell(
-                onTap: (() => Navigator.of(context)
-                    .pushReplacementNamed(RouteConstant.startupRegisterRoute)),
+                onTap: (() => Navigator.of(context).pushReplacementNamed(
+                    RouteConstant.startupRegisterStep1Route)),
                 child: const Text(
                   "Create Account",
                   style: TextStyle(

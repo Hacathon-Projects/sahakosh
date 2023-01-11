@@ -68,13 +68,13 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                           text: 'Register as Investor',
                           onTap: () => Navigator.of(context)
                               .pushReplacementNamed(
-                                  RouteConstant.investorRegisterRoute)),
+                                  RouteConstant.investorRegisterStep1Route)),
                       const SizedBox(height: 30),
                       MyButton(
                           text: 'Register as Startup',
                           onTap: () => Navigator.of(context)
                               .pushReplacementNamed(
-                                  RouteConstant.startupRegisterRoute)),
+                                  RouteConstant.startupRegisterStep1Route)),
                       const SizedBox(
                         height: 70,
                       ),

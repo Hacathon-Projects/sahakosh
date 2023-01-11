@@ -51,8 +51,8 @@ class _LoginAsInvestorScreenState extends State<LoginAsInvestorScreen> {
                 height: 70,
               ),
               InkWell(
-                onTap: (() => Navigator.of(context)
-                    .pushReplacementNamed(RouteConstant.investorRegisterRoute)),
+                onTap: (() => Navigator.of(context).pushReplacementNamed(
+                    RouteConstant.investorRegisterStep1Route)),
                 child: const Text(
                   "Create Account",
                   style: TextStyle(

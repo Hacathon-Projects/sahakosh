@@ -1,21 +1,19 @@
-import 'package:flutter/material.dart';
-import 'package:sahakosh/widgets/text_field.dart';
-import 'package:sahakosh/widgets/button.dart';
+import 'dart:io';
 
-class StartupUIStep3Screen extends StatefulWidget {
-  const StartupUIStep3Screen({super.key});
+import 'package:flutter/material.dart';
+import 'package:sahakosh/widgets/simple_button.dart';
+import 'package:sahakosh/widgets/button.dart';
+import 'package:image_picker/image_picker.dart';
+
+class StartupRegisterStep3Route extends StatefulWidget {
+  const StartupRegisterStep3Route({super.key});
 
   @override
-  State<StartupUIStep3Screen> createState() => _StartupUIStep3ScreenState();
+  State<StartupRegisterStep3Route> createState() =>
+      _StartupRegisterStep3RouteState();
 }
 
-class _StartupUIStep3ScreenState extends State<StartupUIStep3Screen> {
-  final TextEditingController _aboutYourselfController =
-      TextEditingController();
-  final TextEditingController _historyOfYourInvestmentController =
-      TextEditingController();
-  final TextEditingController _uploadCitizenshipController =
-      TextEditingController();
+class _StartupRegisterStep3RouteState extends State<StartupRegisterStep3Route> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,26 +29,28 @@ class _StartupUIStep3ScreenState extends State<StartupUIStep3Screen> {
             ),
             const SizedBox(height: 20),
             const Text(
-              'Now, one more step',
+              'Upload Documents',
               style: TextStyle(fontSize: 16),
             ),
             const Spacer(flex: 2),
-            MyTextField(
-                controller: _aboutYourselfController,
-                hintText: 'About Yourself'),
-            const SizedBox(height: 30),
-            MyTextField(
-                controller: _historyOfYourInvestmentController,
-                hintText: 'History of your investment'),
-            const SizedBox(height: 30),
-            MyTextField(
-                controller: _uploadCitizenshipController,
-                hintText: 'Upload Citizeship/ License'),
-            const Spacer(flex: 2),
-            MyButton(text: 'Finish', onTap: () {}),
-            const SizedBox(
-              height: 70,
+            MySimpleButton(
+              text: 'Upload registration document',
+              ontap: () {
+                // TODO: Upload registration document function
+              },
             ),
+            const SizedBox(height: 30),
+            MySimpleButton(
+                text: 'Upload VAT document',
+                ontap: () {
+                  // TODO: Upload VAT document function
+                }),
+            const Spacer(flex: 2),
+            MyButton(
+                text: 'Finish',
+                onTap: () {
+                  // TODO : State after startup registration complete
+                }),
             const Spacer(flex: 2),
           ],
         ),
