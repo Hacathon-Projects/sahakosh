@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "362956023018",
+    "project_id": "sahakosh-ce8b0",
+    "storage_bucket": "sahakosh-ce8b0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:362956023018:android:e3b71a3e86892ef869a393",
+        "android_client_info": {
+          "package_name": "com.example.sahakosh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "362956023018-vfrcfnvj3m5anud2fik6avdmfrrotq4i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5l0H_q0u0Jor52_q58reI2Or-4rhHSN8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "362956023018-vfrcfnvj3m5anud2fik6avdmfrrotq4i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
