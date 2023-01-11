@@ -1,9 +1,19 @@
 abstract class AuthBase {
-  static void login({
+  static void loginAsStartup({
     required String name,
     required String password,
   }) {}
-  static void register({
+
+  static void loginAsInvestor({
+    required String name,
+    required String password,
+  }) {}
+  static void registerAsInvestor({
+    required String name,
+    required String password,
+    required String email,
+  }) {}
+  static void registerAsStartup({
     required String name,
     required String password,
     required String email,
@@ -12,7 +22,5 @@ abstract class AuthBase {
 
 abstract class AuthDBServiceBase {
   void storeStartupData();
-  void updateStartupData();
   void storeInvestorData();
-  void updateInvestorData();
 }
