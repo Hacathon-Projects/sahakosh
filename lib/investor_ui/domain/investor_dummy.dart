@@ -1,0 +1,83 @@
+import 'package:sahakosh/investor_ui/domain/investor_model.dart';
+
+var InvestorDummy = [
+  InvestorModel(
+      name: "Lil Foodie",
+      owner: "Aayush Gelal",
+      image: "",
+      address: "Lazimpat Kathmandu",
+      amountWithdrawn: true,
+      category: "Tech",
+      createdOn: "yesterday",
+      equity: 10000,
+      long_description:
+          "This is a long description of how it looks where there are many things",
+      operating_yrs: "2 years",
+      target: 1230000,
+      valuation: 400000,
+      targetReached: false),
+  InvestorModel(
+    name: "Lil Foodie",
+    owner: "Aayush Gelal",
+    image: "",
+    address: "Lazimpat Kathmandu",
+    amountWithdrawn: true,
+    category: "Tech",
+    createdOn: "yesterday",
+    equity: 10000,
+    long_description:
+        "This is a long description of how it looks where there are many things",
+    operating_yrs: "2 years",
+    target: 1230000,
+    targetReached: false,
+    valuation: 400000,
+  ),
+  InvestorModel(
+    name: "Lil Foodie",
+    owner: "Aayush Gelal",
+    image: "",
+    address: "Lazimpat Kathmandu",
+    amountWithdrawn: true,
+    category: "Tech",
+    createdOn: "yesterday",
+    equity: 10000,
+    long_description:
+        "This is a long description of how it looks where there are many things",
+    operating_yrs: "3 years",
+    target: 1230000,
+    targetReached: false,
+    valuation: 400000,
+  ),
+  InvestorModel(
+    name: "Lil Foodie",
+    owner: "Aayush Gelal",
+    image: "",
+    address: "Lazimpat Kathmandu",
+    amountWithdrawn: true,
+    category: "Tech",
+    createdOn: "yesterday",
+    equity: 10000,
+    long_description:
+        "This is a long description of how it looks where there are many things",
+    operating_yrs: "3 years",
+    target: 1230000,
+    targetReached: false,
+    valuation: 400000,
+  ),
+  InvestorModel(
+    name: "Lil Foodie",
+    owner: "Aayush Gelal",
+    image: "",
+    address: "Lazimpat Kathmandu",
+    amountWithdrawn: true,
+    category: "Tech",
+    createdOn: "yesterday",
+    equity: 10000,
+    long_description:
+        "This is a long description of how it looks where there are many things",
+    operating_yrs: "3 years",
+    target: 1230000,
+    targetReached: false,
+    valuation: 400000,
+  )
+];
