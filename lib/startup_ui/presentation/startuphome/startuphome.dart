@@ -97,7 +97,7 @@ class StartupHome extends StatelessWidget {
                         }
                       }),
                 ),
-
+                const Divider(),
                 // ================= Recommended =================
                 const SizedBox(height: 28),
 
@@ -125,7 +125,11 @@ class StartupHome extends StatelessWidget {
                                   child: SingleChildScrollView(
                                     child: GestureDetector(
                                         // TODO SEE DETAILS ABOUT STARTUPS
-                                        onTap: () async {},
+                                        onTap: () async {
+                                          Navigator.push(context, MaterialPageRoute(builder: (context) {
+                                            return StartupDetails(startup: items[index]);
+                                          }));
+                                        },
                                         child: Padding(
                                           padding: const EdgeInsets.all(8.0),
                                           child: Column(
@@ -186,7 +190,11 @@ class StartupHome extends StatelessWidget {
                               return SingleChildScrollView(
                                   child: GestureDetector(
                                 // TODO SEE DETAILS ABOUT STARTUPS
-                                onTap: () async {},
+                                onTap: () async {
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                                    return StartupDetails(startup: items[index]);
+                                  }));
+                                },
                                 child: Column(
                                   children: [
                                     const SizedBox(height: 20),
@@ -197,7 +205,7 @@ class StartupHome extends StatelessWidget {
                                           const SizedBox(height: 20),
                                           Row(
                                             children: [
-                                              const SizedBox(width: 6),
+                                              const SizedBox(width: 8),
                                               Container(
                                                 height: 152,
                                                 width: 156,
