@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:sahakosh/widgets/simple_button.dart';
-import 'package:sahakosh/widgets/button.dart';
+import 'package:sahakosh/widgets/primary_button.dart';
 import 'package:image_picker/image_picker.dart';
 
 class StartupRegisterStep3Route extends StatefulWidget {
@@ -46,7 +46,7 @@ class _StartupRegisterStep3RouteState extends State<StartupRegisterStep3Route> {
                   // TODO: Upload VAT document function
                 }),
             const Spacer(flex: 2),
-            MyButton(
+            PrimaryButton(
                 text: 'Finish',
                 onTap: () {
                   // TODO : State after startup registration complete
