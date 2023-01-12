@@ -27,4 +27,7 @@ class RouteConstant {
   //Profile_Screen
   static const investorProfilePage = '/investor/profile';
   static const startupProfilePage = '/startup/profile';
+
+  //Portfolio_Management_Screen
+  static const portfolioManagementScreen = '/portfolio';
 }

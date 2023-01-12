@@ -6,6 +6,8 @@ import 'package:sahakosh/core/routes/routes_constant.dart';
 import 'package:sahakosh/investor_ui/presentation/step_1.dart';
 import 'package:sahakosh/investor_ui/presentation/step_2.dart';
 import 'package:sahakosh/investor_ui/presentation/step_2.dart';
+import 'package:sahakosh/portfolio_ui/domain/portfolioModel.dart';
+import 'package:sahakosh/portfolio_ui/presentation/portfolio_screen.dart';
 import 'package:sahakosh/startup_ui/presentation/step_1.dart';
 import 'package:sahakosh/startup_ui/presentation/step_2.dart';
 import 'package:sahakosh/startup_ui/presentation/step_3.dart';
@@ -47,6 +49,11 @@ class Routes {
       case RouteConstant.startupRegisterStep3Route:
         return MaterialPageRoute(
             builder: (context) => const StartupRegisterStep3Route());
+
+      // Portfolio
+      case RouteConstant.portfolioManagementScreen:
+        return MaterialPageRoute(
+            builder: (context) => const PortfolioManagementScreen());
 
       default:
         return MaterialPageRoute(builder: (context) => const PageNotFound());
