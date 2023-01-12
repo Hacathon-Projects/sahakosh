@@ -4,8 +4,11 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:sahakosh/core/routes/route.dart';
+import 'package:sahakosh/models/startup.dart';
+import 'package:sahakosh/startup_ui/presentation/startuphome/startuphome.dart';
 
 import 'core/routes/routes_constant.dart';
+import 'startup_ui/presentation/proposal/proposal.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,8 +37,9 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.blue[800],
         textTheme: GoogleFonts.nunitoTextTheme(),
       ),
-      onGenerateRoute: Routes.generateRoute,
-      initialRoute: RouteConstant.landingScreen,
+      // onGenerateRoute: Routes.generateRoute,
+      // initialRoute: RouteConstant.landingScreen,
+      home: const StartupHome(),
     );
   }
 }
