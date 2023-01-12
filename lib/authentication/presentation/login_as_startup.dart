@@ -46,8 +46,8 @@ class _LoginAsStartupScreenState extends State<LoginAsStartupScreen> {
               PrimaryButton(
                 text: 'Let\'s Go',
                 onTap: () => Navigator.of(context).pushNamedAndRemoveUntil(
-                    RouteConstant.startupHomeScreen,
-                    (Route<dynamic> route) => false),
+                    RouteConstant.homeRoute, (Route<dynamic> route) => false,
+                    arguments: true),
               ),
               const SizedBox(
                 height: 70,
