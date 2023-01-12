@@ -3,9 +3,14 @@ import 'package:sahakosh/authentication/presentation/create_account_screen.dart'
 import 'package:sahakosh/authentication/presentation/landing_screen.dart';
 import 'package:sahakosh/core/routes/404.dart';
 import 'package:sahakosh/core/routes/routes_constant.dart';
+import 'package:sahakosh/investor_ui/presentation/inverstor_home.dart';
+// import 'package:sahakosh/investor_ui/presentation/investor_notification.dart';
 import 'package:sahakosh/investor_ui/presentation/step_1.dart';
 import 'package:sahakosh/investor_ui/presentation/step_2.dart';
-import 'package:sahakosh/investor_ui/presentation/step_2.dart';
+import 'package:sahakosh/notification_ui/investor/presentation/investor_notification_page.dart';
+import 'package:sahakosh/notification_ui/startup/presentation/startup_notification_page.dart';
+import 'package:sahakosh/portfolio_ui/presentation/portfolio_screen.dart';
+import 'package:sahakosh/startup_ui/presentation/startuphome/startuphome.dart';
 import 'package:sahakosh/startup_ui/presentation/step_1.dart';
 import 'package:sahakosh/startup_ui/presentation/step_2.dart';
 import 'package:sahakosh/startup_ui/presentation/step_3.dart';
@@ -47,6 +52,27 @@ class Routes {
       case RouteConstant.startupRegisterStep3Route:
         return MaterialPageRoute(
             builder: (context) => const StartupRegisterStep3Route());
+
+      // Investor home screen
+      case RouteConstant.investorHomeScreen:
+        return MaterialPageRoute(
+            builder: (context) => const InvestorHomeScreen());
+      case RouteConstant.investorNotificationPage:
+        return MaterialPageRoute(
+            builder: (context) => const InvestorNotificationPage());
+
+      // Startup home screen
+      case RouteConstant.startupHomeScreen:
+        return MaterialPageRoute(
+            builder: (context) => const StartupHomeScreen());
+      case RouteConstant.startupNotificationPage:
+        return MaterialPageRoute(
+            builder: (context) => const StartupNotificationPage());
+
+      // Portfolio
+      case RouteConstant.portfolioManagementScreen:
+        return MaterialPageRoute(
+            builder: (context) => const PortfolioManagementScreen());
 
       default:
         return MaterialPageRoute(builder: (context) => const PageNotFound());

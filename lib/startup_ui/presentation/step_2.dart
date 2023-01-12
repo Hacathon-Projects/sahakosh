@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sahakosh/core/routes/routes_constant.dart';
 import 'package:sahakosh/widgets/text_field.dart';
-import 'package:sahakosh/widgets/button.dart';
+import 'package:sahakosh/widgets/primary_button.dart';
 
 class StartupRegisterStep2Route extends StatefulWidget {
   const StartupRegisterStep2Route({super.key});
@@ -26,6 +26,7 @@ class _StartupRegisterStep2RouteState extends State<StartupRegisterStep2Route> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(30.0),
@@ -70,7 +71,7 @@ class _StartupRegisterStep2RouteState extends State<StartupRegisterStep2Route> {
                 hintText: 'Province',
               ),
               const Spacer(flex: 2),
-              MyButton(
+              PrimaryButton(
                   text: 'Next',
                   onTap: () => Navigator.of(context)
                       .pushNamed(RouteConstant.startupRegisterStep3Route)),

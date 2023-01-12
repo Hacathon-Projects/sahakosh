@@ -1,9 +1,7 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
+import 'package:sahakosh/core/routes/routes_constant.dart';
 import 'package:sahakosh/widgets/simple_button.dart';
-import 'package:sahakosh/widgets/button.dart';
-import 'package:image_picker/image_picker.dart';
+import 'package:sahakosh/widgets/primary_button.dart';
 
 class StartupRegisterStep3Route extends StatefulWidget {
   const StartupRegisterStep3Route({super.key});
@@ -17,6 +15,7 @@ class _StartupRegisterStep3RouteState extends State<StartupRegisterStep3Route> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Padding(
         padding: const EdgeInsets.all(30.0),
         child: Column(
@@ -46,11 +45,12 @@ class _StartupRegisterStep3RouteState extends State<StartupRegisterStep3Route> {
                   // TODO: Upload VAT document function
                 }),
             const Spacer(flex: 2),
-            MyButton(
-                text: 'Finish',
-                onTap: () {
-                  // TODO : State after startup registration complete
-                }),
+            PrimaryButton(
+              text: 'Finish',
+              onTap: () => Navigator.of(context).pushNamedAndRemoveUntil(
+                  RouteConstant.startupHomeScreen,
+                  (Route<dynamic> route) => false),
+            ),
             const Spacer(flex: 2),
           ],
         ),
