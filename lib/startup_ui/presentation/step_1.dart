@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sahakosh/core/routes/routes_constant.dart';
 import 'package:sahakosh/widgets/text_field.dart';
-import 'package:sahakosh/widgets/button.dart';
+import 'package:sahakosh/widgets/primary_button.dart';
 
 class StartupRegisterStep1Route extends StatefulWidget {
   const StartupRegisterStep1Route({super.key});
@@ -73,7 +73,7 @@ class _StartupRegisterStep1RouteState extends State<StartupRegisterStep1Route> {
                   hintText: 'Description',
                 ),
                 const Spacer(flex: 2),
-                MyButton(
+                PrimaryButton(
                     text: 'Next',
                     onTap: () => Navigator.of(context)
                         .pushNamed(RouteConstant.startupRegisterStep2Route)),

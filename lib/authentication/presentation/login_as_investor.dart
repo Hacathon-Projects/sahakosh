@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sahakosh/core/routes/routes_constant.dart';
 import 'package:sahakosh/widgets/text_field.dart';
-import 'package:sahakosh/widgets/button.dart';
+import 'package:sahakosh/widgets/primary_button.dart';
 
 class LoginAsInvestorScreen extends StatefulWidget {
   const LoginAsInvestorScreen({super.key});
@@ -42,7 +42,7 @@ class _LoginAsInvestorScreenState extends State<LoginAsInvestorScreen> {
               MyTextField(
                   controller: _passwordController, hintText: 'Password'),
               const Spacer(flex: 1),
-              MyButton(
+              PrimaryButton(
                   text: 'Let\'s Go',
                   onTap: () {
                     // TODO: show homepage for investor
@@ -53,11 +53,11 @@ class _LoginAsInvestorScreenState extends State<LoginAsInvestorScreen> {
               InkWell(
                 onTap: (() => Navigator.of(context).pushReplacementNamed(
                     RouteConstant.investorRegisterStep1Route)),
-                child: const Text(
+                child: Text(
                   "Create Account",
                   style: TextStyle(
                     decoration: TextDecoration.underline,
-                    color: Color.fromRGBO(143, 148, 251, 1),
+                    color: Colors.blue[800],
                   ),
                 ),
               ),

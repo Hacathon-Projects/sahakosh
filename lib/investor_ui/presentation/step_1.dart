@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sahakosh/core/routes/routes_constant.dart';
 import 'package:sahakosh/widgets/text_field.dart';
-import 'package:sahakosh/widgets/button.dart';
+import 'package:sahakosh/widgets/primary_button.dart';
 
 class InvestorRegisterStep1Route extends StatefulWidget {
   const InvestorRegisterStep1Route({super.key});
@@ -77,7 +77,7 @@ class _InvestorRegisterStep1RouteState
                   hintText: 'Amount you can invest',
                 ),
                 const Spacer(flex: 2),
-                MyButton(
+                PrimaryButton(
                     text: 'Next',
                     onTap: () => Navigator.of(context)
                         .pushNamed(RouteConstant.investorRegisterStep2Route)),
