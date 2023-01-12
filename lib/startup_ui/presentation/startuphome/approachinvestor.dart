@@ -28,13 +28,132 @@ class ApproachInvestor extends StatelessWidget {
             SizedBox(
                 height: 300,
                 width: MediaQuery.of(context).size.width,
-                child: Stack(
-                  children: const [
-                    Card(
-                      elevation: 3,
+                child: Card(
+                  color: Colors.grey[200],
+                  elevation: 0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Container(
+                    padding: const EdgeInsets.fromLTRB(12, 18, 12, 20),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text('Investors Details', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                        const SizedBox(height: 15),
+                        Row(mainAxisSize: MainAxisSize.max, mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                          Column(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.only(left: 5),
+                                child: Text(
+                                  "${startup.personalDetails!.name}",
+                                  style: const TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(height: 4),
+                              Container(
+                                padding: const EdgeInsets.only(left: 5),
+                                child: const Text(
+                                  "",
+                                  style: TextStyle(fontSize: 20, color: Colors.black54, fontWeight: FontWeight.w700, decoration: TextDecoration.none),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.only(right: 5),
+                                child: const Text(
+                                  'Profit Per. %',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(height: 4),
+                              Container(
+                                padding: const EdgeInsets.only(right: 5),
+                                child: const Text(
+                                  "dasd%",
+                                  style: TextStyle(color: Colors.green, fontSize: 20, fontWeight: FontWeight.w700, decoration: TextDecoration.none),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ]),
+                        const SizedBox(height: 25),
+                        Row(mainAxisSize: MainAxisSize.max, mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                          Column(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.only(left: 5),
+                                child: const Text(
+                                  'Investment',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(height: 4),
+                              Container(
+                                padding: const EdgeInsets.only(left: 5),
+                                child: const Text(
+                                  'रु ',
+                                  style: TextStyle(color: Colors.black54, fontSize: 20, fontWeight: FontWeight.w700, decoration: TextDecoration.none),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.only(right: 5),
+                                child: Container(
+                                  alignment: Alignment.centerRight,
+                                  child: const Text(
+                                    'Current Profit',
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(height: 4),
+                              Container(
+                                alignment: Alignment.centerRight,
+                                padding: const EdgeInsets.only(right: 5),
+                                child: const Text(
+                                  "dasdas",
+                                  textAlign: TextAlign.right,
+                                  style: TextStyle(color: Colors.green, fontSize: 20, fontWeight: FontWeight.w700, decoration: TextDecoration.none),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ]),
+                      ],
                     ),
-                    Text("Investor Details")
-                  ],
+                  ),
                 ))
           ],
         ));

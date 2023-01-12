@@ -60,6 +60,7 @@ flutter:
   assets:
     - assets/images/
     - lib/startup_ui/domain/dummy.json
+    - lib/notifications/domain/dummy.json
     - assets/logo.png
     - assets/ibutton.png
   
