@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-import 'package:sahakosh/core/chat_ui/chatlistscreen.dart';
-import 'package:sahakosh/core/profile_ui/investor_profile.dart';
-=======
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
->>>>>>> c481b90daded50e48701be47fa017834bf6629a0
+import 'package:sahakosh/core/profile_ui/investor_profile.dart';
 import 'package:sahakosh/core/routes/route.dart';
+import 'package:sahakosh/models/investor.dart';
 
 import 'core/routes/routes_constant.dart';
 
@@ -38,12 +35,7 @@ class MyApp extends StatelessWidget {
         textTheme: GoogleFonts.nunitoTextTheme(),
       ),
       onGenerateRoute: Routes.generateRoute,
-<<<<<<< HEAD
-      home: ChatListScreen(),
-      debugShowCheckedModeBanner: false,
-=======
-      initialRoute: RouteConstant.landingScreen,
->>>>>>> c481b90daded50e48701be47fa017834bf6629a0
+      home: MyProfileInvestor(),
     );
   }
 }
