@@ -2,6 +2,9 @@ class RouteConstant {
   static const landingScreen = '/landing-screen';
   static const createAccountScreen = '/create-account';
 
+  // Home
+  static const homeRoute = '/home';
+
   // Investor auth
   static const investorLoginRoute = '/investor/login';
   static const investorCompleteProfileRoute = '/investor/complete-profile';
