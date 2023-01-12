@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sahakosh/startup_ui/domain/startupmodel.dart';
 
+import 'approachinvestor.dart';
+
 class StartupDetails extends StatelessWidget {
   StartupModel startup;
   StartupDetails({super.key, required this.startup});
@@ -28,11 +30,15 @@ class StartupDetails extends StatelessWidget {
         child: Align(
           alignment: Alignment.bottomCenter,
           child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return ApproachInvestor(startup: startup);
+                }));
+              },
               style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
-                children: const [Text('Schedule a Meeting'), SizedBox(width: 10), Icon(Icons.schedule)],
+                children: const [Text('Approach Investor'), SizedBox(width: 10), Icon(Icons.schedule)],
               )),
         ),
       ),
@@ -162,13 +168,13 @@ class StartupDetails extends StatelessWidget {
                                   const SizedBox(height: 24),
 
                                   Stack(children: [
-                                    SizedBox(height: 168, width: MediaQuery.of(context).size.width / 1.15, child: const Card(color: Colors.white60)),
+                                    SizedBox(height: 160, width: MediaQuery.of(context).size.width / 1.15, child: const Card(color: Colors.white60)),
                                     Column(
                                       children: [
-                                        const SizedBox(height: 10),
+                                        const SizedBox(height: 20),
                                         Row(
                                           children: [
-                                            const SizedBox(width: 6),
+                                            const SizedBox(width: 15),
                                             Container(
                                               height: 120,
                                               width: 126,
@@ -186,7 +192,7 @@ class StartupDetails extends StatelessWidget {
                                               crossAxisAlignment: CrossAxisAlignment.start,
                                               children: [
                                                 Text(startup.personalDetails!.name ?? "",
-                                                    style: const TextStyle(fontSize: 18, fontFamily: "latobold")),
+                                                    overflow: TextOverflow.ellipsis, style: const TextStyle(fontSize: 18, fontFamily: "latobold")),
                                                 Text(startup.personalDetails!.location ?? ""),
                                                 Text(startup.investmentCategory ?? ""),
                                                 Text("Rs. ${startup.totalBudget}"),
@@ -194,7 +200,6 @@ class StartupDetails extends StatelessWidget {
                                             ),
                                           ],
                                         ),
-                                        const SizedBox(height: 5),
                                       ],
                                     ),
                                   ]),
