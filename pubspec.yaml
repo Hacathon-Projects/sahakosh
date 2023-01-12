@@ -45,6 +45,7 @@ flutter:
   assets:
     - assets/images/
     - lib/startup_ui/domain/dummy.json
-    - lib/notifications/domain/dummy.json
+    - lib/notification_ui/startup/domain/startup_domain_dummy.json
+    - lib/notification_ui/investor/domain/investor_domain_dummy.json
     - assets/logo.png
     - assets/ibutton.png

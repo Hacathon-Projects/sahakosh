@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:sahakosh/notifications/applicatoin/notifications.dart';
-import 'package:sahakosh/notifications/domain/model.dart';
+import 'package:sahakosh/notification_ui/investor/application/investor_noti_application.dart';
+import 'package:sahakosh/notification_ui/investor/domain/investor_noti_model.dart';
 
-class Notifications extends StatelessWidget {
-  const Notifications({super.key});
+class InvestorNotificationPage extends StatelessWidget {
+  const InvestorNotificationPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,8 @@ class Notifications extends StatelessWidget {
                       Navigator.pop(context);
                     }),
                 const SizedBox(width: 15),
-                const Text("Notifications", style: TextStyle(fontSize: 20, fontFamily: "latobold")),
+                const Text("Notifications",
+                    style: TextStyle(fontSize: 20, fontFamily: "latobold")),
                 const SizedBox(width: 40),
               ]),
             ),
@@ -57,11 +58,17 @@ class Notifications extends StatelessWidget {
                                       alignment: Alignment.center,
                                       child: ListTile(
                                         leading: const CircleAvatar(
-                                          backgroundImage: AssetImage("assets/logo.png"),
+                                          backgroundImage:
+                                              AssetImage("assets/logo.png"),
                                         ),
-                                        title: Text(items[index].notification!, style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 13)),
+                                        title: Text(items[index].notification!,
+                                            style: const TextStyle(
+                                                fontWeight: FontWeight.w500,
+                                                fontSize: 13)),
                                         minVerticalPadding: 5,
-                                        subtitle: Text(items[index].time!, style: const TextStyle(fontSize: 13)),
+                                        subtitle: Text(items[index].time!,
+                                            style:
+                                                const TextStyle(fontSize: 13)),
                                         onTap: () {},
                                       ),
                                     ),

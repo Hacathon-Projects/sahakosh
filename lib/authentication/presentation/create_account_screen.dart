@@ -3,6 +3,7 @@ import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:sahakosh/core/routes/routes_constant.dart';
 import 'package:sahakosh/widgets/primary_button.dart';
 import 'package:sahakosh/widgets/gradient.dart';
+import 'package:sahakosh/widgets/secondary_button.dart';
 
 class CreateAccountScreen extends StatefulWidget {
   const CreateAccountScreen({super.key});
@@ -81,16 +82,10 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                       const SizedBox(
                         height: 70,
                       ),
-                      InkWell(
+                      SecondaryButton(
+                        text: "Already have account? Login",
                         onTap: () => Navigator.of(context)
                             .pushReplacementNamed(RouteConstant.landingScreen),
-                        child: Text(
-                          "Already have account? Login",
-                          style: TextStyle(
-                            decoration: TextDecoration.underline,
-                            color: Colors.blue[800],
-                          ),
-                        ),
                       ),
                     ],
                   ),
