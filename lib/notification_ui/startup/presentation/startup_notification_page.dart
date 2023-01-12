@@ -7,27 +7,16 @@ class StartupNotificationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Column(
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Notifications'),
+        backgroundColor: Colors.blue[800],
+        elevation: 0,
+      ),
+      body: SafeArea(
+        child: Column(
           children: [
             const SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.all(5.0),
-              child: Row(children: [
-                const SizedBox(width: 5),
-                IconButton(
-                    icon: const Icon(Icons.arrow_back),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    }),
-                const SizedBox(width: 15),
-                const Text("Notifications",
-                    style: TextStyle(fontSize: 20, fontFamily: "latobold")),
-                const SizedBox(width: 40),
-              ]),
-            ),
-            const SizedBox(height: 5),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 5.0),
               child: SizedBox(
