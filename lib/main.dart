@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sahakosh/core/profile_ui/investor_profile.dart';
+
 import 'package:sahakosh/core/routes/route.dart';
 import 'package:sahakosh/models/investor.dart';
 
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
         textTheme: GoogleFonts.nunitoTextTheme(),
       ),
       onGenerateRoute: Routes.generateRoute,
-      home: MyProfileInvestor(),
+      initialRoute: RouteConstant.landingScreen,
     );
   }
 }

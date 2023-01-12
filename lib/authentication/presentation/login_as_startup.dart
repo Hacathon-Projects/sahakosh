@@ -21,6 +21,7 @@ class _LoginAsStartupScreenState extends State<LoginAsStartupScreen> {
         return true;
       },
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: Padding(
           padding: const EdgeInsets.all(30.0),
           child: Column(
@@ -43,10 +44,11 @@ class _LoginAsStartupScreenState extends State<LoginAsStartupScreen> {
                   controller: _passwordController, hintText: 'Password'),
               const Spacer(flex: 1),
               PrimaryButton(
-                  text: 'Let\'s Go',
-                  onTap: () {
-                    // TODO: show homepage for startup
-                  }),
+                text: 'Let\'s Go',
+                onTap: () => Navigator.of(context).pushNamedAndRemoveUntil(
+                    RouteConstant.startupHomeScreen,
+                    (Route<dynamic> route) => false),
+              ),
               const SizedBox(
                 height: 70,
               ),
