@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:sahakosh/startup_ui/application/startup_service.dart';
 import 'package:sahakosh/startup_ui/domain/startupmodel.dart';
 
+import 'startupdetails.dart';
+
 class StartupHome extends StatelessWidget {
   const StartupHome({super.key});
 
@@ -11,48 +13,24 @@ class StartupHome extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.white,
         drawer: const Drawer(),
-        // appBar: AppBar(
-        //   elevation: 0,
-        //   backgroundColor: Colors.white,
-        //   title: const Text("Sahakosh Investors", style: TextStyle(fontSize: 25, color: Colors.black, fontFamily: "latobold")),
-        //   leading: Row(
-        //     children: [
-        //       const SizedBox(width: 10),
-        //       SizedBox(
-        //         height: 50,
-        //         width: 50,
-        //         child: InkWell(
-        //           onTap: () {},
-        //           child: Image.asset('assets/logo.png', width: 50, height: 50, fit: BoxFit.cover),
-        //         ),
-        //       ),
-        //     ],
-        //   ),
-        // ),
+        appBar: AppBar(
+          backgroundColor: Colors.blue[800],
+          title: const Text("Sahakosh Investors"),
+          elevation: 0,
+          actions: [
+            IconButton(
+                icon: const Icon(Icons.logout),
+                onPressed: () {
+                  Navigator.pop(context);
+                }),
+          ],
+        ),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(3.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(children: [
-                  Row(
-                    children: [
-                      const SizedBox(width: 10),
-                      SizedBox(
-                        height: 100,
-                        width: 100,
-                        child: InkWell(
-                          onTap: () {},
-                          child: Image.asset('assets/logo.png', width: 100, height: 100, fit: BoxFit.cover),
-                        ),
-                      ),
-                      const SizedBox(width: 10),
-                      const Text("Sahakosh Investors", style: TextStyle(fontSize: 24))
-                    ],
-                  ),
-                ]),
-
                 const SizedBox(height: 15),
                 // ================ top rated ====================
                 const Text("  Top Rated", style: TextStyle(fontWeight: FontWeight.w400, fontSize: 24, fontFamily: "latobold")),
@@ -78,7 +56,11 @@ class StartupHome extends StatelessWidget {
                                   padding: const EdgeInsets.all(0),
                                   child: GestureDetector(
                                       // TODO SEE DETAILS ABOUT STARTUPS
-                                      onTap: () async {},
+                                      onTap: () async {
+                                        Navigator.push(context, MaterialPageRoute(builder: (context) {
+                                          return StartupDetails(startup: items[index]);
+                                        }));
+                                      },
                                       child: Padding(
                                         padding: const EdgeInsets.all(8.0),
                                         child: Container(
@@ -93,7 +75,7 @@ class StartupHome extends StatelessWidget {
                                             child: Align(
                                                 alignment: Alignment.bottomRight,
                                                 child: Container(
-                                                    color: Colors.blue,
+                                                    color: const Color.fromARGB(255, 89, 171, 238),
                                                     child: const Padding(
                                                       padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 3),
                                                       child: Text("4.8",
@@ -237,12 +219,12 @@ class StartupHome extends StatelessWidget {
                                                       style: const TextStyle(fontSize: 18, fontFamily: "latobold")),
                                                   Text(items[index].personalDetails!.location ?? ""),
                                                   Text(items[index].investmentCategory ?? ""),
-                                                  Text(items[index].totalBudget ?? ""),
+                                                  Text("Rs. ${items[index].totalBudget}"),
                                                 ],
                                               ),
                                             ],
                                           ),
-                                          const SizedBox(height: 10),
+                                          const SizedBox(height: 5),
                                         ],
                                       ),
                                       Align(
@@ -254,7 +236,7 @@ class StartupHome extends StatelessWidget {
                                         ),
                                       ),
                                     ]),
-                                    const SizedBox(height: 16),
+                                    const SizedBox(height: 5),
                                   ],
                                 ),
                               ));
