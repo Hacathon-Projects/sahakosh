@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sahakosh/core/chat_ui/chatlistscreen.dart';
+import 'package:sahakosh/core/profile_ui/investor_profile.dart';
 import 'package:sahakosh/core/routes/route.dart';
 
 import 'core/routes/routes_constant.dart';
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       onGenerateRoute: Routes.generateRoute,
-      initialRoute: RouteConstant.landingScreen,
+      home: ChatListScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
