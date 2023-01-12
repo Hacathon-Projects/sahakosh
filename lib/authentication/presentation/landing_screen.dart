@@ -4,7 +4,6 @@ import 'package:sahakosh/core/routes/routes_constant.dart';
 import 'package:sahakosh/widgets/primary_button.dart';
 import 'package:sahakosh/widgets/gradient.dart';
 import 'package:sahakosh/widgets/secondary_button.dart';
-import 'package:sahakosh/widgets/simple_button.dart';
 
 class LandingScreen extends StatefulWidget {
   const LandingScreen({super.key});
@@ -43,7 +42,7 @@ class _LandingScreenState extends State<LandingScreen> {
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 30,
+                                  fontSize: 28,
                                   fontWeight: FontWeight.bold),
                             ),
                             const SizedBox(height: 20),
@@ -76,7 +75,11 @@ class _LandingScreenState extends State<LandingScreen> {
                     const SizedBox(
                       height: 70,
                     ),
-                    SecondaryButton(text: 'Create Account', onTap: () {}),
+                    SecondaryButton(
+                      text: 'Create Account',
+                      onTap: () => Navigator.of(context).pushReplacementNamed(
+                          RouteConstant.createAccountScreen),
+                    ),
                   ],
                 ),
               )

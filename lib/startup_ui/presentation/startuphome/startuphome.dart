@@ -5,8 +5,8 @@ import 'package:sahakosh/startup_ui/domain/startupmodel.dart';
 
 import 'startupdetails.dart';
 
-class StartupHome extends StatelessWidget {
-  const StartupHome({super.key});
+class StartupHomeScreen extends StatelessWidget {
+  const StartupHomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,11 @@ class StartupHome extends StatelessWidget {
             children: [
               const SizedBox(height: 15),
               // ================ top rated ====================
-              const Text("  Top Rated", style: TextStyle(fontWeight: FontWeight.w400, fontSize: 24, fontFamily: "latobold")),
+              const Text("  Top Rated",
+                  style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 24,
+                      fontFamily: "latobold")),
               const SizedBox(height: 17),
 
               SizedBox(
@@ -64,8 +68,10 @@ class StartupHome extends StatelessWidget {
                                 child: GestureDetector(
                                     // TODO SEE DETAILS ABOUT STARTUPS
                                     onTap: () async {
-                                      Navigator.push(context, MaterialPageRoute(builder: (context) {
-                                        return StartupDetails(startup: items[index]);
+                                      Navigator.push(context,
+                                          MaterialPageRoute(builder: (context) {
+                                        return StartupDetails(
+                                            startup: items[index]);
                                       }));
                                     },
                                     child: Padding(
@@ -74,22 +80,35 @@ class StartupHome extends StatelessWidget {
                                         height: 108,
                                         width: 127,
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(20.0),
-                                          image: DecorationImage(image: NetworkImage(items[index].personalDetails!.photo ?? ""), fit: BoxFit.cover),
+                                          borderRadius:
+                                              BorderRadius.circular(20.0),
+                                          image: DecorationImage(
+                                              image: NetworkImage(items[index]
+                                                      .personalDetails!
+                                                      .photo ??
+                                                  ""),
+                                              fit: BoxFit.cover),
                                         ),
                                         child: ClipRRect(
-                                          borderRadius: BorderRadius.circular(10.0),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
                                           child: Align(
                                               alignment: Alignment.bottomRight,
                                               child: Container(
-                                                  color: const Color.fromARGB(255, 89, 171, 238),
+                                                  color: const Color.fromARGB(
+                                                      255, 89, 171, 238),
                                                   child: const Padding(
-                                                    padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 3),
+                                                    padding:
+                                                        EdgeInsets.symmetric(
+                                                            horizontal: 12.0,
+                                                            vertical: 3),
                                                     child: Text("4.8",
                                                         style: TextStyle(
                                                             color: Colors.white,
-                                                            fontWeight: FontWeight.bold,
-                                                            fontFamily: "robotobold",
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            fontFamily:
+                                                                "robotobold",
                                                             fontSize: 13)),
                                                   ))),
                                         ),
@@ -108,7 +127,11 @@ class StartupHome extends StatelessWidget {
               // ================= Recommended =================
               const SizedBox(height: 28),
 
-              const Text("  Recommended", style: TextStyle(fontWeight: FontWeight.w400, fontSize: 24, fontFamily: "latobold")),
+              const Text("  Recommended",
+                  style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 24,
+                      fontFamily: "latobold")),
               const SizedBox(height: 18),
 
               SizedBox(
@@ -133,25 +156,40 @@ class StartupHome extends StatelessWidget {
                                   child: GestureDetector(
                                       // TODO SEE DETAILS ABOUT STARTUPS
                                       onTap: () async {
-                                        Navigator.push(context, MaterialPageRoute(builder: (context) {
-                                          return StartupDetails(startup: items[index]);
+                                        Navigator.push(context,
+                                            MaterialPageRoute(
+                                                builder: (context) {
+                                          return StartupDetails(
+                                              startup: items[index]);
                                         }));
                                       },
                                       child: Padding(
                                         padding: const EdgeInsets.all(8.0),
                                         child: Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Container(
                                               height: 108,
                                               width: 127,
                                               decoration: BoxDecoration(
-                                                  borderRadius: BorderRadius.circular(20.0),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          20.0),
                                                   image: DecorationImage(
-                                                      image: NetworkImage(items[index].personalDetails!.photo ?? ""), fit: BoxFit.cover)),
+                                                      image: NetworkImage(items[
+                                                                  index]
+                                                              .personalDetails!
+                                                              .photo ??
+                                                          ""),
+                                                      fit: BoxFit.cover)),
                                               child: ClipRRect(
-                                                borderRadius: BorderRadius.circular(10.0),
-                                                child: Align(alignment: Alignment.bottomRight, child: Container()),
+                                                borderRadius:
+                                                    BorderRadius.circular(10.0),
+                                                child: Align(
+                                                    alignment:
+                                                        Alignment.bottomRight,
+                                                    child: Container()),
                                               ),
                                             ),
                                             Row(
@@ -159,8 +197,15 @@ class StartupHome extends StatelessWidget {
                                                 const SizedBox(width: 8),
                                                 Column(
                                                   children: [
-                                                    const Text("Invested Recently", style: TextStyle(fontFamily: "latobold")),
-                                                    Text(items[index].personalDetails!.name ?? "")
+                                                    const Text(
+                                                        "Invested Recently",
+                                                        style: TextStyle(
+                                                            fontFamily:
+                                                                "latobold")),
+                                                    Text(items[index]
+                                                            .personalDetails!
+                                                            .name ??
+                                                        "")
                                                   ],
                                                 ),
                                               ],
@@ -198,7 +243,8 @@ class StartupHome extends StatelessWidget {
                                 child: GestureDetector(
                               // TODO SEE DETAILS ABOUT STARTUPS
                               onTap: () async {
-                                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                                Navigator.push(context,
+                                    MaterialPageRoute(builder: (context) {
                                   return StartupDetails(startup: items[index]);
                                 }));
                               },
@@ -206,7 +252,12 @@ class StartupHome extends StatelessWidget {
                                 children: [
                                   const SizedBox(height: 20),
                                   Stack(children: [
-                                    SizedBox(height: 185, width: MediaQuery.of(context).size.width, child: const Card(color: Colors.white60)),
+                                    SizedBox(
+                                        height: 185,
+                                        width:
+                                            MediaQuery.of(context).size.width,
+                                        child:
+                                            const Card(color: Colors.white60)),
                                     Column(
                                       children: [
                                         const SizedBox(height: 20),
@@ -217,24 +268,48 @@ class StartupHome extends StatelessWidget {
                                               height: 152,
                                               width: 156,
                                               decoration: BoxDecoration(
-                                                borderRadius: BorderRadius.circular(20.0),
-                                                image:
-                                                    DecorationImage(image: NetworkImage(items[index].personalDetails!.photo ?? ""), fit: BoxFit.fill),
+                                                borderRadius:
+                                                    BorderRadius.circular(20.0),
+                                                image: DecorationImage(
+                                                    image: NetworkImage(items[
+                                                                index]
+                                                            .personalDetails!
+                                                            .photo ??
+                                                        ""),
+                                                    fit: BoxFit.fill),
                                               ),
                                               child: ClipRRect(
-                                                borderRadius: BorderRadius.circular(10.0),
-                                                child: Align(alignment: Alignment.bottomRight, child: Container()),
+                                                borderRadius:
+                                                    BorderRadius.circular(10.0),
+                                                child: Align(
+                                                    alignment:
+                                                        Alignment.bottomRight,
+                                                    child: Container()),
                                               ),
                                             ),
                                             const SizedBox(width: 20),
                                             Column(
-                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
                                               children: [
-                                                Text(items[index].personalDetails!.name ?? "",
-                                                    style: const TextStyle(fontSize: 18, fontFamily: "latobold")),
-                                                Text(items[index].personalDetails!.location ?? ""),
-                                                Text(items[index].investmentCategory ?? ""),
-                                                Text("Rs. ${items[index].totalBudget}"),
+                                                Text(
+                                                    items[index]
+                                                            .personalDetails!
+                                                            .name ??
+                                                        "",
+                                                    style: const TextStyle(
+                                                        fontSize: 18,
+                                                        fontFamily:
+                                                            "latobold")),
+                                                Text(items[index]
+                                                        .personalDetails!
+                                                        .location ??
+                                                    ""),
+                                                Text(items[index]
+                                                        .investmentCategory ??
+                                                    ""),
+                                                Text(
+                                                    "Rs. ${items[index].totalBudget}"),
                                               ],
                                             ),
                                           ],

@@ -17,11 +17,11 @@ class RouteConstant {
   static const startupRegisterStep3Route = '/startup/register/step-3';
 
   //Inverstor_Screen
-  static const startupHomePage = '/startup/home';
+  static const startupHomeScreen = '/startup/home';
   static const startupDetailsPage = '/statupdetail';
 
   //Startup_Screen
-  static const investorHomePage = '/inverstor/home';
+  static const investorHomeScreen = '/inverstor/home';
   static const inverstorDetailsPage = '/investor/detail';
 
   //Profile_Screen

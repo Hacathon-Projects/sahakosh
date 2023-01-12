@@ -26,10 +26,12 @@ class _StartupRegisterStep1RouteState extends State<StartupRegisterStep1Route> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async {
-        Navigator.of(context).pushReplacementNamed(RouteConstant.landingScreen);
+        Navigator.of(context)
+            .pushReplacementNamed(RouteConstant.createAccountScreen);
         return true;
       },
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.all(30.0),

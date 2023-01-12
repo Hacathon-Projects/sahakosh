@@ -26,6 +26,7 @@ class _StartupRegisterStep2RouteState extends State<StartupRegisterStep2Route> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(30.0),

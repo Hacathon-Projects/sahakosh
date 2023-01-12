@@ -4,8 +4,8 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:sahakosh/investor_ui/domain/investor_dummy.dart';
 import 'package:sahakosh/widgets/investor_ui/startup_card.dart';
 
-class InvestorHome extends StatelessWidget {
-  const InvestorHome({super.key});
+class InvestorHomeScreen extends StatelessWidget {
+  const InvestorHomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
