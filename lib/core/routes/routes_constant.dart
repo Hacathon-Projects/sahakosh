@@ -18,11 +18,13 @@ class RouteConstant {
 
   //Inverstor_Screen
   static const startupHomeScreen = '/startup/home';
-  static const startupDetailsPage = '/statupdetail';
+  static const startupDetailsPage = '/startup/detail';
+  static const startupNotificationPage = '/startup/notifications';
 
   //Startup_Screen
   static const investorHomeScreen = '/inverstor/home';
   static const inverstorDetailsPage = '/investor/detail';
+  static const investorNotificationPage = '/investor/notifications';
 
   //Profile_Screen
   static const investorProfilePage = '/investor/profile';

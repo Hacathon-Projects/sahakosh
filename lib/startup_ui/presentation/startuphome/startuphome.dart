@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sahakosh/notifications/presentation/notification.dart';
+import 'package:sahakosh/core/routes/routes_constant.dart';
+import 'package:sahakosh/notification_ui/startup/presentation/startup_notification_page.dart';
 import 'package:sahakosh/startup_ui/application/startup_service.dart';
 import 'package:sahakosh/startup_ui/domain/startupmodel.dart';
 
@@ -25,11 +26,8 @@ class StartupHomeScreen extends StatelessWidget {
               }),
           IconButton(
               icon: const Icon(Icons.notifications),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return const Notifications();
-                }));
-              }),
+              onPressed: () => Navigator.of(context)
+                  .pushNamed(RouteConstant.startupNotificationPage)),
         ],
       ),
       body: SingleChildScrollView(
