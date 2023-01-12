@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:sahakosh/investor_ui/presentation/detail_invest.dart';
 import 'package:sahakosh/widgets/investor_ui/investor_button.dart';
 
 class StartupCard extends StatelessWidget {
@@ -95,10 +96,7 @@ class StartupCard extends StatelessWidget {
       ),
       decoration: BoxDecoration(
           color: Colors.green,
-          image: DecorationImage(
-              image: NetworkImage(
-                  'https://media.geeksforgeeks.org/wp-content/uploads/20210101144014/gfglogo.png'),
-              fit: BoxFit.cover),
+          image: DecorationImage(image: NetworkImage(image), fit: BoxFit.cover),
           borderRadius: BorderRadius.circular(20)),
     );
   }

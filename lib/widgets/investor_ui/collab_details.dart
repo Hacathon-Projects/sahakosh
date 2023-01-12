@@ -19,10 +19,10 @@ class CollabDetails extends StatelessWidget {
                   children: [
                     CircleAvatar(
                       backgroundImage: NetworkImage(
-                          'https://media.geeksforgeeks.org/wp-content/uploads/20210101144014/gfglogo.png'),
+                          'https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTc5OTk2ODUyMTMxNzM0ODcy/gettyimages-1229892983-square.jpg'),
                     ),
                     Text(
-                      'Elon Muslk',
+                      'Elon Musk',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,

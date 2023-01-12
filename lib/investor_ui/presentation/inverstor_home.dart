@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:sahakosh/core/routes/routes_constant.dart';
 import 'package:sahakosh/investor_ui/domain/investor_dummy.dart';
+import 'package:sahakosh/investor_ui/presentation/detail_invest.dart';
 import 'package:sahakosh/widgets/investor_ui/startup_card.dart';
 
 class InvestorHomeScreen extends StatelessWidget {
@@ -10,6 +12,22 @@ class InvestorHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blue[800],
+        title: const Text("Sahakosh Investors"),
+        elevation: 0,
+        actions: [
+          IconButton(
+              icon: const Icon(Icons.logout),
+              onPressed: () {
+                Navigator.pop(context);
+              }),
+          IconButton(
+              icon: const Icon(Icons.notifications),
+              onPressed: () => Navigator.of(context)
+                  .pushNamed(RouteConstant.startupNotificationPage)),
+        ],
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           physics: BouncingScrollPhysics(),
@@ -18,29 +36,6 @@ class InvestorHomeScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(children: [
-                  Row(
-                    children: [
-                      const SizedBox(width: 10),
-                      SizedBox(
-                        height: 100,
-                        width: 100,
-                        child: InkWell(
-                          onTap: () {},
-                          child: Image.network(
-                              'https://media.geeksforgeeks.org/wp-content/uploads/20210101144014/gfglogo.png',
-                              width: 100,
-                              height: 100,
-                              fit: BoxFit.cover),
-                        ),
-                      ),
-                      const SizedBox(width: 10),
-                      const Text(
-                        "Sahakosh Investors",
-                      )
-                    ],
-                  ),
-                ]),
                 SizedBox(
                   height: 20,
                 ),
@@ -63,12 +58,20 @@ class InvestorHomeScreen extends StatelessWidget {
                         separatorBuilder: (context, index) => SizedBox(
                               width: 20,
                             ),
-                        itemBuilder: (context, index) => StartupCard(
-                              image: InvestorDummy[index].image,
-                              category: InvestorDummy[index].category,
-                              money: InvestorDummy[index].target,
-                              operating_yrs: InvestorDummy[index].operating_yrs,
-                              title: InvestorDummy[index].name,
+                        itemBuilder: (context, index) => GestureDetector(
+                              onTap: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => InvestDetail(
+                                          item: InvestorDummy[index]))),
+                              child: StartupCard(
+                                image: InvestorDummy[index].image,
+                                category: InvestorDummy[index].category,
+                                money: InvestorDummy[index].target,
+                                operating_yrs:
+                                    InvestorDummy[index].operating_yrs,
+                                title: InvestorDummy[index].name,
+                              ),
                             ))),
                 Divider(
                   height: 30,
