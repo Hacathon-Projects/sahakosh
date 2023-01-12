@@ -46,8 +46,8 @@ class _LoginAsInvestorScreenState extends State<LoginAsInvestorScreen> {
               PrimaryButton(
                 text: 'Let\'s Go',
                 onTap: () => Navigator.of(context).pushNamedAndRemoveUntil(
-                    RouteConstant.investorHomeScreen,
-                    (Route<dynamic> route) => false),
+                    RouteConstant.homeRoute, (Route<dynamic> route) => false,
+                    arguments: false),
               ),
               const SizedBox(
                 height: 70,

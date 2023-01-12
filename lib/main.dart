@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:sahakosh/core/routes/route.dart';
+import 'package:sahakosh/models/investor.dart';
 
 import 'core/routes/routes_constant.dart';
 

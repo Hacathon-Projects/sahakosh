@@ -4,7 +4,8 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 class StartupDetails extends StatelessWidget {
-  const StartupDetails({super.key});
+  final String owner;
+  const StartupDetails({super.key, required this.owner});
 
   @override
   Widget build(BuildContext context) {
@@ -19,14 +20,14 @@ class StartupDetails extends StatelessWidget {
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
               Text(
-                "Aayush Gelal",
+                owner,
                 style: TextStyle(
                     fontSize: 18, color: Theme.of(context).primaryColor),
               )
             ],
           ),
           Divider(
-            height: 10,
+            height: 20,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -43,7 +44,7 @@ class StartupDetails extends StatelessWidget {
             ],
           ),
           Divider(
-            height: 10,
+            height: 20,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -60,7 +61,7 @@ class StartupDetails extends StatelessWidget {
             ],
           ),
           Divider(
-            height: 10,
+            height: 20,
           )
         ],
       ),
