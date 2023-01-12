@@ -24,11 +24,6 @@ class _MyProfileInvestorState extends State<MyProfileInvestor> {
                 Container(
                   padding: EdgeInsets.all(8),
                   height: 250,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(20),
-                          bottomRight: Radius.circular(30)),
-                      color: Colors.blue),
                   alignment: Alignment.topLeft,
                   child: Row(
                     children: [
@@ -37,12 +32,25 @@ class _MyProfileInvestorState extends State<MyProfileInvestor> {
                             Navigator.pop(context);
                           },
                           icon: Icon(
-                            Icons.arrow_back_ios,
+                            Icons.arrow_back,
                             size: 30,
-                            color: Colors.white,
-                          ))
+                            color: Colors.black87,
+                          )),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        "Profile",
+                        style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w500),
+                      )
                     ],
                   ),
+                ),
+                Divider(
+                  height: 10,
                 ),
                 Expanded(
                   child: Container(
@@ -113,69 +121,37 @@ class _MyProfileInvestorState extends State<MyProfileInvestor> {
                                     child: Text(
                                       'Aayush Gelal',
                                       style: TextStyle(
-                                          color: Colors.white,
+                                          color: Colors.black,
                                           fontWeight: FontWeight.w600,
                                           letterSpacing: 1,
                                           fontSize: 21),
                                     ),
                                   ),
-                                  Icon(
-                                    Icons.star,
-                                    color: Colors.yellow,
-                                  )
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  Text(
-                                    "2",
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 24),
-                                  ),
-                                  SizedBox(
-                                    width: 5,
-                                  ),
-                                  Text("Followers",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w400,
-                                          letterSpacing: 1,
-                                          fontSize: 14)),
                                   SizedBox(
                                     width: 10,
                                   ),
-                                  Text(
-                                    "5",
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 24),
-                                  ),
-                                  SizedBox(
-                                    width: 5,
-                                  ),
-                                  Text("Following",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w400,
-                                          letterSpacing: 1,
-                                          fontSize: 14))
+                                  Icon(
+                                    Icons.star,
+                                    color: Colors.amberAccent,
+                                  )
                                 ],
-                              ),
+                              )
                             ],
                           ),
-                          FloatingActionButton(
-                            backgroundColor: Color.fromARGB(255, 80, 79, 79),
-                            onPressed: () {},
+                          GestureDetector(
+                            onTap: () {},
                             child: Icon(Icons.edit),
                           )
                         ],
                       ),
                       Container(
                           margin: EdgeInsets.all(10),
-                          width: 300,
+                          width: 400,
                           child: Text(
                             "The new age business tycoon with over 50 business and founder of Sahakosh",
                             style: TextStyle(
-                              color: Color.fromARGB(218, 255, 255, 255),
+                              color: Colors.black87,
+                              letterSpacing: 1.5,
                               fontSize: 14,
                             ),
                           ))
