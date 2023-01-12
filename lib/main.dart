@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       onGenerateRoute: Routes.generateRoute,
-      initialRoute: RouteConstant.landingScreen,
+      initialRoute: RouteConstant.portfolioManagementScreen,
       debugShowCheckedModeBanner: false,
     );
   }
