@@ -36,17 +36,16 @@ class StartupHomeScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 15),
+              const SizedBox(height: 13),
               // ================ top rated ====================
               const Text("  Top Rated",
                   style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 24,
-                      fontFamily: "latobold")),
-              const SizedBox(height: 17),
+                    fontWeight: FontWeight.w600,
+                    fontSize: 20,
+                  )),
 
               SizedBox(
-                height: 108,
+                height: 130,
                 child: FutureBuilder(
                     future: StartupService.ReadJsonData(),
                     builder: (context, data) {
@@ -75,7 +74,7 @@ class StartupHomeScreen extends StatelessWidget {
                                     child: Padding(
                                       padding: const EdgeInsets.all(8.0),
                                       child: Container(
-                                        height: 108,
+                                        height: 200,
                                         width: 127,
                                         decoration: BoxDecoration(
                                           borderRadius:
@@ -88,13 +87,23 @@ class StartupHomeScreen extends StatelessWidget {
                                               fit: BoxFit.cover),
                                         ),
                                         child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(10.0),
+                                          borderRadius: const BorderRadius.only(
+                                              topLeft: Radius.circular(10),
+                                              bottomRight: Radius.circular(20)),
                                           child: Align(
                                               alignment: Alignment.bottomRight,
                                               child: Container(
-                                                  color: const Color.fromARGB(
-                                                      255, 89, 171, 238),
+                                                  decoration: BoxDecoration(
+                                                    color: Colors.blue[700],
+                                                    borderRadius:
+                                                        const BorderRadius.only(
+                                                            topLeft:
+                                                                Radius.circular(
+                                                                    10),
+                                                            bottomRight:
+                                                                Radius.circular(
+                                                                    20)),
+                                                  ),
                                                   child: const Padding(
                                                     padding:
                                                         EdgeInsets.symmetric(
@@ -122,15 +131,14 @@ class StartupHomeScreen extends StatelessWidget {
                     }),
               ),
               const Divider(),
-              // ================= Recommended =================
-              const SizedBox(height: 28),
+              const SizedBox(height: 8),
 
+              // ================= Recommended =================
               const Text("  Recommended",
                   style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 24,
-                      fontFamily: "latobold")),
-              const SizedBox(height: 18),
+                    fontWeight: FontWeight.w600,
+                    fontSize: 20,
+                  )),
 
               SizedBox(
                 height: 170,
@@ -190,6 +198,7 @@ class StartupHomeScreen extends StatelessWidget {
                                                     child: Container()),
                                               ),
                                             ),
+                                            const SizedBox(height: 5),
                                             Row(
                                               children: [
                                                 const SizedBox(width: 8),
@@ -198,12 +207,18 @@ class StartupHomeScreen extends StatelessWidget {
                                                     const Text(
                                                         "Invested Recently",
                                                         style: TextStyle(
-                                                            fontFamily:
-                                                                "latobold")),
-                                                    Text(items[index]
-                                                            .personalDetails!
-                                                            .name ??
-                                                        "")
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .w700)),
+                                                    Text(
+                                                      items[index]
+                                                              .personalDetails!
+                                                              .name ??
+                                                          "",
+                                                      style: const TextStyle(
+                                                          color:
+                                                              Colors.black54),
+                                                    )
                                                   ],
                                                 ),
                                               ],
@@ -222,15 +237,40 @@ class StartupHomeScreen extends StatelessWidget {
                     }),
               ),
               const Divider(),
+              const SizedBox(height: 8),
 
-              FutureBuilder(
-                  future: StartupService.ReadJsonData(),
-                  builder: (context, data) {
-                    if (data.hasError) {
-                      return Center(child: Text("${data.error}"));
-                    } else if (data.hasData) {
-                      var items = data.data as List<StartupModel>;
-                      return ListView.builder(
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      "Startups",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 20,
+                      ),
+                    ),
+                    Icon(
+                      Icons.sort,
+                      color: Colors.blue[900],
+                    ),
+                  ],
+                ),
+              ),
+
+              const SizedBox(height: 8),
+
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12),
+                child: FutureBuilder(
+                    future: StartupService.ReadJsonData(),
+                    builder: (context, data) {
+                      if (data.hasError) {
+                        return Center(child: Text("${data.error}"));
+                      } else if (data.hasData) {
+                        var items = data.data as List<StartupModel>;
+                        return ListView.builder(
                           physics: const NeverScrollableScrollPhysics(),
                           shrinkWrap: true,
                           scrollDirection: Axis.vertical,
@@ -238,103 +278,172 @@ class StartupHomeScreen extends StatelessWidget {
                           itemCount: items == null ? 0 : items.length,
                           itemBuilder: (context, index) {
                             return SingleChildScrollView(
-                                child: GestureDetector(
-                              // TODO SEE DETAILS ABOUT STARTUPS
-                              onTap: () async {
-                                Navigator.push(context,
-                                    MaterialPageRoute(builder: (context) {
-                                  return StartupDetails(startup: items[index]);
-                                }));
-                              },
-                              child: Column(
-                                children: [
-                                  const SizedBox(height: 20),
-                                  Stack(children: [
-                                    SizedBox(
-                                        height: 185,
-                                        width:
-                                            MediaQuery.of(context).size.width,
-                                        child:
-                                            const Card(color: Colors.white60)),
-                                    Column(
-                                      children: [
-                                        const SizedBox(height: 20),
-                                        Row(
-                                          children: [
-                                            const SizedBox(width: 8),
-                                            Container(
-                                              height: 152,
-                                              width: 156,
-                                              decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(20.0),
-                                                image: DecorationImage(
-                                                    image: NetworkImage(items[
-                                                                index]
-                                                            .personalDetails!
-                                                            .photo ??
-                                                        ""),
-                                                    fit: BoxFit.fill),
+                              child: GestureDetector(
+                                // TODO SEE DETAILS ABOUT STARTUPS
+                                onTap: () async {
+                                  Navigator.push(context,
+                                      MaterialPageRoute(builder: (context) {
+                                    return StartupDetails(
+                                        startup: items[index]);
+                                  }));
+                                },
+                                child: Padding(
+                                  padding: const EdgeInsets.only(bottom: 5),
+                                  child: Card(
+                                    color: Colors.grey[200],
+                                    elevation: 1,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    child: Container(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          5, 10, 5, 10),
+                                      child: Column(
+                                        children: [
+                                          Row(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              const SizedBox(width: 8),
+                                              Container(
+                                                height: 150,
+                                                width: 145,
+                                                decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          20.0),
+                                                  image: DecorationImage(
+                                                      image: NetworkImage(items[
+                                                                  index]
+                                                              .personalDetails!
+                                                              .photo ??
+                                                          ""),
+                                                      fit: BoxFit.fill),
+                                                ),
+                                                child: ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          10.0),
+                                                  child: Align(
+                                                      alignment:
+                                                          Alignment.bottomRight,
+                                                      child: Container()),
+                                                ),
                                               ),
-                                              child: ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(10.0),
-                                                child: Align(
-                                                    alignment:
-                                                        Alignment.bottomRight,
-                                                    child: Container()),
-                                              ),
-                                            ),
-                                            const SizedBox(width: 20),
-                                            Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
+                                              const SizedBox(width: 20),
+                                              Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  const SizedBox(height: 3),
+                                                  Text(
+                                                      items[index]
+                                                              .personalDetails!
+                                                              .name ??
+                                                          "",
+                                                      style: const TextStyle(
+                                                        fontSize: 18,
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                        color: Colors.black87,
+                                                      )),
+                                                  Text(
                                                     items[index]
                                                             .personalDetails!
-                                                            .name ??
+                                                            .location ??
                                                         "",
                                                     style: const TextStyle(
-                                                        fontSize: 18,
-                                                        fontFamily:
-                                                            "latobold")),
-                                                Text(items[index]
-                                                        .personalDetails!
-                                                        .location ??
-                                                    ""),
-                                                Text(items[index]
-                                                        .investmentCategory ??
-                                                    ""),
-                                                Text(
-                                                    "Rs. ${items[index].totalBudget}"),
-                                              ],
-                                            ),
-                                          ],
-                                        ),
-                                        const SizedBox(height: 5),
-                                      ],
-                                    ),
-                                    Align(
-                                      alignment: Alignment.topRight,
-                                      child: Image.asset(
-                                        'assets/ibutton.png',
-                                        width: 60,
-                                        height: 60,
+                                                      color: Colors.black54,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                    ),
+                                                  ),
+                                                  const SizedBox(height: 3),
+                                                  RichText(
+                                                      text: TextSpan(children: [
+                                                    const TextSpan(
+                                                        text: 'Category : ',
+                                                        style: TextStyle(
+                                                            color: Colors.black,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .w500)),
+                                                    TextSpan(
+                                                        text: items[index]
+                                                                .investmentCategory ??
+                                                            "",
+                                                        style: const TextStyle(
+                                                            color:
+                                                                Colors.black)),
+                                                  ])),
+                                                  RichText(
+                                                      text: TextSpan(children: [
+                                                    const TextSpan(
+                                                        text: 'Asked Price : ',
+                                                        style: TextStyle(
+                                                            color: Colors.black,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .w500)),
+                                                    TextSpan(
+                                                        text: items[index]
+                                                            .totalBudget,
+                                                        style: const TextStyle(
+                                                            color:
+                                                                Colors.black)),
+                                                  ])),
+                                                  SizedBox(
+                                                    width: 150,
+                                                    child: RichText(
+                                                        text:
+                                                            TextSpan(children: [
+                                                      const TextSpan(
+                                                          text:
+                                                              'Description : ',
+                                                          style: TextStyle(
+                                                              color:
+                                                                  Colors.black,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500)),
+                                                      TextSpan(
+                                                          text:
+                                                              '${items[index].bio!.substring(0, 50)}...',
+                                                          style: const TextStyle(
+                                                              overflow:
+                                                                  TextOverflow
+                                                                      .ellipsis,
+                                                              color: Colors
+                                                                  .black)),
+                                                    ])),
+                                                  ),
+                                                  const SizedBox(height: 5),
+                                                  Text(
+                                                    '                        More Details',
+                                                    style: TextStyle(
+                                                        color:
+                                                            Colors.blue[800]),
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        ],
                                       ),
                                     ),
-                                  ]),
-                                  const SizedBox(height: 5),
-                                ],
+                                  ),
+                                ),
                               ),
-                            ));
-                          });
-                    } else {
-                      return const Center(
-                        child: CircularProgressIndicator(),
-                      );
-                    }
-                  }),
+                            );
+                          },
+                        );
+                      } else {
+                        return const Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      }
+                    }),
+              ),
               const Divider(),
             ],
           ),
