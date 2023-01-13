@@ -7,7 +7,7 @@
       "photo": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       "location": "Sydney"
     },
-    "bio": "an angel investor from Sydney, is looking for early-stage companies in the biotech industry with a minimum investment of $500,000.",
+    "bio": "An angel investor from Sydney, is looking for early-stage companies in the biotech industry with a minimum investment of $500,000.",
     "invested_company": "5",
     "total_budget": "200000",
     "investment_category": "FinTech",
@@ -22,7 +22,7 @@
       "photo": "https://images.unsplash.com/photo-1503185912284-5271ff81b9a8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
       "location": "Singapore"
     },
-    "bio": ", a venture capitalist from Singapore, is seeking to invest in AI and machine learning companies with a minimum asking price of $2 million.",
+    "bio": "A venture capitalist from Singapore, is seeking to invest in AI and machine learning companies with a minimum asking price of $2 million.",
     "invested_company": "5",
     "total_budget": "100000",
     "investment_category": "Education",
@@ -52,7 +52,7 @@
       "photo": "https://images.unsplash.com/photo-1484515991647-c5760fcecfc7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=449&q=80",
       "location": "New York"
     },
-    "bio": "a wealthy investor based in New York City, is looking to invest in promising startups in the tech industry with a minimum asking price of $5 million.",
+    "bio": "A wealthy investor based in New York City, is looking to invest in promising startups in the tech industry with a minimum asking price of $5 million.",
     "invested_company": "5",
     "total_budget": "500000",
     "investment_category": "Branding",
@@ -68,7 +68,7 @@
       "photo": "https://images.unsplash.com/photo-1474176857210-7287d38d27c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       "location": "Sanfrancisco"
     },
-    "bio": "a successful entrepreneur from San Francisco, is seeking to invest in sustainable energy projects with a minimum investment of $1 million.",
+    "bio": "A successful entrepreneur from San Francisco, is seeking to invest in sustainable energy projects with a minimum investment of $1 million.",
     "invested_company": "5",
     "total_budget": "600000",
     "investment_category": "Real Estate",
@@ -83,7 +83,7 @@
       "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80",
       "location": "London"
     },
-    "bio": ", a seasoned investor from London, is interested in investing in real estate development projects with a minimum asking price of $10 million.",
+    "bio": "A seasoned investor from London, is interested in investing in real estate development projects with a minimum asking price of $10 million.",
     "invested_company": "5",
     "total_budget": "700000",
     "investment_category": "Technology",

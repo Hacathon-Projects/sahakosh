@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sahakosh/core/chat_ui/investor/investor-chatlistscreen.dart';
+import 'package:sahakosh/core/chat_ui/startup/startup-chatlistscreen.dart';
 import 'package:sahakosh/core/later_screen.dart';
 import 'package:sahakosh/core/profile_ui/investor_profile.dart';
 import 'package:sahakosh/core/profile_ui/startup_profile.dart';
@@ -59,13 +61,21 @@ class _HomeScreenState extends State<HomeScreen> {
                 ? widget.isStartup
                     ? const PortfolioManagementScreen()
                     : const LaterScreen()
-                : widget.isStartup
-                    ? const StartupProfileScreen()
-                    : const InvestorProfileScreen(),
+                : _selectedIndex == 2
+                    ? widget.isStartup
+                        ? StartupChatListScreen()
+                        : InvestorChatListScreen()
+                    : widget.isStartup
+                        ? const StartupProfileScreen()
+                        : const InvestorProfileScreen(),
 
         //    Bottom Navbar   //
         bottomNavigationBar: BottomNavigationBar(
           selectedItemColor: Colors.blue[800],
+          unselectedItemColor: Colors.grey,
+          unselectedLabelStyle: const TextStyle(color: Colors.grey),
+          showSelectedLabels: true,
+          showUnselectedLabels: true,
           items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.home_rounded),
@@ -74,6 +84,10 @@ class _HomeScreenState extends State<HomeScreen> {
             BottomNavigationBarItem(
               icon: Icon(Icons.copy_all_rounded),
               label: 'Portfolio',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.chat_rounded),
+              label: 'Chats',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.person_rounded),
