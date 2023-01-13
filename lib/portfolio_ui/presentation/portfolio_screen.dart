@@ -34,6 +34,7 @@ class PortfolioManagementScreen extends StatelessWidget {
         ],
       ),
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         scrollDirection: Axis.vertical,
         child: Container(
           padding: const EdgeInsets.fromLTRB(13, 10, 13, 10),

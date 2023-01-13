@@ -10,6 +10,7 @@ class InvestTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      physics: BouncingScrollPhysics(),
       child: Container(
         padding: const EdgeInsets.all(4),
         child: Column(

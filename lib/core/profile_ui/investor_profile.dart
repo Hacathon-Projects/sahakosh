@@ -32,6 +32,7 @@ class _InvestorProfileScreenState extends State<InvestorProfileScreen> {
         ],
       ),
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Column(
           children: [
             const SizedBox(height: 15),
