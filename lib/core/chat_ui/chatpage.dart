@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:sahakosh/calendar_ui/calendarscreen.dart';
 import 'package:sahakosh/models/chat_message.dart';
 import 'package:sahakosh/models/chat_person.dart';
 
@@ -78,9 +79,15 @@ class _ChatPageState extends State<ChatPage> {
                     ],
                   ),
                 ),
-                Icon(
-                  CupertinoIcons.mail,
-                  color: Colors.black54,
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ScheduleMeetingPage())),
+                  child: Icon(
+                    CupertinoIcons.mail,
+                    color: Colors.black54,
+                  ),
                 ),
                 SizedBox(
                   width: 15,
