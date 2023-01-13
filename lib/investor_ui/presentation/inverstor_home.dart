@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:sahakosh/core/routes/routes_constant.dart';
 import 'package:sahakosh/investor_ui/domain/investor_dummy.dart';
-import 'package:sahakosh/investor_ui/presentation/detail_invest.dart';
 import 'package:sahakosh/widgets/investor_ui/startup_card.dart';
+
+import 'detail_invest.dart';
 
 class InvestorHomeScreen extends StatelessWidget {
   const InvestorHomeScreen({super.key});
@@ -12,15 +11,16 @@ class InvestorHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const Drawer(),
       appBar: AppBar(
         backgroundColor: Colors.blue[800],
-        title: const Text("Sahakosh StartUps"),
+        title: const Text("Sahakosh Startups"),
         elevation: 0,
         actions: [
           IconButton(
               icon: const Icon(Icons.logout),
               onPressed: () {
-                Navigator.pop(context);
+                Navigator.of(context).pushNamedAndRemoveUntil(RouteConstant.landingScreen, (Route<dynamic> route) => false);
               }),
           IconButton(icon: const Icon(Icons.notifications), onPressed: () => Navigator.of(context).pushNamed(RouteConstant.startupNotificationPage)),
         ],
