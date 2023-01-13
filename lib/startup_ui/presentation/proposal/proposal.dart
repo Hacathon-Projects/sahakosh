@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sahakosh/core/chat_ui/chatlistscreen.dart';
 import 'package:sahakosh/startup_ui/domain/startupmodel.dart';
 
 class ProposalPage extends StatelessWidget {
@@ -126,7 +127,11 @@ class ProposalPage extends StatelessWidget {
             children: [
               ElevatedButton(
                 style: ElevatedButton.styleFrom(backgroundColor: Colors.blue[800]),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
+                    return ChatListScreen();
+                  }));
+                },
                 child: const Text("Send Proposal"),
               ),
             ],

@@ -3,8 +3,6 @@ import 'package:sahakosh/core/routes/routes_constant.dart';
 import 'package:sahakosh/investor_ui/domain/investor_dummy.dart';
 import 'package:sahakosh/widgets/investor_ui/startup_card.dart';
 
-import 'detail_invest.dart';
-
 class InvestorHomeScreen extends StatelessWidget {
   const InvestorHomeScreen({super.key});
 
@@ -20,14 +18,9 @@ class InvestorHomeScreen extends StatelessWidget {
           IconButton(
               icon: const Icon(Icons.logout),
               onPressed: () {
-                Navigator.of(context).pushNamedAndRemoveUntil(
-                    RouteConstant.landingScreen,
-                    (Route<dynamic> route) => false);
+                Navigator.of(context).pushNamedAndRemoveUntil(RouteConstant.landingScreen, (Route<dynamic> route) => false);
               }),
-          IconButton(
-              icon: const Icon(Icons.notifications),
-              onPressed: () => Navigator.of(context)
-                  .pushNamed(RouteConstant.startupNotificationPage)),
+          IconButton(icon: const Icon(Icons.notifications), onPressed: () => Navigator.of(context).pushNamed(RouteConstant.startupNotificationPage)),
         ],
       ),
       body: SingleChildScrollView(
@@ -58,6 +51,7 @@ class InvestorHomeScreen extends StatelessWidget {
                             width: 15,
                           ),
                       itemBuilder: (context, index) => StartupCard(
+                            item: investorDummy1[index],
                             image: investorDummy1[index].image,
                             category: investorDummy1[index].category,
                             money: investorDummy1[index].target,
@@ -83,9 +77,9 @@ class InvestorHomeScreen extends StatelessWidget {
                       physics: const BouncingScrollPhysics(),
                       scrollDirection: Axis.horizontal,
                       itemCount: investorDummy2.length,
-                      separatorBuilder: (context, index) =>
-                          const SizedBox(width: 15),
+                      separatorBuilder: (context, index) => const SizedBox(width: 15),
                       itemBuilder: (context, index) => StartupCard(
+                            item: investorDummy1[index],
                             image: investorDummy2[index].image,
                             category: investorDummy2[index].category,
                             money: investorDummy2[index].target,
@@ -115,6 +109,7 @@ class InvestorHomeScreen extends StatelessWidget {
                             width: 15,
                           ),
                       itemBuilder: (context, index) => StartupCard(
+                            item: investorDummy1[index],
                             image: investorDummy3[index].image,
                             category: investorDummy3[index].category,
                             money: investorDummy3[index].target,
