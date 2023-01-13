@@ -1,56 +1,84 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:sahakosh/widgets/investor_ui/investor_button.dart';
+import 'package:sahakosh/core/chat_ui/chatlistscreen.dart';
+import 'package:sahakosh/investor_ui/domain/investor_model.dart';
 
 class InvestTab extends StatelessWidget {
-  final String description;
-  final double valuation;
-  const InvestTab(
-      {super.key, required this.description, required this.valuation});
+  final InvestorModel item;
+
+  const InvestTab({super.key, required this.item});
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        padding: EdgeInsets.all(4),
+        padding: const EdgeInsets.all(4),
         child: Column(
           children: [
-            Text(description),
-            SizedBox(
-              height: 10,
-            ),
-            Divider(
-              height: 1,
-            ),
-            SizedBox(
-              height: 10,
-            ),
+            Text(item.long_description.toString()),
+            const SizedBox(height: 10),
+            const Divider(height: 1),
+            const SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  'Startup Valuation',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Text(
-                  "Rs  ${valuation.toString()}",
-                  style: TextStyle(
-                      fontSize: 20, color: Theme.of(context).primaryColor),
-                )
+                const Text('Startup Valuation', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
+                Text("Rs. ${item.valuation.toString()}", style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold))
               ],
             ),
-            SizedBox(
-              height: 10,
+            const SizedBox(height: 5),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text('Owner', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
+                Text(item.owner, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold))
+              ],
             ),
-            Divider(
-              height: 1,
+            const SizedBox(height: 5),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text('Amount Raising', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
+                Text(item.raisingAmount.toString(), style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold))
+              ],
             ),
+            const SizedBox(height: 5),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text('Operatin years', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
+                Text(item.operating_yrs, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold))
+              ],
+            ),
+            const SizedBox(height: 5),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text('Address', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
+                Text(item.address, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold))
+              ],
+            ),
+            const SizedBox(height: 5),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text('Equity', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
+                Text(item.equity, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold))
+              ],
+            ),
+            const SizedBox(height: 10),
+            const Divider(height: 1),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return ChatListScreen();
+                  }));
+                },
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.blue[800]),
+                child: Row(mainAxisSize: MainAxisSize.min, children: const [
+                  Text('Invest', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
+                  SizedBox(width: 10),
+                  Icon(Icons.attach_money_outlined, size: 20)
+                ])),
           ],
         ),
       ),

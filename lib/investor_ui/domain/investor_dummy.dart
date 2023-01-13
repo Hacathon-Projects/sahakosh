@@ -10,12 +10,13 @@ var investorDummy1 = [
       amountWithdrawn: true,
       category: "Tech",
       createdOn: "yesterday",
-      equity: 10000,
+      equity: "5%",
       long_description:
           "Using AI and automation to improve the production of chemicals and materials.",
       operating_yrs: "4 years",
       target: 130500,
       valuation: 4000000,
+      raisingAmount: 100000,
       targetReached: false),
   InvestorModel(
     name: "Pustakthana",
@@ -26,13 +27,14 @@ var investorDummy1 = [
     amountWithdrawn: true,
     category: "Tech",
     createdOn: "yesterday",
-    equity: 10000,
+    equity: "5%",
     long_description:
         "Utilizing natural language processing and machine learning to provide financial data analytics",
     operating_yrs: "2 years",
     target: 230000,
     targetReached: false,
     valuation: 4000000,
+    raisingAmount: 100000,
   ),
   InvestorModel(
     name: "Pay Request",
@@ -43,12 +45,13 @@ var investorDummy1 = [
     amountWithdrawn: true,
     category: "Tech",
     createdOn: "yesterday",
-    equity: 10000,
+    equity: "5%",
     long_description:
         "This is a long description of how it looks where there are many things",
     operating_yrs: "3 years",
     target: 3000000,
     targetReached: false,
+    raisingAmount: 100000,
     valuation: 40000000,
   ),
   InvestorModel(
@@ -60,13 +63,14 @@ var investorDummy1 = [
     amountWithdrawn: true,
     category: "Tech",
     createdOn: "yesterday",
-    equity: 10000,
+    equity: "5%",
     long_description:
         "This is a long description of how it looks where there are many things",
     operating_yrs: "3 years",
     target: 130000,
     targetReached: false,
     valuation: 400000000,
+    raisingAmount: 100000,
   ),
   InvestorModel(
     name: "Startup Tips",
@@ -77,13 +81,14 @@ var investorDummy1 = [
     amountWithdrawn: true,
     category: "Tech",
     createdOn: "yesterday",
-    equity: 10000,
+    equity: "5%",
     long_description:
         "This is a long description of how it looks where there are many things",
     operating_yrs: "3 years",
     target: 1230000,
     targetReached: false,
     valuation: 40000000,
+    raisingAmount: 100000,
   )
 ];
 
@@ -104,6 +109,7 @@ var investorDummy2 = [
     target: 130000,
     targetReached: false,
     valuation: 400000000,
+    raisingAmount: 100000,
   ),
   InvestorModel(
     name: "Pay Request",
@@ -121,6 +127,7 @@ var investorDummy2 = [
     target: 3000000,
     targetReached: false,
     valuation: 40000000,
+    raisingAmount: 100000,
   ),
   InvestorModel(
       name: "Google",
@@ -137,6 +144,7 @@ var investorDummy2 = [
       operating_yrs: "4 years",
       target: 130500,
       valuation: 4000000,
+      raisingAmount: 100000,
       targetReached: false),
   InvestorModel(
     name: "Pustakthana",
@@ -153,6 +161,7 @@ var investorDummy2 = [
     operating_yrs: "2 years",
     target: 230000,
     targetReached: false,
+    raisingAmount: 100000,
     valuation: 4000000,
   ),
   InvestorModel(
@@ -171,6 +180,7 @@ var investorDummy2 = [
     target: 1230000,
     targetReached: false,
     valuation: 40000000,
+    raisingAmount: 100000,
   )
 ];
 
@@ -191,6 +201,7 @@ var investorDummy3 = [
     target: 230000,
     targetReached: false,
     valuation: 4000000,
+    raisingAmount: 100000,
   ),
   InvestorModel(
       name: "Google",
@@ -207,6 +218,7 @@ var investorDummy3 = [
       operating_yrs: "4 years",
       target: 130500,
       valuation: 4000000,
+      raisingAmount: 100000,
       targetReached: false),
   InvestorModel(
     name: "Naamche",
@@ -223,6 +235,7 @@ var investorDummy3 = [
     operating_yrs: "3 years",
     target: 130000,
     targetReached: false,
+    raisingAmount: 100000,
     valuation: 400000000,
   ),
   InvestorModel(
@@ -240,6 +253,7 @@ var investorDummy3 = [
     operating_yrs: "3 years",
     target: 3000000,
     targetReached: false,
+    raisingAmount: 100000,
     valuation: 40000000,
   ),
   InvestorModel(
@@ -258,5 +272,6 @@ var investorDummy3 = [
     target: 1230000,
     targetReached: false,
     valuation: 40000000,
+    raisingAmount: 100000,
   )
 ];

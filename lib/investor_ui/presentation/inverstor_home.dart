@@ -3,6 +3,8 @@ import 'package:sahakosh/core/routes/routes_constant.dart';
 import 'package:sahakosh/investor_ui/domain/investor_dummy.dart';
 import 'package:sahakosh/widgets/investor_ui/startup_card.dart';
 
+import 'detail_invest.dart';
+
 class InvestorHomeScreen extends StatelessWidget {
   const InvestorHomeScreen({super.key});
 

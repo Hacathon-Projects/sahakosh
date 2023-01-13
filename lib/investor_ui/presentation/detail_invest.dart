@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:sahakosh/investor_ui/domain/investor_model.dart';
 import 'package:sahakosh/widgets/investor_ui/collab_details.dart';
@@ -16,14 +14,13 @@ class InvestDetail extends StatefulWidget {
   State<InvestDetail> createState() => _InvestDetailState();
 }
 
-class _InvestDetailState extends State<InvestDetail>
-    with TickerProviderStateMixin {
+class _InvestDetailState extends State<InvestDetail> with TickerProviderStateMixin {
   late TabController _tabController;
 
   @override
   void initState() {
     super.initState();
-    _tabController = new TabController(length: 4, vsync: this);
+    _tabController = TabController(length: 4, vsync: this);
   }
 
   @override
@@ -50,11 +47,11 @@ class _InvestDetailState extends State<InvestDetail>
           width: MediaQuery.of(context).size.width,
           child: Container(
             height: MediaQuery.of(context).size.height,
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(20),
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                   color: Colors.grey,
                   blurRadius: 4.0,
@@ -68,10 +65,7 @@ class _InvestDetailState extends State<InvestDetail>
                   children: [
                     Text(
                       widget.item.name,
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                     Text(
                       widget.item.category,
@@ -82,13 +76,13 @@ class _InvestDetailState extends State<InvestDetail>
                     )
                   ],
                 ),
-                Divider(
+                const Divider(
                   color: Colors.grey,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
+                    const Text(
                       "Target",
                       style: TextStyle(
                         fontSize: 14,
@@ -96,7 +90,7 @@ class _InvestDetailState extends State<InvestDetail>
                       ),
                     ),
                     Text(widget.item.target.toString(),
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
                         ))
@@ -111,32 +105,25 @@ class _InvestDetailState extends State<InvestDetail>
                     animation: true,
                     lineHeight: 18.0,
                     animationDuration: 1000,
-                    percent:
-                        ((widget.item.target * 100 / widget.item.valuation) /
-                            100),
-                    linearStrokeCap: LinearStrokeCap.roundAll,
+                    percent: ((widget.item.target * 100 / widget.item.valuation) / 100),
                     progressColor: Theme.of(context).primaryColor,
                   ),
                 ),
                 Container(
                   height: 30,
-                  margin: EdgeInsets.only(bottom: 10, top: 5),
+                  margin: const EdgeInsets.only(bottom: 10, top: 5),
                   width: MediaQuery.of(context).size.width - 40,
                   child: TabBar(
                     indicatorColor: Theme.of(context).primaryColor,
                     unselectedLabelColor: Colors.black38,
                     labelColor: Theme.of(context).primaryColor,
-                    labelStyle: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 14,
-                      fontFamily: 'Avenir',
-                    ),
-                    unselectedLabelStyle: TextStyle(
+                    labelStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14, fontFamily: 'Avenir'),
+                    unselectedLabelStyle: const TextStyle(
                       fontWeight: FontWeight.normal,
                       fontSize: 14,
                       fontFamily: 'Avenir',
                     ),
-                    tabs: [
+                    tabs: const [
                       Tab(
                         child: Text(
                           "Invest",
@@ -161,29 +148,14 @@ class _InvestDetailState extends State<InvestDetail>
                     controller: _tabController,
                   ),
                 ),
-                Container(
+                SizedBox(
                   height: 400,
                   child: TabBarView(
                     controller: _tabController,
-                    children: [
-                      InvestTab(
-                        description: widget.item.long_description,
-                        valuation: widget.item.valuation,
-                      ),
-                      Text("Files"),
-                      CollabDetails(),
-                      StartupDetails(
-                        owner: widget.item.owner,
-                      )
-                    ],
+                    children: [InvestTab(item: widget.item), const Text("Files"), const CollabDetails(), StartupDetails(owner: widget.item.owner)],
                   ),
                 ),
-                InvestorButton(
-                  title: 'Invest',
-                  height: 60,
-                  textSize: 20,
-                  width: 300,
-                )
+                InvestorButton(title: 'Invest', height: 60, textSize: 20, width: 300)
               ],
             ),
           ))
