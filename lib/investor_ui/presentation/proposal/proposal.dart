@@ -139,7 +139,7 @@ class InvestorPage extends StatelessWidget {
                         void showDialogBox(BuildContext context, String title) {
                           AlertDialog dialog = AlertDialog(
                             title: Text(title),
-                            content: const Text("Proposal sent to the Startup. He will reply you soon !"),
+                            content: const Text("Proposal sent to the Startup. They will reply you soon !"),
                             actions: <Widget>[
                               ElevatedButton(
                                 child: const Text("OK"),
@@ -154,7 +154,7 @@ class InvestorPage extends StatelessWidget {
                           showDialog(context: context, builder: (BuildContext context) => dialog);
                         }
 
-                        showDialogBox(context, "Succesful !");
+                        showDialogBox(context, "Successful !");
                       })),
             ]),
           ),
