@@ -32,11 +32,11 @@ class _InvestorProfileScreenState extends State<InvestorProfileScreen> {
         ],
       ),
       body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Column(
           children: [
             const SizedBox(height: 15),
-            const CircleAvatarBorder(),
+            const CircleAvatarBorder(image: 'assets/images/subarna.png'),
             SizedBox(
               width: MediaQuery.of(context).size.width - 30,
               child: Column(

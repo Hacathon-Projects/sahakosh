@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:sahakosh/models/chat_person.dart';
 import 'package:sahakosh/widgets/chat_ui/ConversationList.dart';
 
+// ignore: must_be_immutable
 class ChatListScreen extends StatelessWidget {
   List<ChatUsers> chatUsers = [
     ChatUsers(
@@ -61,32 +60,30 @@ class ChatListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             SafeArea(
               child: Padding(
-                padding: EdgeInsets.only(left: 16, right: 16, top: 10),
+                padding: const EdgeInsets.only(left: 16, right: 16, top: 10),
                 child: Row(
                   children: <Widget>[
                     IconButton(
                         onPressed: () => Navigator.pop(context),
-                        icon: Icon(Icons.arrow_back)),
-                    SizedBox(
+                        icon: const Icon(Icons.arrow_back)),
+                    const SizedBox(
                       width: 20,
                     ),
-                    Text(
-                      "Conversations",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
-                    ),
+                    const Text("Conversations",
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.w500)),
                   ],
                 ),
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: 16, left: 16, right: 16),
+              padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
               child: TextField(
                 decoration: InputDecoration(
                   hintText: "Search...",
@@ -98,7 +95,7 @@ class ChatListScreen extends StatelessWidget {
                   ),
                   filled: true,
                   fillColor: Colors.grey.shade100,
-                  contentPadding: EdgeInsets.all(8),
+                  contentPadding: const EdgeInsets.all(8),
                   enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
                       borderSide: BorderSide(color: Colors.grey.shade100)),
@@ -108,8 +105,8 @@ class ChatListScreen extends StatelessWidget {
             ListView.builder(
               itemCount: chatUsers.length,
               shrinkWrap: true,
-              padding: EdgeInsets.only(top: 16),
-              physics: NeverScrollableScrollPhysics(),
+              padding: const EdgeInsets.only(top: 16),
+              physics: const NeverScrollableScrollPhysics(),
               itemBuilder: (context, index) {
                 return ConversationList(
                   name: chatUsers[index].text,

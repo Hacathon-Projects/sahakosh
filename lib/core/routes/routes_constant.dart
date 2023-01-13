@@ -1,4 +1,5 @@
 class RouteConstant {
+  static const splashScreen = '/splash-screen';
   static const landingScreen = '/landing-screen';
   static const createAccountScreen = '/create-account';
 

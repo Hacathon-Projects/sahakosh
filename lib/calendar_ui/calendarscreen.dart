@@ -1,32 +1,31 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 
 class ScheduleMeetingPage extends StatefulWidget {
+  const ScheduleMeetingPage({super.key});
+
   @override
   _ScheduleMeetingPageState createState() => _ScheduleMeetingPageState();
 }
 
 class _ScheduleMeetingPageState extends State<ScheduleMeetingPage> {
-  List<Meeting> _meetings = <Meeting>[];
+  final List<Meeting> _meetings = <Meeting>[];
   final TextEditingController _eventNameController = TextEditingController();
-  final TextEditingController _eventDescriptionController =
-      TextEditingController();
+  final TextEditingController _eventDescriptionController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back,
               color: Colors.black87,
             ),
             onPressed: () => Navigator.pop(context)),
-        title: Text(
+        title: const Text(
           "Schedule Meeting",
-          style: TextStyle(
-              color: Colors.black, fontWeight: FontWeight.w600, fontSize: 20),
+          style: TextStyle(color: Colors.black, fontWeight: FontWeight.w600, fontSize: 20),
         ),
         backgroundColor: Colors.white,
       ),
@@ -35,9 +34,7 @@ class _ScheduleMeetingPageState extends State<ScheduleMeetingPage> {
           Expanded(
             child: SfCalendar(
               view: CalendarView.month,
-              monthViewSettings: MonthViewSettings(
-                  appointmentDisplayMode: MonthAppointmentDisplayMode.indicator,
-                  showAgenda: true),
+              monthViewSettings: const MonthViewSettings(appointmentDisplayMode: MonthAppointmentDisplayMode.indicator, showAgenda: true),
               dataSource: MeetingDataSource(_meetings),
               onTap: (CalendarTapDetails details) {
                 _showAddMeetingDialog(details.date);
@@ -54,19 +51,19 @@ class _ScheduleMeetingPageState extends State<ScheduleMeetingPage> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text("Add Meeting"),
+          title: const Text("Add Meeting"),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               TextField(
                 controller: _eventNameController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: "Event Name",
                 ),
               ),
               TextField(
                 controller: _eventDescriptionController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: "Event Description",
                 ),
               ),
@@ -74,19 +71,18 @@ class _ScheduleMeetingPageState extends State<ScheduleMeetingPage> {
           ),
           actions: <Widget>[
             ElevatedButton(
-              child: Text("Cancel"),
+              child: const Text("Cancel"),
               onPressed: () {
                 Navigator.pop(context);
               },
             ),
             ElevatedButton(
-              child: Text("Add"),
+              child: const Text("Add"),
               onPressed: () {
-                _addMeeting(_eventNameController.text,
-                    _eventDescriptionController.text, date!);
+                _addMeeting(_eventNameController.text, _eventDescriptionController.text, date!);
                 Navigator.pop(context);
                 AlertDialog(
-                  title: Text("Meeting Scheduled on ${date!}"),
+                  title: Text("Meeting Scheduled on $date"),
                 );
               },
             ),
@@ -97,8 +93,7 @@ class _ScheduleMeetingPageState extends State<ScheduleMeetingPage> {
   }
 
   void _addMeeting(String name, String description, DateTime startTime) {
-    final Meeting meeting = Meeting(
-        name, description, startTime, startTime.add(Duration(hours: 1)));
+    final Meeting meeting = Meeting(name, description, startTime, startTime.add(const Duration(hours: 1)));
     setState(() {
       _meetings.add(meeting);
     });
