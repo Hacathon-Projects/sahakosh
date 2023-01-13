@@ -32,11 +32,11 @@ class _StartupProfileScreenState extends State<StartupProfileScreen> {
         ],
       ),
       body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Column(
           children: [
             const SizedBox(height: 15),
-            const CircleAvatarBorder(),
+            const CircleAvatarBorder(image: 'assets/images/logo.png'),
             SizedBox(
               width: MediaQuery.of(context).size.width - 30,
               child: Column(
@@ -51,7 +51,7 @@ class _StartupProfileScreenState extends State<StartupProfileScreen> {
                           const SizedBox(height: 5),
                           Row(
                             children: const [
-                              Text("Subarna Poudel",
+                              Text("Digital Innovators",
                                   style: TextStyle(
                                     fontWeight: FontWeight.w600,
                                     fontSize: 22,
