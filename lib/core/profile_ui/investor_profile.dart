@@ -22,7 +22,7 @@ class _InvestorProfileScreenState extends State<InvestorProfileScreen> {
             Column(
               children: [
                 Container(
-                  padding: EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(8),
                   height: 250,
                   alignment: Alignment.topLeft,
                   child: Row(
@@ -31,32 +31,33 @@ class _InvestorProfileScreenState extends State<InvestorProfileScreen> {
                           onPressed: () {
                             Navigator.pop(context);
                           },
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.arrow_back,
                             size: 30,
                             color: Colors.black87,
                           )),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
-                      Text(
+                      const Text(
                         "Profile",
-                        style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.black,
-                            fontWeight: FontWeight.w500),
+                        style: TextStyle(fontSize: 20, color: Colors.black, fontWeight: FontWeight.w500),
                       )
                     ],
                   ),
                 ),
-                Divider(
+                const Divider(
                   height: 10,
                 ),
                 Expanded(
                   child: Container(
-                    padding: EdgeInsets.only(top: 50),
-                    child:
-                        ListView(physics: BouncingScrollPhysics(), children: [
+                    padding: const EdgeInsets.only(top: 50),
+                    width: double.infinity,
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(topLeft: Radius.circular(40), topRight: Radius.circular(40)),
+                    ),
+                    child: ListView(physics: BouncingScrollPhysics(), children: [
                       MyProileTile(
                         title: "Mobile",
                         icon: Icons.phone_android,
@@ -88,13 +89,6 @@ class _InvestorProfileScreenState extends State<InvestorProfileScreen> {
                         data: "",
                       ),
                     ]),
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(40),
-                          topRight: Radius.circular(40)),
-                    ),
                   ),
                 )
               ],
@@ -109,28 +103,23 @@ class _InvestorProfileScreenState extends State<InvestorProfileScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          CircleAvatarBorder(),
+                          const CircleAvatarBorder(),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   Container(
-                                    child: Text(
+                                    child: const Text(
                                       'Aayush Gelal',
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.w600,
-                                          letterSpacing: 1,
-                                          fontSize: 21),
+                                      style: TextStyle(color: Colors.black, fontWeight: FontWeight.w600, letterSpacing: 1, fontSize: 21),
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 10,
                                   ),
-                                  Icon(
+                                  const Icon(
                                     Icons.star,
                                     color: Colors.amberAccent,
                                   )
@@ -140,14 +129,14 @@ class _InvestorProfileScreenState extends State<InvestorProfileScreen> {
                           ),
                           GestureDetector(
                             onTap: () {},
-                            child: Icon(Icons.edit),
+                            child: const Icon(Icons.edit),
                           )
                         ],
                       ),
                       Container(
-                          margin: EdgeInsets.all(10),
+                          margin: const EdgeInsets.all(10),
                           width: 400,
-                          child: Text(
+                          child: const Text(
                             "The new age business tycoon with over 50 business and founder of Sahakosh",
                             style: TextStyle(
                               color: Colors.black87,
