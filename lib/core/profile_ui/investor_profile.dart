@@ -5,14 +5,14 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:sahakosh/widgets/circle_avatar_border.dart';
 import 'package:sahakosh/widgets/my_profile_tile.dart';
 
-class MyProfileInvestor extends StatefulWidget {
-  const MyProfileInvestor({super.key});
+class InvestorProfileScreen extends StatefulWidget {
+  const InvestorProfileScreen({super.key});
 
   @override
-  State<MyProfileInvestor> createState() => _MyProfileInvestorState();
+  State<InvestorProfileScreen> createState() => _InvestorProfileScreenState();
 }
 
-class _MyProfileInvestorState extends State<MyProfileInvestor> {
+class _InvestorProfileScreenState extends State<InvestorProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
