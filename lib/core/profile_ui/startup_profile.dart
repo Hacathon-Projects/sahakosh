@@ -32,6 +32,7 @@ class _StartupProfileScreenState extends State<StartupProfileScreen> {
         ],
       ),
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Column(
           children: [
             const SizedBox(height: 15),

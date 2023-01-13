@@ -31,6 +31,7 @@ class StartupHomeScreen extends StatelessWidget {
         ],
       ),
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Padding(
           padding: const EdgeInsets.all(3.0),
           child: Column(
@@ -159,6 +160,7 @@ class StartupHomeScreen extends StatelessWidget {
                               return Padding(
                                 padding: const EdgeInsets.all(0),
                                 child: SingleChildScrollView(
+                                  physics: BouncingScrollPhysics(),
                                   child: GestureDetector(
                                       // TODO SEE DETAILS ABOUT STARTUPS
                                       onTap: () async {
@@ -278,6 +280,7 @@ class StartupHomeScreen extends StatelessWidget {
                           itemCount: items == null ? 0 : items.length,
                           itemBuilder: (context, index) {
                             return SingleChildScrollView(
+                              physics: BouncingScrollPhysics(),
                               child: GestureDetector(
                                 // TODO SEE DETAILS ABOUT STARTUPS
                                 onTap: () async {

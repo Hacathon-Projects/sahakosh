@@ -24,6 +24,7 @@ class InvestorHomeScreen extends StatelessWidget {
         ],
       ),
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 12),
           child: Column(

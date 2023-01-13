@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:sahakosh/core/later_screen.dart';
 import 'package:sahakosh/core/profile_ui/investor_profile.dart';
 import 'package:sahakosh/core/profile_ui/startup_profile.dart';
 import 'package:sahakosh/investor_ui/presentation/inverstor_home.dart';
-import 'package:sahakosh/models/investor.dart';
 import 'package:sahakosh/portfolio_ui/presentation/portfolio_screen.dart';
 import 'package:sahakosh/startup_ui/presentation/startuphome/startuphome.dart';
 
@@ -57,24 +57,25 @@ class _HomeScreenState extends State<HomeScreen> {
                 : const InvestorHomeScreen()
             : _selectedIndex == 1
                 ? widget.isStartup
+                    ? const PortfolioManagementScreen()
+                    : const LaterScreen()
+                : widget.isStartup
                     ? const StartupProfileScreen()
-                    : const PortfolioManagementScreen()
-                : const InvestorProfileScreen(),
+                    : const InvestorProfileScreen(),
 
         //    Bottom Navbar   //
         bottomNavigationBar: BottomNavigationBar(
           selectedItemColor: Colors.blue[800],
-          items: [
-            const BottomNavigationBarItem(
+          items: const [
+            BottomNavigationBarItem(
               icon: Icon(Icons.home_rounded),
               label: 'Home',
             ),
-            if (!widget.isStartup)
-              const BottomNavigationBarItem(
-                icon: Icon(Icons.copy_all_rounded),
-                label: 'Portfolio',
-              ),
-            const BottomNavigationBarItem(
+            BottomNavigationBarItem(
+              icon: Icon(Icons.copy_all_rounded),
+              label: 'Portfolio',
+            ),
+            BottomNavigationBarItem(
               icon: Icon(Icons.person_rounded),
               label: 'Profile',
             )

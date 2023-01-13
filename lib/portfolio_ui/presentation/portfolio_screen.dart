@@ -17,7 +17,7 @@ class PortfolioManagementScreen extends StatelessWidget {
       drawer: const Drawer(),
       appBar: AppBar(
         backgroundColor: Colors.blue[800],
-        title: const Text("Sahakosh Investors"),
+        title: const Text("My Portfolio"),
         elevation: 0,
         actions: [
           IconButton(
@@ -34,6 +34,7 @@ class PortfolioManagementScreen extends StatelessWidget {
         ],
       ),
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         scrollDirection: Axis.vertical,
         child: Container(
           padding: const EdgeInsets.fromLTRB(13, 10, 13, 10),

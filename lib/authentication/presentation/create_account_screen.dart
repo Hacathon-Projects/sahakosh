@@ -23,6 +23,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
       child: Scaffold(
           backgroundColor: Colors.white,
           body: SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
             child: Column(
               children: [
                 Stack(
