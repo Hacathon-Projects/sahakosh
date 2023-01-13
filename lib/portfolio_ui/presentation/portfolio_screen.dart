@@ -17,7 +17,7 @@ class PortfolioManagementScreen extends StatelessWidget {
       drawer: const Drawer(),
       appBar: AppBar(
         backgroundColor: Colors.blue[800],
-        title: const Text("Sahakosh Investors"),
+        title: const Text("My Portfolio"),
         elevation: 0,
         actions: [
           IconButton(
