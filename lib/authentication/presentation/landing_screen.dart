@@ -67,12 +67,8 @@ class _LandingScreenState extends State<LandingScreen> {
                     PrimaryButton(
                         text: 'Login as Investor',
                         onTap: () async {
-                          await FirebaseAuth.instance
-                              .createUserWithEmailAndPassword(
-                                  email: "rabin@gmail.com",
-                                  password: "rabin_11");
-                          // Navigator.of(context).pushReplacementNamed(
-                          //     RouteConstant.investorLoginRoute);
+                          Navigator.of(context).pushReplacementNamed(
+                              RouteConstant.investorLoginRoute);
                         }),
                     const SizedBox(height: 30),
                     PrimaryButton(
