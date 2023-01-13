@@ -18,7 +18,8 @@ class StartupDetails extends StatelessWidget {
         child: Align(
           alignment: Alignment.bottomCenter,
           child: InkWell(
-            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) {
+            onTap: () =>
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
               return ProposalPage(startup: startup);
             })),
             child: Container(
@@ -66,7 +67,10 @@ class StartupDetails extends StatelessWidget {
                   height: 300,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20.0),
-                    image: DecorationImage(image: NetworkImage(startup.personalDetails!.photo ?? ""), fit: BoxFit.cover),
+                    image: DecorationImage(
+                        image:
+                            NetworkImage(startup.personalDetails!.photo ?? ""),
+                        fit: BoxFit.cover),
                   ),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10.0),
@@ -75,7 +79,8 @@ class StartupDetails extends StatelessWidget {
                 ),
                 Card(
                   elevation: 2,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12)),
                   child: Padding(
                     padding: const EdgeInsets.all(5.0),
                     child: Column(
@@ -94,8 +99,12 @@ class StartupDetails extends StatelessWidget {
                                     )),
                                 const SizedBox(height: 5),
                                 SizedBox(
-                                  width: MediaQuery.of(context).size.width / 1.2,
-                                  child: Text(startup.bio ?? "", style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 15)),
+                                  width:
+                                      MediaQuery.of(context).size.width / 1.2,
+                                  child: Text(startup.bio ?? "",
+                                      style: const TextStyle(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 15)),
                                 ),
                               ],
                             ),
@@ -120,19 +129,32 @@ class StartupDetails extends StatelessWidget {
                                   children: [
                                     Container(
                                         decoration: const BoxDecoration(
-                                            color: Color.fromARGB(255, 231, 231, 231), borderRadius: BorderRadius.all(Radius.circular(11))),
+                                            color: Color.fromARGB(
+                                                255, 231, 231, 231),
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(11))),
                                         width: 135,
                                         height: 50,
                                         child: TextButton(
-                                            onPressed: () {}, child: Text(startup.investmentCategory!, style: const TextStyle(color: Colors.black)))),
+                                            onPressed: () {},
+                                            child: Text(
+                                                startup.investmentCategory!,
+                                                style: const TextStyle(
+                                                    color: Colors.black)))),
                                     const SizedBox(width: 10),
                                     Container(
                                         decoration: const BoxDecoration(
-                                            color: Color.fromARGB(255, 231, 231, 231), borderRadius: BorderRadius.all(Radius.circular(11))),
+                                            color: Color.fromARGB(
+                                                255, 231, 231, 231),
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(11))),
                                         width: 130,
                                         height: 50,
                                         child: TextButton(
-                                            onPressed: () {}, child: const Text("IoT", style: TextStyle(color: Colors.black))))
+                                            onPressed: () {},
+                                            child: const Text("IoT",
+                                                style: TextStyle(
+                                                    color: Colors.black))))
                                   ],
                                 ),
                                 const SizedBox(height: 10),
@@ -140,17 +162,31 @@ class StartupDetails extends StatelessWidget {
                                   children: [
                                     Container(
                                         decoration: const BoxDecoration(
-                                            color: Color.fromARGB(255, 231, 231, 231), borderRadius: BorderRadius.all(Radius.circular(11))),
+                                            color: Color.fromARGB(
+                                                255, 231, 231, 231),
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(11))),
                                         width: 135,
                                         height: 50,
-                                        child: TextButton(onPressed: () {}, child: const Text("FinTech", style: TextStyle(color: Colors.black)))),
+                                        child: TextButton(
+                                            onPressed: () {},
+                                            child: const Text("FinTech",
+                                                style: TextStyle(
+                                                    color: Colors.black)))),
                                     const SizedBox(width: 10),
                                     Container(
                                         decoration: const BoxDecoration(
-                                            color: Color.fromARGB(255, 231, 231, 231), borderRadius: BorderRadius.all(Radius.circular(11))),
+                                            color: Color.fromARGB(
+                                                255, 231, 231, 231),
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(11))),
                                         width: 130,
                                         height: 50,
-                                        child: TextButton(onPressed: () {}, child: const Text("Science", style: TextStyle(color: Colors.black))))
+                                        child: TextButton(
+                                            onPressed: () {},
+                                            child: const Text("Science",
+                                                style: TextStyle(
+                                                    color: Colors.black))))
                                   ],
                                 ),
                                 const SizedBox(height: 20),
@@ -192,7 +228,10 @@ class StartupDetails extends StatelessWidget {
 
   Stack pastInvestment(BuildContext context) {
     return Stack(children: [
-      SizedBox(height: 160, width: MediaQuery.of(context).size.width / 1.21, child: Card(color: Colors.grey[200])),
+      SizedBox(
+          height: 160,
+          width: MediaQuery.of(context).size.width / 1.21,
+          child: Card(color: Colors.grey[200])),
       Column(
         children: [
           const SizedBox(height: 20),
@@ -204,17 +243,14 @@ class StartupDetails extends StatelessWidget {
                 width: 126,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20.0),
-<<<<<<< HEAD
                   image: DecorationImage(
                       image: NetworkImage(startup.personalDetails!.photo ?? ""),
                       fit: BoxFit.cover),
-=======
-                  image: DecorationImage(image: NetworkImage(startup.personalDetails!.photo ?? ""), fit: BoxFit.fill),
->>>>>>> 972b441cc20e40bc35d0962f4913d8224b10f4f6
                 ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10.0),
-                  child: Align(alignment: Alignment.bottomRight, child: Container()),
+                  child: Align(
+                      alignment: Alignment.bottomRight, child: Container()),
                 ),
               ),
               const SizedBox(width: 20),
@@ -222,7 +258,9 @@ class StartupDetails extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(startup.personalDetails!.name ?? "",
-                      overflow: TextOverflow.ellipsis, style: const TextStyle(fontSize: 18, fontFamily: "latobold")),
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(
+                          fontSize: 18, fontFamily: "latobold")),
                   Text(startup.personalDetails!.location ?? ""),
                   Text(startup.investmentCategory ?? ""),
                   Text("Rs. ${startup.totalBudget}"),
@@ -241,13 +279,19 @@ class StartupDetails extends StatelessWidget {
         const SizedBox(height: 5),
         SizedBox(
             width: MediaQuery.of(context).size.width / 1.3,
-            child: Text("Address: ${startup.personalDetails!.location}", style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 16))),
+            child: Text("Address: ${startup.personalDetails!.location}",
+                style: const TextStyle(
+                    fontWeight: FontWeight.w400, fontSize: 16))),
         SizedBox(
             width: MediaQuery.of(context).size.width / 1.3,
-            child: Text("Recently Invested:  ${startup.totalBudget}", style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 16))),
+            child: Text("Recently Invested:  ${startup.totalBudget}",
+                style: const TextStyle(
+                    fontWeight: FontWeight.w400, fontSize: 16))),
         SizedBox(
             width: MediaQuery.of(context).size.width / 1.3,
-            child: Text("Rating: ${startup.rating}", style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 16)))
+            child: Text("Rating: ${startup.rating}",
+                style:
+                    const TextStyle(fontWeight: FontWeight.w400, fontSize: 16)))
       ],
     );
   }
