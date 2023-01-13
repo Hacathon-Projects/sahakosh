@@ -247,7 +247,7 @@ class StartupHomeScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     const Text(
-                      "Startups",
+                      "Investors",
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 20,
