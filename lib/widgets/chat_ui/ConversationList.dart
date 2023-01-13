@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sahakosh/core/chat_ui/investor/investor-chatpage.dart';
 import 'package:sahakosh/core/chat_ui/startup/startup-chatpage.dart';
 
 class ConversationList extends StatefulWidget {
@@ -6,9 +7,11 @@ class ConversationList extends StatefulWidget {
   String messageText;
   String imageUrl;
   String time;
+  String type;
   bool isMessageRead;
   ConversationList(
       {super.key,
+      required this.type,
       required this.name,
       required this.messageText,
       required this.imageUrl,
@@ -23,9 +26,15 @@ class _ConversationListState extends State<ConversationList> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return const StartupChatScreen();
-        }));
+        if (widget.type == "startup") {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return const StartupChatScreen();
+          }));
+        } else {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return const InvestorChatScreen();
+          }));
+        }
       },
       child: Container(
         padding:

@@ -59,6 +59,7 @@ class InvestorChatListScreen extends StatelessWidget {
               physics: const NeverScrollableScrollPhysics(),
               itemBuilder: (context, index) {
                 return ConversationList(
+                  type: "startup",
                   name: chatUsers[index].text,
                   messageText: chatUsers[index].secondaryText,
                   imageUrl: chatUsers[index].image,
