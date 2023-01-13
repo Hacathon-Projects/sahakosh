@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sahakosh/startup_ui/domain/startupmodel.dart';
 import 'package:sahakosh/startup_ui/presentation/proposal/proposal.dart';
-import 'package:sahakosh/widgets/primary_button.dart';
 
 class StartupDetails extends StatelessWidget {
   final StartupModel startup;
