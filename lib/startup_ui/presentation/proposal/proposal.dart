@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sahakosh/core/chat_ui/chatlistscreen.dart';
 import 'package:sahakosh/startup_ui/domain/startupmodel.dart';
 import 'package:sahakosh/widgets/primary_button.dart';
 
@@ -123,7 +124,14 @@ class ProposalPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              Center(child: PrimaryButton(text: 'Send Proposal', onTap: () {})),
+              Center(
+                  child: PrimaryButton(
+                      text: 'Send Proposal',
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) {
+                          return ChatListScreen();
+                        }));
+                      })),
             ]),
           ),
         ));

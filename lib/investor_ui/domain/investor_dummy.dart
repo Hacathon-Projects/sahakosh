@@ -11,8 +11,7 @@ var investorDummy1 = [
       category: "Tech",
       createdOn: "yesterday",
       equity: "5%",
-      long_description:
-          "Using AI and automation to improve the production of chemicals and materials.",
+      long_description: "Using AI and automation to improve the production of chemicals and materials.",
       operating_yrs: "4 years",
       target: 130500,
       valuation: 4000000,
@@ -28,8 +27,7 @@ var investorDummy1 = [
     category: "Tech",
     createdOn: "yesterday",
     equity: "5%",
-    long_description:
-        "Utilizing natural language processing and machine learning to provide financial data analytics",
+    long_description: "Utilizing natural language processing and machine learning to provide financial data analytics",
     operating_yrs: "2 years",
     target: 230000,
     targetReached: false,
@@ -46,8 +44,7 @@ var investorDummy1 = [
     category: "Tech",
     createdOn: "yesterday",
     equity: "5%",
-    long_description:
-        "This is a long description of how it looks where there are many things",
+    long_description: "This is a long description of how it looks where there are many things",
     operating_yrs: "3 years",
     target: 3000000,
     targetReached: false,
@@ -64,8 +61,7 @@ var investorDummy1 = [
     category: "Tech",
     createdOn: "yesterday",
     equity: "5%",
-    long_description:
-        "This is a long description of how it looks where there are many things",
+    long_description: "This is a long description of how it looks where there are many things",
     operating_yrs: "3 years",
     target: 130000,
     targetReached: false,
@@ -75,15 +71,13 @@ var investorDummy1 = [
   InvestorModel(
     name: "Startup Tips",
     owner: "Aayush Gelal",
-    image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwLxOZ4hErPxltsnLyVjmgVdP7O5wqFtRwiaphZgzhH6qnbzjZzv5Ebo-TJhMozmKOYAo&usqp=CAU",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwLxOZ4hErPxltsnLyVjmgVdP7O5wqFtRwiaphZgzhH6qnbzjZzv5Ebo-TJhMozmKOYAo&usqp=CAU",
     address: "Lazimpat Kathmandu",
     amountWithdrawn: true,
     category: "Tech",
     createdOn: "yesterday",
     equity: "5%",
-    long_description:
-        "This is a long description of how it looks where there are many things",
+    long_description: "This is a long description of how it looks where there are many things",
     operating_yrs: "3 years",
     target: 1230000,
     targetReached: false,
@@ -103,8 +97,7 @@ var investorDummy2 = [
     category: "Tech",
     createdOn: "yesterday",
     equity: "5%",
-    long_description:
-        "This is a long description of how it looks where there are many things",
+    long_description: "This is a long description of how it looks where there are many things",
     operating_yrs: "3 years",
     target: 130000,
     targetReached: false,
@@ -121,8 +114,7 @@ var investorDummy2 = [
     category: "Tech",
     createdOn: "yesterday",
     equity: "5%",
-    long_description:
-        "This is a long description of how it looks where there are many things",
+    long_description: "This is a long description of how it looks where there are many things",
     operating_yrs: "3 years",
     target: 3000000,
     targetReached: false,
@@ -139,8 +131,7 @@ var investorDummy2 = [
       category: "Tech",
       createdOn: "yesterday",
       equity: "5%",
-      long_description:
-          "Using AI and automation to improve the production of chemicals and materials.",
+      long_description: "Using AI and automation to improve the production of chemicals and materials.",
       operating_yrs: "4 years",
       target: 130500,
       valuation: 4000000,
@@ -156,8 +147,7 @@ var investorDummy2 = [
     category: "Tech",
     createdOn: "yesterday",
     equity: "5%",
-    long_description:
-        "Utilizing natural language processing and machine learning to provide financial data analytics",
+    long_description: "Utilizing natural language processing and machine learning to provide financial data analytics",
     operating_yrs: "2 years",
     target: 230000,
     targetReached: false,
@@ -167,15 +157,13 @@ var investorDummy2 = [
   InvestorModel(
     name: "Startup Tips",
     owner: "Aayush Gelal",
-    image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwLxOZ4hErPxltsnLyVjmgVdP7O5wqFtRwiaphZgzhH6qnbzjZzv5Ebo-TJhMozmKOYAo&usqp=CAU",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwLxOZ4hErPxltsnLyVjmgVdP7O5wqFtRwiaphZgzhH6qnbzjZzv5Ebo-TJhMozmKOYAo&usqp=CAU",
     address: "Lazimpat Kathmandu",
     amountWithdrawn: true,
     category: "Tech",
     createdOn: "yesterday",
     equity: "5%",
-    long_description:
-        "This is a long description of how it looks where there are many things",
+    long_description: "This is a long description of how it looks where there are many things",
     operating_yrs: "3 years",
     target: 1230000,
     targetReached: false,
@@ -195,8 +183,7 @@ var investorDummy3 = [
     category: "Tech",
     createdOn: "yesterday",
     equity: "5%",
-    long_description:
-        "Utilizing natural language processing and machine learning to provide financial data analytics",
+    long_description: "Utilizing natural language processing and machine learning to provide financial data analytics",
     operating_yrs: "2 years",
     target: 230000,
     targetReached: false,
@@ -213,8 +200,7 @@ var investorDummy3 = [
       category: "Tech",
       createdOn: "yesterday",
       equity: "5%",
-      long_description:
-          "Using AI and automation to improve the production of chemicals and materials.",
+      long_description: "Using AI and automation to improve the production of chemicals and materials.",
       operating_yrs: "4 years",
       target: 130500,
       valuation: 4000000,
@@ -230,8 +216,7 @@ var investorDummy3 = [
     category: "Tech",
     createdOn: "yesterday",
     equity: "5%",
-    long_description:
-        "This is a long description of how it looks where there are many things",
+    long_description: "This is a long description of how it looks where there are many things",
     operating_yrs: "3 years",
     target: 130000,
     targetReached: false,
@@ -248,8 +233,7 @@ var investorDummy3 = [
     category: "Tech",
     createdOn: "yesterday",
     equity: "5%",
-    long_description:
-        "This is a long description of how it looks where there are many things",
+    long_description: "This is a long description of how it looks where there are many things",
     operating_yrs: "3 years",
     target: 3000000,
     targetReached: false,
@@ -259,15 +243,13 @@ var investorDummy3 = [
   InvestorModel(
     name: "Startup Tips",
     owner: "Aayush Gelal",
-    image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwLxOZ4hErPxltsnLyVjmgVdP7O5wqFtRwiaphZgzhH6qnbzjZzv5Ebo-TJhMozmKOYAo&usqp=CAU",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwLxOZ4hErPxltsnLyVjmgVdP7O5wqFtRwiaphZgzhH6qnbzjZzv5Ebo-TJhMozmKOYAo&usqp=CAU",
     address: "Lazimpat Kathmandu",
     amountWithdrawn: true,
     category: "Tech",
     createdOn: "yesterday",
     equity: "5%",
-    long_description:
-        "This is a long description of how it looks where there are many things",
+    long_description: "This is a long description of how it looks where there are many things",
     operating_yrs: "3 years",
     target: 1230000,
     targetReached: false,

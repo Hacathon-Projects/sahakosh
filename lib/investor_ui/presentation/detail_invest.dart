@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
+import 'package:sahakosh/core/chat_ui/chatlistscreen.dart';
 import 'package:sahakosh/investor_ui/domain/investor_model.dart';
 import 'package:sahakosh/widgets/investor_ui/collab_details.dart';
 import 'package:sahakosh/widgets/investor_ui/invest_tab.dart';
-import 'package:sahakosh/widgets/investor_ui/investor_button.dart';
 import 'package:sahakosh/widgets/investor_ui/startup_details.dart';
 import 'package:sahakosh/widgets/primary_button.dart';
 
@@ -15,8 +15,7 @@ class InvestDetail extends StatefulWidget {
   State<InvestDetail> createState() => _InvestDetailState();
 }
 
-class _InvestDetailState extends State<InvestDetail>
-    with TickerProviderStateMixin {
+class _InvestDetailState extends State<InvestDetail> with TickerProviderStateMixin {
   late TabController _tabController;
 
   @override
@@ -82,8 +81,7 @@ class _InvestDetailState extends State<InvestDetail>
                   children: [
                     Text(
                       widget.item.name,
-                      style: const TextStyle(
-                          fontSize: 20, fontWeight: FontWeight.bold),
+                      style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                     Text(
                       widget.item.category,
@@ -123,9 +121,7 @@ class _InvestDetailState extends State<InvestDetail>
                     animation: true,
                     lineHeight: 18.0,
                     animationDuration: 1000,
-                    percent:
-                        ((widget.item.target * 100 / widget.item.valuation) /
-                            100),
+                    percent: ((widget.item.target * 100 / widget.item.valuation) / 100),
                     progressColor: Theme.of(context).primaryColor,
                   ),
                 ),
@@ -174,15 +170,16 @@ class _InvestDetailState extends State<InvestDetail>
                   height: 400,
                   child: TabBarView(
                     controller: _tabController,
-                    children: [
-                      InvestTab(item: widget.item),
-                      const Text("Files"),
-                      const CollabDetails(),
-                      StartupDetails(owner: widget.item.owner)
-                    ],
+                    children: [InvestTab(item: widget.item), const Text("Files"), const CollabDetails(), StartupDetails(owner: widget.item.owner)],
                   ),
                 ),
-                PrimaryButton(text: 'Invest', onTap: () {}),
+                PrimaryButton(
+                    text: 'Invest',
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) {
+                        return ChatListScreen();
+                      }));
+                    }),
               ],
             ),
           ))
