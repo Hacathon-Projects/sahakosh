@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sahakosh/calendar_ui/calendarscreen.dart';
 
 import 'package:sahakosh/core/routes/route.dart';
 import 'package:sahakosh/models/investor.dart';
@@ -30,12 +29,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          primaryColor: Colors.blue[800],
-          textTheme: GoogleFonts.nunitoTextTheme(),
-        ),
-        home: ScheduleMeetingPage());
+      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primaryColor: Colors.blue[800],
+        textTheme: GoogleFonts.nunitoTextTheme(),
+      ),
+      onGenerateRoute: Routes.generateRoute,
+      initialRoute: RouteConstant.landingScreen,
+    );
   }
 }
