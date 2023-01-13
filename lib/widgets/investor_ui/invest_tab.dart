@@ -9,7 +9,7 @@ class InvestTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      physics: BouncingScrollPhysics(),
+      physics: const BouncingScrollPhysics(),
       child: Container(
         padding: const EdgeInsets.all(4),
         child: Column(
@@ -91,21 +91,6 @@ class InvestTab extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             const Divider(height: 1),
-            // ElevatedButton(
-            //     onPressed: () {
-            //       Navigator.push(context, MaterialPageRoute(builder: (context) {
-            //         return ChatListScreen();
-            //       }));
-            //     },
-            //     style:
-            //         ElevatedButton.styleFrom(backgroundColor: Colors.blue[800]),
-            //     child: Row(mainAxisSize: MainAxisSize.min, children: const [
-            //       Text('Invest',
-            //           style:
-            //               TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
-            //       SizedBox(width: 10),
-            //       Icon(Icons.attach_money_outlined, size: 20)
-            //     ])),
           ],
         ),
       ),

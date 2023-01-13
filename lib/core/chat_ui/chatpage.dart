@@ -15,12 +15,9 @@ class _ChatPageState extends State<ChatPage> {
   List<ChatMessage> messages = [
     ChatMessage(messageContent: "Hello, Will", messageType: "receiver"),
     ChatMessage(messageContent: "How have you been?", messageType: "receiver"),
-    ChatMessage(
-        messageContent: "Hey Kriss, I am doing fine dude. wbu?",
-        messageType: "sender"),
+    ChatMessage(messageContent: "Hey Kriss, I am doing fine dude. wbu?", messageType: "sender"),
     ChatMessage(messageContent: "ehhhh, doing OK.", messageType: "receiver"),
-    ChatMessage(
-        messageContent: "Is there any thing wrong?", messageType: "sender"),
+    ChatMessage(messageContent: "Is there any thing wrong?", messageType: "sender"),
   ];
   @override
   Widget build(BuildContext context) {
@@ -44,10 +41,7 @@ class _ChatPageState extends State<ChatPage> {
                 const SizedBox(
                   width: 2,
                 ),
-                const CircleAvatar(
-                    backgroundImage: NetworkImage(
-                        "https://randomuser.me/api/portraits/men/5.jpg"),
-                    maxRadius: 20),
+                const CircleAvatar(backgroundImage: NetworkImage("https://randomuser.me/api/portraits/men/5.jpg"), maxRadius: 20),
                 const SizedBox(width: 12),
                 Expanded(
                   child: Column(
@@ -56,14 +50,10 @@ class _ChatPageState extends State<ChatPage> {
                     children: const <Widget>[
                       Text(
                         "Kriss Benwat",
-                        style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w600),
+                        style: TextStyle(fontSize: 16, color: Colors.white, fontWeight: FontWeight.w600),
                       ),
                       SizedBox(height: 1),
-                      Text("Online",
-                          style: TextStyle(color: Colors.white, fontSize: 13)),
+                      Text("Online", style: TextStyle(color: Colors.white, fontSize: 13)),
                     ],
                   ),
                 ),
@@ -81,15 +71,8 @@ class _ChatPageState extends State<ChatPage> {
                   width: 15,
                 ),
                 GestureDetector(
-                  onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => ScheduleMeetingPage())),
-                  child: const Icon(
-                    CupertinoIcons.calendar,
-                    color: Colors.white,
-                  ),
-                )
+                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const ScheduleMeetingPage())),
+                ),
               ],
             ),
           ),
@@ -104,18 +87,13 @@ class _ChatPageState extends State<ChatPage> {
             physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) {
               return Container(
-                padding: const EdgeInsets.only(
-                    left: 14, right: 14, top: 10, bottom: 10),
+                padding: const EdgeInsets.only(left: 14, right: 14, top: 10, bottom: 10),
                 child: Align(
-                  alignment: (messages[index].messageType == "receiver"
-                      ? Alignment.topLeft
-                      : Alignment.topRight),
+                  alignment: (messages[index].messageType == "receiver" ? Alignment.topLeft : Alignment.topRight),
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      color: (messages[index].messageType == "receiver"
-                          ? Colors.grey.shade200
-                          : Colors.blue[200]),
+                      color: (messages[index].messageType == "receiver" ? Colors.grey.shade200 : Colors.blue[200]),
                     ),
                     padding: const EdgeInsets.all(16),
                     child: Text(
@@ -157,10 +135,8 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                   const Expanded(
                     child: TextField(
-                      decoration: InputDecoration(
-                          hintText: "Write message...",
-                          hintStyle: TextStyle(color: Colors.black54),
-                          border: InputBorder.none),
+                      decoration:
+                          InputDecoration(hintText: "Write message...", hintStyle: TextStyle(color: Colors.black54), border: InputBorder.none),
                     ),
                   ),
                   const SizedBox(

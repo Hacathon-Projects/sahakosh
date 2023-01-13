@@ -19,18 +19,13 @@ class InvestorHomeScreen extends StatelessWidget {
           IconButton(
               icon: const Icon(Icons.logout),
               onPressed: () {
-                Navigator.of(context).pushNamedAndRemoveUntil(
-                    RouteConstant.landingScreen,
-                    (Route<dynamic> route) => false);
+                Navigator.of(context).pushNamedAndRemoveUntil(RouteConstant.landingScreen, (Route<dynamic> route) => false);
               }),
-          IconButton(
-              icon: const Icon(Icons.notifications),
-              onPressed: () => Navigator.of(context)
-                  .pushNamed(RouteConstant.startupNotificationPage)),
+          IconButton(icon: const Icon(Icons.notifications), onPressed: () => Navigator.of(context).pushNamed(RouteConstant.startupNotificationPage)),
         ],
       ),
       body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 12),
           child: Column(
@@ -84,8 +79,7 @@ class InvestorHomeScreen extends StatelessWidget {
                       physics: const BouncingScrollPhysics(),
                       scrollDirection: Axis.horizontal,
                       itemCount: investorDummy2.length,
-                      separatorBuilder: (context, index) =>
-                          const SizedBox(width: 15),
+                      separatorBuilder: (context, index) => const SizedBox(width: 15),
                       itemBuilder: (context, index) => StartupCard(
                             item: investorDummy2[index],
                             image: investorDummy2[index].image,
