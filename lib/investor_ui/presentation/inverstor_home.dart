@@ -14,7 +14,7 @@ class InvestorHomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue[800],
-        title: const Text("Sahakosh Investors"),
+        title: const Text("Sahakosh StartUps"),
         elevation: 0,
         actions: [
           IconButton(
@@ -22,21 +22,18 @@ class InvestorHomeScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.pop(context);
               }),
-          IconButton(
-              icon: const Icon(Icons.notifications),
-              onPressed: () => Navigator.of(context)
-                  .pushNamed(RouteConstant.startupNotificationPage)),
+          IconButton(icon: const Icon(Icons.notifications), onPressed: () => Navigator.of(context).pushNamed(RouteConstant.startupNotificationPage)),
         ],
       ),
       body: SafeArea(
         child: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Row(
@@ -44,36 +41,31 @@ class InvestorHomeScreen extends StatelessWidget {
                   children: [
                     Text(
                       'Technology Startups',
-                      style: Theme.of(context).textTheme.headline6,
+                      style: Theme.of(context).textTheme.titleLarge,
                     ),
-                    TextButton(onPressed: () {}, child: Text('View All'))
+                    TextButton(onPressed: () {}, child: const Text('View All'))
                   ],
                 ),
                 SizedBox(
                     height: 230,
                     child: ListView.separated(
-                        physics: BouncingScrollPhysics(),
+                        physics: const BouncingScrollPhysics(),
                         scrollDirection: Axis.horizontal,
                         itemCount: InvestorDummy.length,
-                        separatorBuilder: (context, index) => SizedBox(
+                        separatorBuilder: (context, index) => const SizedBox(
                               width: 20,
                             ),
                         itemBuilder: (context, index) => GestureDetector(
-                              onTap: () => Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => InvestDetail(
-                                          item: InvestorDummy[index]))),
+                              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => InvestDetail(item: InvestorDummy[index]))),
                               child: StartupCard(
                                 image: InvestorDummy[index].image,
                                 category: InvestorDummy[index].category,
                                 money: InvestorDummy[index].target,
-                                operating_yrs:
-                                    InvestorDummy[index].operating_yrs,
+                                operating_yrs: InvestorDummy[index].operating_yrs,
                                 title: InvestorDummy[index].name,
                               ),
                             ))),
-                Divider(
+                const Divider(
                   height: 30,
                 ),
                 Row(
@@ -81,18 +73,18 @@ class InvestorHomeScreen extends StatelessWidget {
                   children: [
                     Text(
                       'Popular Startups',
-                      style: Theme.of(context).textTheme.headline6,
+                      style: Theme.of(context).textTheme.titleLarge,
                     ),
-                    TextButton(onPressed: () {}, child: Text('View All'))
+                    TextButton(onPressed: () {}, child: const Text('View All'))
                   ],
                 ),
                 SizedBox(
                     height: 230,
                     child: ListView.separated(
-                        physics: BouncingScrollPhysics(),
+                        physics: const BouncingScrollPhysics(),
                         scrollDirection: Axis.horizontal,
                         itemCount: InvestorDummy.length,
-                        separatorBuilder: (context, index) => SizedBox(
+                        separatorBuilder: (context, index) => const SizedBox(
                               width: 20,
                             ),
                         itemBuilder: (context, index) => StartupCard(
@@ -102,7 +94,7 @@ class InvestorHomeScreen extends StatelessWidget {
                               operating_yrs: InvestorDummy[index].operating_yrs,
                               title: InvestorDummy[index].name,
                             ))),
-                Divider(
+                const Divider(
                   height: 30,
                 ),
                 Row(
@@ -110,18 +102,18 @@ class InvestorHomeScreen extends StatelessWidget {
                   children: [
                     Text(
                       'New Startups',
-                      style: Theme.of(context).textTheme.headline6,
+                      style: Theme.of(context).textTheme.titleLarge,
                     ),
-                    TextButton(onPressed: () {}, child: Text('View All'))
+                    TextButton(onPressed: () {}, child: const Text('View All'))
                   ],
                 ),
                 SizedBox(
                     height: 230,
                     child: ListView.separated(
-                        physics: BouncingScrollPhysics(),
+                        physics: const BouncingScrollPhysics(),
                         scrollDirection: Axis.horizontal,
                         itemCount: InvestorDummy.length,
-                        separatorBuilder: (context, index) => SizedBox(
+                        separatorBuilder: (context, index) => const SizedBox(
                               width: 20,
                               height: 10,
                             ),
