@@ -55,7 +55,7 @@ class StartupHomeScreen extends StatelessWidget {
                       } else if (data.hasData) {
                         var items = data.data as List<StartupModel>;
                         return ListView.builder(
-                            physics: const AlwaysScrollableScrollPhysics(),
+                            physics: BouncingScrollPhysics(),
                             shrinkWrap: true,
                             scrollDirection: Axis.horizontal,
                             // ignore: unnecessary_null_comparison
@@ -152,7 +152,7 @@ class StartupHomeScreen extends StatelessWidget {
                       } else if (data.hasData) {
                         var items = data.data as List<StartupModel>;
                         return ListView.builder(
-                            physics: const AlwaysScrollableScrollPhysics(),
+                            physics: const BouncingScrollPhysics(),
                             shrinkWrap: true,
                             scrollDirection: Axis.horizontal,
                             // ignore: unnecessary_null_comparison
