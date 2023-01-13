@@ -7,9 +7,14 @@ class InvestorNotificationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Column(
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Notifications'),
+        backgroundColor: Colors.blue[800],
+        elevation: 0,
+      ),
+      body: SafeArea(
+        child: Column(
           children: [
             const SizedBox(height: 10),
             Padding(

@@ -21,103 +21,108 @@ class _InvestorProfileScreenState extends State<InvestorProfileScreen> {
         title: const Text("Profile"),
         elevation: 0,
         actions: [
+          IconButton(icon: const Icon(Icons.edit), onPressed: () {}),
           IconButton(
               icon: const Icon(Icons.logout),
               onPressed: () {
-                Navigator.of(context).pushNamedAndRemoveUntil(RouteConstant.landingScreen, (Route<dynamic> route) => false);
+                Navigator.of(context).pushNamedAndRemoveUntil(
+                    RouteConstant.landingScreen,
+                    (Route<dynamic> route) => false);
               }),
-          IconButton(icon: const Icon(Icons.notifications), onPressed: () => Navigator.of(context).pushNamed(RouteConstant.startupNotificationPage)),
         ],
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const SizedBox(height: 10),
+            const SizedBox(height: 15),
+            const CircleAvatarBorder(),
             SizedBox(
               width: MediaQuery.of(context).size.width - 30,
               child: Column(
                 children: [
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisSize: MainAxisSize.min,
                     children: [
-                      const CircleAvatarBorder(),
+                      const SizedBox(width: 10),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          const SizedBox(height: 5),
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Container(
-                                child: const Text('Subarna Poudel',
-                                    style: TextStyle(color: Colors.black, fontWeight: FontWeight.w600, letterSpacing: 1, fontSize: 21)),
-                              ),
-                              const SizedBox(
-                                width: 10,
-                              ),
-                              const Icon(Icons.star, color: Colors.amberAccent)
+                            children: const [
+                              Text("Subarna Poudel",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 22,
+                                  )),
+                              SizedBox(width: 10),
+                              Text('4'),
+                              Icon(
+                                Icons.star,
+                                color: Colors.amberAccent,
+                                size: 20,
+                              )
                             ],
                           )
                         ],
                       ),
-                      GestureDetector(
-                        onTap: () {},
-                        child: const Icon(Icons.edit),
-                      )
                     ],
                   ),
-                  Container(
-                      margin: const EdgeInsets.all(10),
-                      width: 400,
-                      child: const Text(
-                        "Looking for the legit dreamers to pursue it.",
-                        style: TextStyle(
-                          color: Colors.black87,
-                          letterSpacing: 1.5,
-                          fontSize: 14,
-                        ),
-                      ))
+                  const Text(
+                    "Looking for the legit dreamers to pursue it.",
+                    style: TextStyle(
+                      color: Colors.black54,
+                      fontSize: 14,
+                    ),
+                  )
                 ],
               ),
             ),
+            const SizedBox(height: 15),
             Container(
               padding: const EdgeInsets.only(top: 0),
               width: double.infinity,
               decoration: const BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.only(topLeft: Radius.circular(40), topRight: Radius.circular(40)),
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(40),
+                    topRight: Radius.circular(40)),
               ),
-              child: ListView(physics: const BouncingScrollPhysics(), shrinkWrap: true, children: [
-                MyProileTile(
-                  title: "Mobile",
-                  icon: Icons.phone_android,
-                  onTap: () {},
-                  data: "98236504841",
-                ),
-                MyProileTile(
-                  title: "Address",
-                  icon: Icons.location_pin,
-                  onTap: () {},
-                  data: "Bhakhatapur, Kathmandu",
-                ),
-                MyProileTile(
-                  title: "Payment Option",
-                  icon: CupertinoIcons.creditcard_fill,
-                  onTap: () {},
-                  data: "Connect IPS 9861****",
-                ),
-                MyProileTile(
-                  title: "Investment History",
-                  icon: CupertinoIcons.square_list_fill,
-                  onTap: () {},
-                  data: "",
-                ),
-                MyProileTile(
-                  title: "Forgot Password",
-                  icon: CupertinoIcons.lock_fill,
-                  onTap: () {},
-                  data: "",
-                ),
-              ]),
+              child: ListView(
+                  physics: const BouncingScrollPhysics(),
+                  shrinkWrap: true,
+                  children: [
+                    MyProileTile(
+                      title: "Mobile",
+                      icon: Icons.phone_android,
+                      onTap: () {},
+                      data: "98236504841",
+                    ),
+                    MyProileTile(
+                      title: "Address",
+                      icon: Icons.location_pin,
+                      onTap: () {},
+                      data: "Lokanthali, Kathmandu",
+                    ),
+                    MyProileTile(
+                      title: "Payment Option",
+                      icon: CupertinoIcons.creditcard_fill,
+                      onTap: () {},
+                      data: "Connect IPS 9861****",
+                    ),
+                    MyProileTile(
+                      title: "Investment History",
+                      icon: CupertinoIcons.square_list_fill,
+                      onTap: () {},
+                      data: "",
+                    ),
+                    MyProileTile(
+                      title: "Forgot Password",
+                      icon: CupertinoIcons.lock_fill,
+                      onTap: () {},
+                      data: "",
+                    ),
+                  ]),
             )
           ],
         ),

@@ -28,7 +28,10 @@ class StartupCard extends StatelessWidget {
       child: Container(
         width: 280,
         decoration: BoxDecoration(
-            color: Colors.green, image: DecorationImage(image: NetworkImage(image), fit: BoxFit.cover), borderRadius: BorderRadius.circular(20)),
+          color: Colors.grey,
+          image: DecorationImage(image: NetworkImage(image), fit: BoxFit.cover),
+          borderRadius: BorderRadius.circular(20),
+        ),
         child: Container(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
@@ -52,7 +55,10 @@ class StartupCard extends StatelessWidget {
                     ),
                     Text(
                       "Rs ${money.toString()}",
-                      style: const TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w500),
+                      style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500),
                     ),
                   ],
                 ),
@@ -61,7 +67,9 @@ class StartupCard extends StatelessWidget {
                 height: 50,
                 decoration: BoxDecoration(
                     color: Colors.black.withOpacity(0.7),
-                    borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(20), bottomRight: Radius.circular(20))),
+                    borderRadius: const BorderRadius.only(
+                        bottomLeft: Radius.circular(20),
+                        bottomRight: Radius.circular(20))),
                 padding: const EdgeInsets.all(10),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -78,7 +86,8 @@ class StartupCard extends StatelessWidget {
                         ),
                         Text(
                           operating_yrs,
-                          style: const TextStyle(color: Colors.white, fontSize: 14),
+                          style: const TextStyle(
+                              color: Colors.white, fontSize: 14),
                         )
                       ],
                     )
