@@ -6,13 +6,13 @@ import 'package:sahakosh/widgets/chat_ui/ConversationList.dart';
 class StartupChatListScreen extends StatelessWidget {
   List<ChatUsers> chatUsers = [
     ChatUsers(
-        text: "Subina Shrestha",
-        secondaryText: "Naamche Tech",
+        text: "Aayush Gelal",
+        secondaryText: "Sahakosh",
         image:
-            "https://www.mayoclinic.org/-/media/kcms/employees/2020/06/02/15/25/patress-persons-15375439.jpg",
+            "https://avatars.githubusercontent.com/u/69633391?s=400&u=08d255a98f3c223ea69fcd8dff3f0b53d0d744f4&v=4",
         time: "Now"),
     ChatUsers(
-        text: "Ritesh Poudel",
+        text: "Subarna Phuyal",
         secondaryText: "Digital Innovators",
         image: "https://avatars.githubusercontent.com/u/82575511?v=4",
         time: "Yesterday"),

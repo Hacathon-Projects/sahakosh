@@ -81,6 +81,10 @@ class _StartupChatScreenState extends State<StartupChatScreen> {
                   width: 15,
                 ),
                 GestureDetector(
+                  child: Icon(
+                    CupertinoIcons.calendar,
+                    color: Colors.white,
+                  ),
                   onTap: () => Navigator.push(
                       context,
                       MaterialPageRoute(
