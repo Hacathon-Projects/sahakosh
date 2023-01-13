@@ -40,24 +40,16 @@ class StartupNotificationPage extends StatelessWidget {
                                   child: Card(
                                     color: Colors.grey[200],
                                     elevation: 0,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(15),
-                                    ),
+                                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
                                     child: Align(
                                       alignment: Alignment.center,
                                       child: ListTile(
                                         leading: const CircleAvatar(
-                                          backgroundImage:
-                                              AssetImage("assets/logo.png"),
+                                          backgroundImage: AssetImage("assets/logo.png"),
                                         ),
-                                        title: Text(items[index].notification!,
-                                            style: const TextStyle(
-                                                fontWeight: FontWeight.w500,
-                                                fontSize: 13)),
+                                        title: Text(items[index].notification!, style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 15)),
                                         minVerticalPadding: 5,
-                                        subtitle: Text(items[index].time!,
-                                            style:
-                                                const TextStyle(fontSize: 13)),
+                                        subtitle: Text(items[index].time!, style: const TextStyle(fontSize: 14)),
                                         onTap: () {},
                                       ),
                                     ),

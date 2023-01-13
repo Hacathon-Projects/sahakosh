@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sahakosh/core/chat_ui/chatlistscreen.dart';
+import 'package:sahakosh/core/chat_ui/startup/startup-chatlistscreen.dart';
 import 'package:sahakosh/startup_ui/domain/startupmodel.dart';
 import 'package:sahakosh/widgets/primary_button.dart';
 
@@ -16,7 +16,7 @@ class ProposalPage extends StatelessWidget {
           elevation: 0,
         ),
         body: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           child: Padding(
             padding: const EdgeInsets.all(5),
             child:
@@ -180,8 +180,9 @@ class ProposalPage extends StatelessWidget {
                   child: PrimaryButton(
                       text: 'Send Proposal',
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) {
-                          return ChatListScreen();
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return StartupChatListScreen();
                         }));
                       })),
             ]),
