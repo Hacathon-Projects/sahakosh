@@ -248,7 +248,7 @@ class StartupDetails extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20.0),
                   image: DecorationImage(
                       image: NetworkImage(startup.personalDetails!.photo ?? ""),
-                      fit: BoxFit.fill),
+                      fit: BoxFit.cover),
                 ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10.0),
