@@ -3,6 +3,7 @@ import 'package:sahakosh/core/profile_ui/investor_profile.dart';
 import 'package:sahakosh/core/profile_ui/startup_profile.dart';
 import 'package:sahakosh/investor_ui/presentation/inverstor_home.dart';
 import 'package:sahakosh/models/investor.dart';
+import 'package:sahakosh/portfolio_ui/presentation/portfolio_screen.dart';
 import 'package:sahakosh/startup_ui/presentation/startuphome/startuphome.dart';
 
 int _selectedIndex = 0;
@@ -54,22 +55,26 @@ class _HomeScreenState extends State<HomeScreen> {
             ? widget.isStartup
                 ? const StartupHomeScreen()
                 : const InvestorHomeScreen()
-            : widget.isStartup
-                ? const StartupProfileScreen()
+            : _selectedIndex == 1
+                ? widget.isStartup
+                    ? const StartupProfileScreen()
+                    : const PortfolioManagementScreen()
                 : const InvestorProfileScreen(),
 
         //    Bottom Navbar   //
         bottomNavigationBar: BottomNavigationBar(
           selectedItemColor: Colors.blue[800],
-          items: const [
-            // Ld
-            BottomNavigationBarItem(
+          items: [
+            const BottomNavigationBarItem(
               icon: Icon(Icons.home_rounded),
               label: 'Home',
             ),
-
-            // Other Apps
-            BottomNavigationBarItem(
+            if (!widget.isStartup)
+              const BottomNavigationBarItem(
+                icon: Icon(Icons.copy_all_rounded),
+                label: 'Portfolio',
+              ),
+            const BottomNavigationBarItem(
               icon: Icon(Icons.person_rounded),
               label: 'Profile',
             )

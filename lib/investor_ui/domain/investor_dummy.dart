@@ -102,7 +102,7 @@ var investorDummy2 = [
     amountWithdrawn: true,
     category: "Tech",
     createdOn: "yesterday",
-    equity: 10000,
+    equity: "5%",
     long_description:
         "This is a long description of how it looks where there are many things",
     operating_yrs: "3 years",
@@ -120,7 +120,7 @@ var investorDummy2 = [
     amountWithdrawn: true,
     category: "Tech",
     createdOn: "yesterday",
-    equity: 10000,
+    equity: "5%",
     long_description:
         "This is a long description of how it looks where there are many things",
     operating_yrs: "3 years",
@@ -138,7 +138,7 @@ var investorDummy2 = [
       amountWithdrawn: true,
       category: "Tech",
       createdOn: "yesterday",
-      equity: 10000,
+      equity: "5%",
       long_description:
           "Using AI and automation to improve the production of chemicals and materials.",
       operating_yrs: "4 years",
@@ -155,7 +155,7 @@ var investorDummy2 = [
     amountWithdrawn: true,
     category: "Tech",
     createdOn: "yesterday",
-    equity: 10000,
+    equity: "5%",
     long_description:
         "Utilizing natural language processing and machine learning to provide financial data analytics",
     operating_yrs: "2 years",
@@ -173,7 +173,7 @@ var investorDummy2 = [
     amountWithdrawn: true,
     category: "Tech",
     createdOn: "yesterday",
-    equity: 10000,
+    equity: "5%",
     long_description:
         "This is a long description of how it looks where there are many things",
     operating_yrs: "3 years",
@@ -194,7 +194,7 @@ var investorDummy3 = [
     amountWithdrawn: true,
     category: "Tech",
     createdOn: "yesterday",
-    equity: 10000,
+    equity: "5%",
     long_description:
         "Utilizing natural language processing and machine learning to provide financial data analytics",
     operating_yrs: "2 years",
@@ -212,7 +212,7 @@ var investorDummy3 = [
       amountWithdrawn: true,
       category: "Tech",
       createdOn: "yesterday",
-      equity: 10000,
+      equity: "5%",
       long_description:
           "Using AI and automation to improve the production of chemicals and materials.",
       operating_yrs: "4 years",
@@ -229,7 +229,7 @@ var investorDummy3 = [
     amountWithdrawn: true,
     category: "Tech",
     createdOn: "yesterday",
-    equity: 10000,
+    equity: "5%",
     long_description:
         "This is a long description of how it looks where there are many things",
     operating_yrs: "3 years",
@@ -247,7 +247,7 @@ var investorDummy3 = [
     amountWithdrawn: true,
     category: "Tech",
     createdOn: "yesterday",
-    equity: 10000,
+    equity: "5%",
     long_description:
         "This is a long description of how it looks where there are many things",
     operating_yrs: "3 years",
@@ -265,7 +265,7 @@ var investorDummy3 = [
     amountWithdrawn: true,
     category: "Tech",
     createdOn: "yesterday",
-    equity: 10000,
+    equity: "5%",
     long_description:
         "This is a long description of how it looks where there are many things",
     operating_yrs: "3 years",
