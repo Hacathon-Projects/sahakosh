@@ -89,7 +89,7 @@ class StartupCard extends StatelessWidget {
       ),
       decoration: BoxDecoration(
           color: Colors.green,
-          image: DecorationImage(image: AssetImage(image)),
+          image: DecorationImage(image: NetworkImage(image), fit: BoxFit.cover),
           borderRadius: BorderRadius.circular(20)),
     );
   }

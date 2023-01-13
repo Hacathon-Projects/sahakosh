@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
+import 'package:sahakosh/investor_ui/domain/investor_model.dart';
 import 'package:sahakosh/widgets/investor_ui/collab_details.dart';
 import 'package:sahakosh/widgets/investor_ui/invest_tab.dart';
 import 'package:sahakosh/widgets/investor_ui/investor_button.dart';
 import 'package:sahakosh/widgets/investor_ui/startup_details.dart';
 
 class InvestDetail extends StatefulWidget {
-  const InvestDetail({super.key});
+  final InvestorModel item;
+  const InvestDetail({super.key, required this.item});
 
   @override
   State<InvestDetail> createState() => _InvestDetailState();
@@ -37,8 +39,7 @@ class _InvestDetailState extends State<InvestDetail>
       Positioned(
         height: 250,
         child: Image(
-          image: NetworkImage(
-              "https://media.geeksforgeeks.org/wp-content/uploads/20210101144014/gfglogo.png"),
+          image: NetworkImage(widget.item.image),
           fit: BoxFit.cover,
           height: 250,
           width: MediaQuery.of(context).size.width,
@@ -66,14 +67,14 @@ class _InvestDetailState extends State<InvestDetail>
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Geeks for Geeks',
+                      widget.item.name,
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     Text(
-                      "Fintech",
+                      widget.item.category,
                       style: TextStyle(
                         fontSize: 15,
                         color: Theme.of(context).primaryColor,
@@ -94,7 +95,7 @@ class _InvestDetailState extends State<InvestDetail>
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    Text("Rs 50000",
+                    Text(widget.item.target.toString(),
                         style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
@@ -110,10 +111,9 @@ class _InvestDetailState extends State<InvestDetail>
                     animation: true,
                     lineHeight: 18.0,
                     animationDuration: 1000,
-                    percent: ((double.parse('10000') *
-                            100 /
-                            double.parse('100000')) /
-                        100),
+                    percent:
+                        ((widget.item.target * 100 / widget.item.valuation) /
+                            100),
                     linearStrokeCap: LinearStrokeCap.roundAll,
                     progressColor: Theme.of(context).primaryColor,
                   ),
@@ -167,17 +167,14 @@ class _InvestDetailState extends State<InvestDetail>
                     controller: _tabController,
                     children: [
                       InvestTab(
-                        description:
-                            'Our aim is to build the fastest production electric cardshfma',
-                        valuation: 400000,
+                        description: widget.item.long_description,
+                        valuation: widget.item.valuation,
                       ),
-                      InvestTab(
-                        description:
-                            'Our aim is to build the fastest production electric cardshfma',
-                        valuation: 400000,
-                      ),
+                      Text("Files"),
                       CollabDetails(),
-                      StartupDetails()
+                      StartupDetails(
+                        owner: widget.item.owner,
+                      )
                     ],
                   ),
                 ),
