@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sahakosh/core/routes/routes_constant.dart';
-import 'package:sahakosh/notification_ui/startup/presentation/startup_notification_page.dart';
 import 'package:sahakosh/startup_ui/application/startup_service.dart';
 import 'package:sahakosh/startup_ui/domain/startupmodel.dart';
+import 'package:sahakosh/widgets/drawer.dart';
 
 import 'startupdetails.dart';
 
@@ -12,8 +12,7 @@ class StartupHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      drawer: const Drawer(),
+      drawer: const SideMenu(),
       appBar: AppBar(
         backgroundColor: Colors.blue[800],
         title: const Text("Sahakosh Investors"),
@@ -22,7 +21,9 @@ class StartupHomeScreen extends StatelessWidget {
           IconButton(
               icon: const Icon(Icons.logout),
               onPressed: () {
-                Navigator.pop(context);
+                Navigator.of(context).pushNamedAndRemoveUntil(
+                    RouteConstant.landingScreen,
+                    (Route<dynamic> route) => false);
               }),
           IconButton(
               icon: const Icon(Icons.notifications),
@@ -31,6 +32,7 @@ class StartupHomeScreen extends StatelessWidget {
         ],
       ),
       body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         child: Padding(
           padding: const EdgeInsets.all(3.0),
           child: Column(
@@ -54,7 +56,7 @@ class StartupHomeScreen extends StatelessWidget {
                       } else if (data.hasData) {
                         var items = data.data as List<StartupModel>;
                         return ListView.builder(
-                            physics: const AlwaysScrollableScrollPhysics(),
+                            physics: BouncingScrollPhysics(),
                             shrinkWrap: true,
                             scrollDirection: Axis.horizontal,
                             // ignore: unnecessary_null_comparison
@@ -104,18 +106,19 @@ class StartupHomeScreen extends StatelessWidget {
                                                                 Radius.circular(
                                                                     20)),
                                                   ),
-                                                  child: const Padding(
-                                                    padding:
-                                                        EdgeInsets.symmetric(
-                                                            horizontal: 12.0,
-                                                            vertical: 3),
-                                                    child: Text("4.8",
-                                                        style: TextStyle(
+                                                  child: Padding(
+                                                    padding: const EdgeInsets
+                                                            .symmetric(
+                                                        horizontal: 12.0,
+                                                        vertical: 3),
+                                                    child: Text(
+                                                        items[index]
+                                                            .rating
+                                                            .toString(),
+                                                        style: const TextStyle(
                                                             color: Colors.white,
                                                             fontWeight:
                                                                 FontWeight.bold,
-                                                            fontFamily:
-                                                                "robotobold",
                                                             fontSize: 13)),
                                                   ))),
                                         ),
@@ -150,15 +153,17 @@ class StartupHomeScreen extends StatelessWidget {
                       } else if (data.hasData) {
                         var items = data.data as List<StartupModel>;
                         return ListView.builder(
-                            physics: const AlwaysScrollableScrollPhysics(),
+                            physics: const BouncingScrollPhysics(),
                             shrinkWrap: true,
                             scrollDirection: Axis.horizontal,
                             // ignore: unnecessary_null_comparison
                             itemCount: items == null ? 0 : items.length,
                             itemBuilder: (context, index) {
+                              index = items.length - index - 1;
                               return Padding(
                                 padding: const EdgeInsets.all(0),
                                 child: SingleChildScrollView(
+                                  physics: const BouncingScrollPhysics(),
                                   child: GestureDetector(
                                       // TODO SEE DETAILS ABOUT STARTUPS
                                       onTap: () async {
@@ -245,7 +250,7 @@ class StartupHomeScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     const Text(
-                      "Startups",
+                      "Investors",
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 20,
@@ -278,6 +283,7 @@ class StartupHomeScreen extends StatelessWidget {
                           itemCount: items == null ? 0 : items.length,
                           itemBuilder: (context, index) {
                             return SingleChildScrollView(
+                              physics: const BouncingScrollPhysics(),
                               child: GestureDetector(
                                 // TODO SEE DETAILS ABOUT STARTUPS
                                 onTap: () async {
@@ -313,12 +319,13 @@ class StartupHomeScreen extends StatelessWidget {
                                                       BorderRadius.circular(
                                                           20.0),
                                                   image: DecorationImage(
-                                                      image: NetworkImage(items[
-                                                                  index]
-                                                              .personalDetails!
-                                                              .photo ??
-                                                          ""),
-                                                      fit: BoxFit.fill),
+                                                    image: NetworkImage(items[
+                                                                index]
+                                                            .personalDetails!
+                                                            .photo ??
+                                                        ""),
+                                                    fit: BoxFit.cover,
+                                                  ),
                                                 ),
                                                 child: ClipRRect(
                                                   borderRadius:

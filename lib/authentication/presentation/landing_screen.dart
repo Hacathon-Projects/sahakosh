@@ -1,4 +1,4 @@
-import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:sahakosh/core/routes/routes_constant.dart';
@@ -19,6 +19,7 @@ class _LandingScreenState extends State<LandingScreen> {
     return Scaffold(
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
           child: Column(
             children: <Widget>[
               Stack(

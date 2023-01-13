@@ -112,6 +112,7 @@ class ChatListScreen extends StatelessWidget {
               physics: NeverScrollableScrollPhysics(),
               itemBuilder: (context, index) {
                 return ConversationList(
+                  type: '',
                   name: chatUsers[index].text,
                   messageText: chatUsers[index].secondaryText,
                   imageUrl: chatUsers[index].image,

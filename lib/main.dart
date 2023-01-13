@@ -1,17 +1,14 @@
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'package:sahakosh/core/routes/route.dart';
-
 import 'core/routes/routes_constant.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp() ; 
+  // await Firebase.initializeApp() ; 
 
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
@@ -29,14 +26,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Sahakosh',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: Colors.blue[800],
         textTheme: GoogleFonts.nunitoTextTheme(),
       ),
       onGenerateRoute: Routes.generateRoute,
-      initialRoute: RouteConstant.landingScreen,
+      initialRoute: RouteConstant.splashScreen,
     );
   }
 }

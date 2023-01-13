@@ -1,187 +1,131 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:sahakosh/core/routes/routes_constant.dart';
 import 'package:sahakosh/widgets/circle_avatar_border.dart';
+import 'package:sahakosh/widgets/drawer.dart';
 import 'package:sahakosh/widgets/my_profile_tile.dart';
 
-class MyProfileInvestor extends StatefulWidget {
-  const MyProfileInvestor({super.key});
+class InvestorProfileScreen extends StatefulWidget {
+  const InvestorProfileScreen({super.key});
 
   @override
-  State<MyProfileInvestor> createState() => _MyProfileInvestorState();
+  State<InvestorProfileScreen> createState() => _InvestorProfileScreenState();
 }
 
-class _MyProfileInvestorState extends State<MyProfileInvestor> {
+class _InvestorProfileScreenState extends State<InvestorProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Stack(
+      drawer: const SideMenu(),
+      appBar: AppBar(
+        backgroundColor: Colors.blue[800],
+        title: const Text("Profile"),
+        elevation: 0,
+        actions: [
+          IconButton(icon: const Icon(Icons.edit), onPressed: () {}),
+          IconButton(
+              icon: const Icon(Icons.logout),
+              onPressed: () {
+                Navigator.of(context).pushNamedAndRemoveUntil(
+                    RouteConstant.landingScreen,
+                    (Route<dynamic> route) => false);
+              }),
+        ],
+      ),
+      body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
+        child: Column(
           children: [
-            Column(
-              children: [
-                Container(
-                  padding: EdgeInsets.all(8),
-                  height: 250,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(20),
-                          bottomRight: Radius.circular(30)),
-                      color: Colors.blue),
-                  alignment: Alignment.topLeft,
-                  child: Row(
+            const SizedBox(height: 15),
+            const CircleAvatarBorder(image: 'assets/images/subarna.png'),
+            SizedBox(
+              width: MediaQuery.of(context).size.width - 30,
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
-                      IconButton(
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                          icon: Icon(
-                            Icons.arrow_back_ios,
-                            size: 30,
-                            color: Colors.white,
-                          ))
-                    ],
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    padding: EdgeInsets.only(top: 50),
-                    child:
-                        ListView(physics: BouncingScrollPhysics(), children: [
-                      MyProileTile(
-                        title: "Mobile",
-                        icon: Icons.phone_android,
-                        onTap: () {},
-                        data: "9861487591",
-                      ),
-                      MyProileTile(
-                        title: "Address",
-                        icon: Icons.location_pin,
-                        onTap: () {},
-                        data: "Gelal Gaun, Changunarayan",
-                      ),
-                      MyProileTile(
-                        title: "Payment Option",
-                        icon: CupertinoIcons.creditcard_fill,
-                        onTap: () {},
-                        data: "Esewa 9861****",
-                      ),
-                      MyProileTile(
-                        title: "Investment History",
-                        icon: CupertinoIcons.square_list_fill,
-                        onTap: () {},
-                        data: "",
-                      ),
-                      MyProileTile(
-                        title: "Forgot Password",
-                        icon: CupertinoIcons.lock_fill,
-                        onTap: () {},
-                        data: "",
-                      ),
-                    ]),
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(40),
-                          topRight: Radius.circular(40)),
-                    ),
-                  ),
-                )
-              ],
-            ),
-            Positioned(
-                top: 70,
-                left: 20,
-                child: SizedBox(
-                  width: MediaQuery.of(context).size.width - 30,
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      const SizedBox(width: 10),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          CircleAvatarBorder(),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Container(
-                                    child: Text(
-                                      'Aayush Gelal',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w600,
-                                          letterSpacing: 1,
-                                          fontSize: 21),
-                                    ),
-                                  ),
-                                  Icon(
-                                    Icons.star,
-                                    color: Colors.yellow,
-                                  )
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  Text(
-                                    "2",
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 24),
-                                  ),
-                                  SizedBox(
-                                    width: 5,
-                                  ),
-                                  Text("Followers",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w400,
-                                          letterSpacing: 1,
-                                          fontSize: 14)),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Text(
-                                    "5",
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 24),
-                                  ),
-                                  SizedBox(
-                                    width: 5,
-                                  ),
-                                  Text("Following",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w400,
-                                          letterSpacing: 1,
-                                          fontSize: 14))
-                                ],
-                              ),
+                          const SizedBox(height: 5),
+                          Row(
+                            children: const [
+                              Text("Subarna Poudel",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 22,
+                                  )),
+                              SizedBox(width: 10),
+                              Text('4'),
+                              Icon(
+                                Icons.star,
+                                color: Colors.amberAccent,
+                                size: 20,
+                              )
                             ],
-                          ),
-                          FloatingActionButton(
-                            backgroundColor: Color.fromARGB(255, 80, 79, 79),
-                            onPressed: () {},
-                            child: Icon(Icons.edit),
                           )
                         ],
                       ),
-                      Container(
-                          margin: EdgeInsets.all(10),
-                          width: 300,
-                          child: Text(
-                            "The new age business tycoon with over 50 business and founder of Sahakosh",
-                            style: TextStyle(
-                              color: Color.fromARGB(218, 255, 255, 255),
-                              fontSize: 14,
-                            ),
-                          ))
                     ],
                   ),
-                )),
+                  const Text(
+                    "Looking for the legit dreamers to pursue it.",
+                    style: TextStyle(
+                      color: Colors.black54,
+                      fontSize: 14,
+                    ),
+                  )
+                ],
+              ),
+            ),
+            const SizedBox(height: 15),
+            Container(
+              padding: const EdgeInsets.only(top: 0),
+              width: double.infinity,
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(40),
+                    topRight: Radius.circular(40)),
+              ),
+              child: ListView(
+                  physics: const BouncingScrollPhysics(),
+                  shrinkWrap: true,
+                  children: [
+                    MyProileTile(
+                      title: "Mobile",
+                      icon: Icons.phone_android,
+                      onTap: () {},
+                      data: "98236504841",
+                    ),
+                    MyProileTile(
+                      title: "Address",
+                      icon: Icons.location_pin,
+                      onTap: () {},
+                      data: "Lokanthali, Kathmandu",
+                    ),
+                    MyProileTile(
+                      title: "Payment Option",
+                      icon: CupertinoIcons.creditcard_fill,
+                      onTap: () {},
+                      data: "Connect IPS 9861****",
+                    ),
+                    MyProileTile(
+                      title: "Investment History",
+                      icon: CupertinoIcons.square_list_fill,
+                      onTap: () {},
+                      data: "",
+                    ),
+                    MyProileTile(
+                      title: "Forgot Password",
+                      icon: CupertinoIcons.lock_fill,
+                      onTap: () {},
+                      data: "",
+                    ),
+                  ]),
+            )
           ],
         ),
       ),

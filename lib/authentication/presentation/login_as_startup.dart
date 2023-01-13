@@ -41,13 +41,15 @@ class _LoginAsStartupScreenState extends State<LoginAsStartupScreen> {
               MyTextField(controller: _emailController, hintText: 'Email'),
               const SizedBox(height: 30),
               MyTextField(
-                  controller: _passwordController, hintText: 'Password'),
+                  controller: _passwordController,
+                  isObscure: true,
+                  hintText: 'Password'),
               const Spacer(flex: 1),
               PrimaryButton(
                 text: 'Let\'s Go',
                 onTap: () => Navigator.of(context).pushNamedAndRemoveUntil(
-                    RouteConstant.startupHomeScreen,
-                    (Route<dynamic> route) => false),
+                    RouteConstant.homeRoute, (Route<dynamic> route) => false,
+                    arguments: true),
               ),
               const SizedBox(
                 height: 70,

@@ -3,6 +3,7 @@ import 'package:sahakosh/authentication/presentation/create_account_screen.dart'
 import 'package:sahakosh/authentication/presentation/landing_screen.dart';
 import 'package:sahakosh/core/routes/404.dart';
 import 'package:sahakosh/core/routes/routes_constant.dart';
+import 'package:sahakosh/home_ui/home_screen.dart';
 import 'package:sahakosh/investor_ui/presentation/inverstor_home.dart';
 // import 'package:sahakosh/investor_ui/presentation/investor_notification.dart';
 import 'package:sahakosh/investor_ui/presentation/step_1.dart';
@@ -10,6 +11,7 @@ import 'package:sahakosh/investor_ui/presentation/step_2.dart';
 import 'package:sahakosh/notification_ui/investor/presentation/investor_notification_page.dart';
 import 'package:sahakosh/notification_ui/startup/presentation/startup_notification_page.dart';
 import 'package:sahakosh/portfolio_ui/presentation/portfolio_screen.dart';
+import 'package:sahakosh/splash_screen.dart';
 import 'package:sahakosh/startup_ui/presentation/startuphome/startuphome.dart';
 import 'package:sahakosh/startup_ui/presentation/step_1.dart';
 import 'package:sahakosh/startup_ui/presentation/step_2.dart';
@@ -22,11 +24,19 @@ class Routes {
   static Route<dynamic> generateRoute(RouteSettings routeSettings) {
     final arguments = routeSettings.arguments;
     switch (routeSettings.name) {
+      case RouteConstant.splashScreen:
+        return MaterialPageRoute(builder: (context) => const SplashScreen());
       case RouteConstant.landingScreen:
         return MaterialPageRoute(builder: (context) => const LandingScreen());
       case RouteConstant.createAccountScreen:
         return MaterialPageRoute(
             builder: (context) => const CreateAccountScreen());
+      case RouteConstant.homeRoute:
+        final args = arguments as bool;
+        return MaterialPageRoute(
+            builder: (context) => HomeScreen(
+                  isStartup: args,
+                ));
 
       // Investor auth
       case RouteConstant.investorLoginRoute:
