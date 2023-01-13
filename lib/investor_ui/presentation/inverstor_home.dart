@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sahakosh/core/routes/routes_constant.dart';
 import 'package:sahakosh/investor_ui/domain/investor_dummy.dart';
+import 'package:sahakosh/widgets/drawer.dart';
 import 'package:sahakosh/widgets/investor_ui/startup_card.dart';
 
 class InvestorHomeScreen extends StatelessWidget {
@@ -9,7 +10,7 @@ class InvestorHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const Drawer(),
+      drawer: const SideMenu(),
       appBar: AppBar(
         backgroundColor: Colors.blue[800],
         title: const Text("Sahakosh Startups"),
