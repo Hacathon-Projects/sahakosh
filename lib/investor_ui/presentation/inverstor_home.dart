@@ -20,7 +20,7 @@ class InvestorHomeScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context).pushNamedAndRemoveUntil(RouteConstant.landingScreen, (Route<dynamic> route) => false);
               }),
-          IconButton(icon: const Icon(Icons.notifications), onPressed: () => Navigator.of(context).pushNamed(RouteConstant.investorNotificationPage)),
+          IconButton(icon: const Icon(Icons.notifications), onPressed: () => Navigator.of(context).pushNamed(RouteConstant.startupNotificationPage)),
         ],
       ),
       body: SingleChildScrollView(
@@ -110,7 +110,7 @@ class InvestorHomeScreen extends StatelessWidget {
                             width: 15,
                           ),
                       itemBuilder: (context, index) => StartupCard(
-                            item: investorDummy1[index],
+                            item: investorDummy3[index],
                             image: investorDummy3[index].image,
                             category: investorDummy3[index].category,
                             money: investorDummy3[index].target,

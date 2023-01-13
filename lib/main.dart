@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'package:sahakosh/core/routes/route.dart';
-import 'package:sahakosh/models/investor.dart';
-
 import 'core/routes/routes_constant.dart';
 
 void main() async {
@@ -29,14 +25,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Sahakosh',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: Colors.blue[800],
         textTheme: GoogleFonts.nunitoTextTheme(),
       ),
       onGenerateRoute: Routes.generateRoute,
-      initialRoute: RouteConstant.landingScreen,
+      initialRoute: RouteConstant.splashScreen,
     );
   }
 }

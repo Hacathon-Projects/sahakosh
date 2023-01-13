@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 class CircleAvatarBorder extends StatelessWidget {
-  const CircleAvatarBorder({super.key});
+  final String image;
+  const CircleAvatarBorder({super.key, required this.image});
 
   @override
   Widget build(BuildContext context) {
-    return const CircleAvatar(
+    return CircleAvatar(
       radius: 70,
       backgroundColor: Colors.blueGrey,
-      child: CircleAvatar(
-          radius: 67, backgroundImage: AssetImage('assets/images/subarna.png')),
+      child: CircleAvatar(radius: 67, backgroundImage: AssetImage(image)),
     );
   }
 }
