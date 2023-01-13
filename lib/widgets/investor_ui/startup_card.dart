@@ -1,11 +1,4 @@
-import 'dart:ffi';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:sahakosh/investor_ui/presentation/detail_invest.dart';
-import 'package:sahakosh/widgets/investor_ui/investor_button.dart';
 
 class StartupCard extends StatelessWidget {
   var title;
@@ -25,14 +18,8 @@ class StartupCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 300,
+      width: 280,
       child: Container(
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            gradient: LinearGradient(colors: [
-              Colors.blue.shade900.withOpacity(0.5),
-              Theme.of(context).backgroundColor.withOpacity(0.5)
-            ])),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -54,17 +41,19 @@ class StartupCard extends StatelessWidget {
                   ),
                 ],
               ),
-              height: 40,
+              height: 35,
               width: 130,
               decoration: BoxDecoration(
-                  color: Theme.of(context).backgroundColor,
-                  borderRadius:
-                      BorderRadius.only(topRight: Radius.circular(20))),
+                  color: Colors.blue,
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(20),
+                    bottomLeft: Radius.circular(7),
+                  )),
             ),
             Container(
               height: 50,
               decoration: BoxDecoration(
-                  color: Colors.black.withAlpha(700),
+                  color: Colors.black.withOpacity(0.7),
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(20),
                       bottomRight: Radius.circular(20))),

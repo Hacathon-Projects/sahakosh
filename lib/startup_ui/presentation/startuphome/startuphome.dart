@@ -11,7 +11,6 @@ class StartupHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       drawer: const Drawer(),
       appBar: AppBar(
         backgroundColor: Colors.blue[800],

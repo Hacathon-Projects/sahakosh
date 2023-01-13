@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class InvestorModel {
   final String name;
   final String owner;
@@ -8,12 +6,13 @@ class InvestorModel {
   final String long_description;
   final String createdOn;
   final int target;
-  final double equity;
+  var equity;
   final String address;
   final String category;
   final bool targetReached;
   final bool amountWithdrawn;
   final double valuation;
+  var raisingAmount;
 
   InvestorModel(
       {required this.name,
@@ -28,5 +27,6 @@ class InvestorModel {
       required this.operating_yrs,
       required this.target,
       required this.targetReached,
-      required this.valuation});
+      required this.valuation,
+      required this.raisingAmount});
 }

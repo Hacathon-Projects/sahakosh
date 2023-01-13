@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:sahakosh/core/profile_ui/investor_profile.dart';
+import 'package:sahakosh/core/profile_ui/startup_profile.dart';
 import 'package:sahakosh/investor_ui/presentation/inverstor_home.dart';
+import 'package:sahakosh/models/investor.dart';
 import 'package:sahakosh/startup_ui/presentation/startuphome/startuphome.dart';
 
 int _selectedIndex = 0;
@@ -52,8 +55,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 ? const StartupHomeScreen()
                 : const InvestorHomeScreen()
             : widget.isStartup
-                ? const StartupHomeScreen()
-                : const InvestorHomeScreen(),
+                ? const StartupProfileScreen()
+                : const InvestorProfileScreen(),
 
         //    Bottom Navbar   //
         bottomNavigationBar: BottomNavigationBar(
