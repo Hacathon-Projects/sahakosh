@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sahakosh/core/chat_ui/chatpage.dart';
+import 'package:sahakosh/core/chat_ui/startup/startup-chatpage.dart';
 
 class ConversationList extends StatefulWidget {
   String name;
@@ -8,7 +8,8 @@ class ConversationList extends StatefulWidget {
   String time;
   bool isMessageRead;
   ConversationList(
-      {super.key, required this.name,
+      {super.key,
+      required this.name,
       required this.messageText,
       required this.imageUrl,
       required this.time,
@@ -23,11 +24,12 @@ class _ConversationListState extends State<ConversationList> {
     return GestureDetector(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return const ChatPage();
+          return const StartupChatScreen();
         }));
       },
       child: Container(
-        padding: const EdgeInsets.only(left: 16, right: 16, top: 10, bottom: 10),
+        padding:
+            const EdgeInsets.only(left: 16, right: 16, top: 10, bottom: 10),
         child: Row(
           children: <Widget>[
             Expanded(
