@@ -16,7 +16,8 @@ class InvestDetail extends StatefulWidget {
   State<InvestDetail> createState() => _InvestDetailState();
 }
 
-class _InvestDetailState extends State<InvestDetail> with TickerProviderStateMixin {
+class _InvestDetailState extends State<InvestDetail>
+    with TickerProviderStateMixin {
   late TabController _tabController;
 
   @override
@@ -82,7 +83,8 @@ class _InvestDetailState extends State<InvestDetail> with TickerProviderStateMix
                   children: [
                     Text(
                       widget.item.name,
-                      style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      style: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                     Text(
                       widget.item.category,
@@ -122,7 +124,9 @@ class _InvestDetailState extends State<InvestDetail> with TickerProviderStateMix
                     animation: true,
                     lineHeight: 18.0,
                     animationDuration: 1000,
-                    percent: ((widget.item.target * 100 / widget.item.valuation) / 100),
+                    percent:
+                        ((widget.item.target * 100 / widget.item.valuation) /
+                            100),
                     progressColor: Theme.of(context).primaryColor,
                   ),
                 ),
@@ -171,13 +175,19 @@ class _InvestDetailState extends State<InvestDetail> with TickerProviderStateMix
                   height: 400,
                   child: TabBarView(
                     controller: _tabController,
-                    children: [InvestTab(item: widget.item), const Text("Files"), const CollabDetails(), StartupDetails(owner: widget.item.owner)],
+                    children: [
+                      InvestTab(item: widget.item),
+                      const Text("Nothing !!"),
+                      const CollabDetails(),
+                      StartupDetails(owner: widget.item.owner),
+                    ],
                   ),
                 ),
                 PrimaryButton(
                     text: 'Invest',
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
                         return InvestorPage(
                           startup: widget.item,
                         );

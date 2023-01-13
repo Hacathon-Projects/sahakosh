@@ -28,11 +28,11 @@ class _ConversationListState extends State<ConversationList> {
       onTap: () {
         if (widget.type == "startup") {
           Navigator.push(context, MaterialPageRoute(builder: (context) {
-            return const StartupChatScreen();
+            return const InvestorChatScreen();
           }));
         } else {
           Navigator.push(context, MaterialPageRoute(builder: (context) {
-            return const InvestorChatScreen();
+            return const StartupChatScreen();
           }));
         }
       },

@@ -46,7 +46,7 @@ class _StartupChatScreenState extends State<StartupChatScreen> {
                 ),
                 const CircleAvatar(
                     backgroundImage: NetworkImage(
-                        "https://randomuser.me/api/portraits/men/5.jpg"),
+                        "https://avatars.githubusercontent.com/u/69633391?s=400&u=08d255a98f3c223ea69fcd8dff3f0b53d0d744f4&v=4"),
                     maxRadius: 20),
                 const SizedBox(width: 12),
                 Expanded(
@@ -55,7 +55,7 @@ class _StartupChatScreenState extends State<StartupChatScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: const <Widget>[
                       Text(
-                        "Kriss Benwat",
+                        "Aayush Gelal",
                         style: TextStyle(
                             fontSize: 16,
                             color: Colors.white,

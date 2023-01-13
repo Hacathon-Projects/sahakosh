@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sahakosh/core/routes/routes_constant.dart';
 import 'package:sahakosh/widgets/circle_avatar_border.dart';
+import 'package:sahakosh/widgets/drawer.dart';
 import 'package:sahakosh/widgets/my_profile_tile.dart';
 
 class InvestorProfileScreen extends StatefulWidget {
@@ -15,7 +16,7 @@ class _InvestorProfileScreenState extends State<InvestorProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const Drawer(),
+      drawer: const SideMenu(),
       appBar: AppBar(
         backgroundColor: Colors.blue[800],
         title: const Text("Profile"),

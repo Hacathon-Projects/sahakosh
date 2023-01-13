@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sahakosh/core/routes/routes_constant.dart';
+import 'package:sahakosh/widgets/drawer.dart';
 
 class LaterScreen extends StatelessWidget {
   const LaterScreen({Key? key}) : super(key: key);
@@ -7,7 +8,7 @@ class LaterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: const Drawer(),
+        drawer: const SideMenu(),
         appBar: AppBar(
           backgroundColor: Colors.blue[800],
           title: const Text("Investment Portfolio"),

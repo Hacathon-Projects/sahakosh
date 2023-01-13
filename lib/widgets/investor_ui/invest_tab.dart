@@ -14,10 +14,13 @@ class InvestTab extends StatelessWidget {
         padding: const EdgeInsets.all(4),
         child: Column(
           children: [
-            Text(item.long_description.toString()),
+            Text(
+              item.long_description.toString(),
+              style: const TextStyle(fontSize: 16),
+            ),
             const SizedBox(height: 10),
             const Divider(height: 1),
-            const SizedBox(height: 10),
+            const SizedBox(height: 15),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -89,7 +92,7 @@ class InvestTab extends StatelessWidget {
                         fontSize: 16, fontWeight: FontWeight.bold))
               ],
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 15),
             const Divider(height: 1),
           ],
         ),

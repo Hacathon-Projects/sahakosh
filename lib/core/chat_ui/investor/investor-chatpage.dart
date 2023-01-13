@@ -46,7 +46,7 @@ class _InvestorChatScreenState extends State<InvestorChatScreen> {
                 ),
                 const CircleAvatar(
                     backgroundImage: NetworkImage(
-                        "https://randomuser.me/api/portraits/men/5.jpg"),
+                        "https://www.mayoclinic.org/-/media/kcms/employees/2020/06/02/15/25/patress-persons-15375439.jpg"),
                     maxRadius: 20),
                 const SizedBox(width: 12),
                 Expanded(
@@ -55,7 +55,7 @@ class _InvestorChatScreenState extends State<InvestorChatScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: const <Widget>[
                       Text(
-                        "Kriss Benwat",
+                        "Subina Shrestha",
                         style: TextStyle(
                             fontSize: 16,
                             color: Colors.white,

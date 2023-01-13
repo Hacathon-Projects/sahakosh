@@ -11,30 +11,31 @@ class ScheduleMeetingPage extends StatefulWidget {
 class _ScheduleMeetingPageState extends State<ScheduleMeetingPage> {
   final List<Meeting> _meetings = <Meeting>[];
   final TextEditingController _eventNameController = TextEditingController();
-  final TextEditingController _eventDescriptionController = TextEditingController();
+  final TextEditingController _eventDescriptionController =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.blue[800],
+        title: const Text("Schedule Meeting"),
+        elevation: 0,
         leading: IconButton(
             icon: const Icon(
               Icons.arrow_back,
-              color: Colors.black87,
+              color: Colors.white,
             ),
             onPressed: () => Navigator.pop(context)),
-        title: const Text(
-          "Schedule Meeting",
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.w600, fontSize: 20),
-        ),
-        backgroundColor: Colors.white,
       ),
       body: Column(
         children: <Widget>[
           Expanded(
             child: SfCalendar(
               view: CalendarView.month,
-              monthViewSettings: const MonthViewSettings(appointmentDisplayMode: MonthAppointmentDisplayMode.indicator, showAgenda: true),
+              monthViewSettings: const MonthViewSettings(
+                  appointmentDisplayMode: MonthAppointmentDisplayMode.indicator,
+                  showAgenda: true),
               dataSource: MeetingDataSource(_meetings),
               onTap: (CalendarTapDetails details) {
                 _showAddMeetingDialog(details.date);
@@ -79,7 +80,8 @@ class _ScheduleMeetingPageState extends State<ScheduleMeetingPage> {
             ElevatedButton(
               child: const Text("Add"),
               onPressed: () {
-                _addMeeting(_eventNameController.text, _eventDescriptionController.text, date!);
+                _addMeeting(_eventNameController.text,
+                    _eventDescriptionController.text, date!);
                 Navigator.pop(context);
                 AlertDialog(
                   title: Text("Meeting Scheduled on $date"),
@@ -93,7 +95,8 @@ class _ScheduleMeetingPageState extends State<ScheduleMeetingPage> {
   }
 
   void _addMeeting(String name, String description, DateTime startTime) {
-    final Meeting meeting = Meeting(name, description, startTime, startTime.add(const Duration(hours: 1)));
+    final Meeting meeting = Meeting(
+        name, description, startTime, startTime.add(const Duration(hours: 1)));
     setState(() {
       _meetings.add(meeting);
     });

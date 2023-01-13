@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sahakosh/core/routes/routes_constant.dart';
 import 'package:sahakosh/portfolio_ui/domain/data.dart';
 import 'package:sahakosh/portfolio_ui/domain/portfolioModel.dart';
+import 'package:sahakosh/widgets/drawer.dart';
 
 class PortfolioManagementScreen extends StatelessWidget {
   const PortfolioManagementScreen({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class PortfolioManagementScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const Drawer(),
+      drawer: const SideMenu(),
       appBar: AppBar(
         backgroundColor: Colors.blue[800],
         title: const Text("My Portfolio"),
