@@ -4,7 +4,7 @@ var InvestorDummy = [
   InvestorModel(
       name: "Lil Foodie",
       owner: "Aayush Gelal",
-      image: "",
+      image: "assets/images/rect.png",
       address: "Lazimpat Kathmandu",
       amountWithdrawn: true,
       category: "Tech",
@@ -19,7 +19,7 @@ var InvestorDummy = [
   InvestorModel(
     name: "Lil Foodie",
     owner: "Aayush Gelal",
-    image: "",
+    image: "assets/images/rect.png",
     address: "Lazimpat Kathmandu",
     amountWithdrawn: true,
     category: "Tech",
@@ -35,7 +35,7 @@ var InvestorDummy = [
   InvestorModel(
     name: "Lil Foodie",
     owner: "Aayush Gelal",
-    image: "",
+    image: "assets/images/rect.png",
     address: "Lazimpat Kathmandu",
     amountWithdrawn: true,
     category: "Tech",
@@ -51,7 +51,7 @@ var InvestorDummy = [
   InvestorModel(
     name: "Lil Foodie",
     owner: "Aayush Gelal",
-    image: "",
+    image: "assets/images/rect.png",
     address: "Lazimpat Kathmandu",
     amountWithdrawn: true,
     category: "Tech",
@@ -67,7 +67,7 @@ var InvestorDummy = [
   InvestorModel(
     name: "Lil Foodie",
     owner: "Aayush Gelal",
-    image: "",
+    image: "assets/images/rect.png",
     address: "Lazimpat Kathmandu",
     amountWithdrawn: true,
     category: "Tech",

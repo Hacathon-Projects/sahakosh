@@ -1,10 +1,4 @@
-import 'dart:ffi';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:sahakosh/widgets/investor_ui/investor_button.dart';
 
 class StartupCard extends StatelessWidget {
   var title;
@@ -53,7 +47,7 @@ class StartupCard extends StatelessWidget {
                   ),
                 ],
               ),
-              height: 40,
+              height: 35,
               width: 130,
               decoration: BoxDecoration(
                   color: Theme.of(context).backgroundColor,
@@ -63,7 +57,7 @@ class StartupCard extends StatelessWidget {
             Container(
               height: 50,
               decoration: BoxDecoration(
-                  color: Colors.black.withAlpha(700),
+                  color: Colors.black.withOpacity(0.5),
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(20),
                       bottomRight: Radius.circular(20))),
@@ -95,10 +89,7 @@ class StartupCard extends StatelessWidget {
       ),
       decoration: BoxDecoration(
           color: Colors.green,
-          image: DecorationImage(
-              image: NetworkImage(
-                  'https://media.geeksforgeeks.org/wp-content/uploads/20210101144014/gfglogo.png'),
-              fit: BoxFit.cover),
+          image: DecorationImage(image: AssetImage(image)),
           borderRadius: BorderRadius.circular(20)),
     );
   }
