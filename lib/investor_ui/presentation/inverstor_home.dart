@@ -47,23 +47,23 @@ class InvestorHomeScreen extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                  height: 230,
+                  height: 210,
                   child: ListView.separated(
                       physics: const BouncingScrollPhysics(),
                       scrollDirection: Axis.horizontal,
-                      itemCount: InvestorDummy.length,
+                      itemCount: investorDummy1.length,
                       separatorBuilder: (context, index) => const SizedBox(
-                            width: 20,
+                            width: 15,
                           ),
                       itemBuilder: (context, index) => StartupCard(
-                            image: InvestorDummy[index].image,
-                            category: InvestorDummy[index].category,
-                            money: InvestorDummy[index].target,
-                            operating_yrs: InvestorDummy[index].operating_yrs,
-                            title: InvestorDummy[index].name,
+                            image: investorDummy1[index].image,
+                            category: investorDummy1[index].category,
+                            money: investorDummy1[index].target,
+                            operating_yrs: investorDummy1[index].operating_yrs,
+                            title: investorDummy1[index].name,
                           ))),
-              const SizedBox(height: 10),
-              const Divider(),
+              const SizedBox(height: 15),
+              const Divider(height: 1),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -76,22 +76,22 @@ class InvestorHomeScreen extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                  height: 230,
+                  height: 210,
                   child: ListView.separated(
                       physics: const BouncingScrollPhysics(),
                       scrollDirection: Axis.horizontal,
-                      itemCount: InvestorDummy.length,
+                      itemCount: investorDummy2.length,
                       separatorBuilder: (context, index) =>
-                          const SizedBox(width: 20),
+                          const SizedBox(width: 15),
                       itemBuilder: (context, index) => StartupCard(
-                            image: InvestorDummy[index].image,
-                            category: InvestorDummy[index].category,
-                            money: InvestorDummy[index].target,
-                            operating_yrs: InvestorDummy[index].operating_yrs,
-                            title: InvestorDummy[index].name,
+                            image: investorDummy2[index].image,
+                            category: investorDummy2[index].category,
+                            money: investorDummy2[index].target,
+                            operating_yrs: investorDummy2[index].operating_yrs,
+                            title: investorDummy2[index].name,
                           ))),
-              const SizedBox(height: 10),
-              const Divider(),
+              const SizedBox(height: 15),
+              const Divider(height: 1),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -104,21 +104,20 @@ class InvestorHomeScreen extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                  height: 230,
+                  height: 210,
                   child: ListView.separated(
                       physics: const BouncingScrollPhysics(),
                       scrollDirection: Axis.horizontal,
-                      itemCount: InvestorDummy.length,
+                      itemCount: investorDummy3.length,
                       separatorBuilder: (context, index) => const SizedBox(
-                            width: 20,
-                            height: 10,
+                            width: 15,
                           ),
                       itemBuilder: (context, index) => StartupCard(
-                            image: InvestorDummy[index].image,
-                            category: InvestorDummy[index].category,
-                            money: InvestorDummy[index].target,
-                            operating_yrs: InvestorDummy[index].operating_yrs,
-                            title: InvestorDummy[index].name,
+                            image: investorDummy3[index].image,
+                            category: investorDummy3[index].category,
+                            money: investorDummy3[index].target,
+                            operating_yrs: investorDummy3[index].operating_yrs,
+                            title: investorDummy3[index].name,
                           ))),
               const SizedBox(height: 10),
             ],
