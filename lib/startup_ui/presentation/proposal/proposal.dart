@@ -89,10 +89,13 @@ class ProposalPage extends StatelessWidget {
                               SizedBox(
                                 height: 50,
                                 width: MediaQuery.of(context).size.width / 1.1,
-                                child: TextField(
+                                child: TextFormField(
                                   readOnly: true,
-                                  decoration: InputDecoration(border: const OutlineInputBorder(), labelText: "Rs. ${startup.totalBudget}"),
-                                  style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.blue),
+                                  initialValue: "Rs. ${startup.totalBudget}",
+                                  decoration: const InputDecoration(
+                                    border: OutlineInputBorder(),
+                                  ),
+                                  style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black),
                                 ),
                               ),
                             ],
