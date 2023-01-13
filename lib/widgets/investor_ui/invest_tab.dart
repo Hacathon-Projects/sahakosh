@@ -24,72 +24,48 @@ class InvestTab extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text('Startup Valuation',
-                    style:
-                        TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
-                Text("Rs. ${item.valuation.toString()}",
-                    style: const TextStyle(
-                        fontSize: 16, fontWeight: FontWeight.bold))
+                const Text('Startup Valuation', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
+                Text("Rs. ${item.valuation.toString()}", style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold))
               ],
             ),
             const SizedBox(height: 5),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text('Owner',
-                    style:
-                        TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
-                Text(item.owner,
-                    style: const TextStyle(
-                        fontSize: 16, fontWeight: FontWeight.bold))
+                const Text('Owner', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
+                Text(item.owner, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold))
               ],
             ),
             const SizedBox(height: 5),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text('Amount Raising',
-                    style:
-                        TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
-                Text(item.raisingAmount.toString(),
-                    style: const TextStyle(
-                        fontSize: 16, fontWeight: FontWeight.bold))
+                const Text('Amount Raising', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
+                Text("Rs. ${item.raisingAmount}", style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold))
               ],
             ),
             const SizedBox(height: 5),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text('Operating years',
-                    style:
-                        TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
-                Text(item.operating_yrs,
-                    style: const TextStyle(
-                        fontSize: 16, fontWeight: FontWeight.bold))
+                const Text('Operating years', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
+                Text(item.operating_yrs, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold))
               ],
             ),
             const SizedBox(height: 5),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text('Address',
-                    style:
-                        TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
-                Text(item.address,
-                    style: const TextStyle(
-                        fontSize: 16, fontWeight: FontWeight.bold))
+                const Text('Address', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
+                Text(item.address, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold))
               ],
             ),
             const SizedBox(height: 5),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text('Equity',
-                    style:
-                        TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
-                Text(item.equity.toString(),
-                    style: const TextStyle(
-                        fontSize: 16, fontWeight: FontWeight.bold))
+                const Text('Equity', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
+                Text(item.equity.toString(), style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold))
               ],
             ),
             const SizedBox(height: 15),

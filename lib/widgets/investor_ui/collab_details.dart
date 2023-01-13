@@ -1,7 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class CollabDetails extends StatelessWidget {
   const CollabDetails({super.key});
@@ -10,7 +7,7 @@ class CollabDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.separated(
         itemBuilder: (context, index) => Container(
-              padding: const EdgeInsets.all(4),
+              padding: const EdgeInsets.all(2),
               child: Row(
                 children: const [
                   CircleAvatar(

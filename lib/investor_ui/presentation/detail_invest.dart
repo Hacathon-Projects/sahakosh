@@ -16,8 +16,7 @@ class InvestDetail extends StatefulWidget {
   State<InvestDetail> createState() => _InvestDetailState();
 }
 
-class _InvestDetailState extends State<InvestDetail>
-    with TickerProviderStateMixin {
+class _InvestDetailState extends State<InvestDetail> with TickerProviderStateMixin {
   late TabController _tabController;
 
   @override
@@ -83,8 +82,7 @@ class _InvestDetailState extends State<InvestDetail>
                   children: [
                     Text(
                       widget.item.name,
-                      style: const TextStyle(
-                          fontSize: 20, fontWeight: FontWeight.bold),
+                      style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                     Text(
                       widget.item.category,
@@ -101,18 +99,42 @@ class _InvestDetailState extends State<InvestDetail>
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text(
-                      "Target",
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    Row(
+                      children: [
+                        const Text(
+                          "Target :",
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const SizedBox(width: 10),
+                        Text(
+                          "Rs. ${widget.item.raisingAmount.toString()}",
+                          style: const TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
                     ),
-                    Text(widget.item.target.toString(),
-                        style: const TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                        ))
+                    Row(
+                      children: [
+                        const Text(
+                          "Raised : ",
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const SizedBox(width: 10),
+                        Text(widget.item.target.toString(),
+                            style: const TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                            ))
+                      ],
+                    ),
                   ],
                 ),
                 Padding(
@@ -124,9 +146,7 @@ class _InvestDetailState extends State<InvestDetail>
                     animation: true,
                     lineHeight: 18.0,
                     animationDuration: 1000,
-                    percent:
-                        ((widget.item.target * 100 / widget.item.valuation) /
-                            100),
+                    percent: ((widget.item.target * 100 / widget.item.raisingAmount) / 100),
                     progressColor: Theme.of(context).primaryColor,
                   ),
                 ),
@@ -177,7 +197,7 @@ class _InvestDetailState extends State<InvestDetail>
                     controller: _tabController,
                     children: [
                       InvestTab(item: widget.item),
-                      const Text("Nothing !!"),
+                      const Center(child: Text("Data not updated !!")),
                       const CollabDetails(),
                       StartupDetails(owner: widget.item.owner),
                     ],
@@ -186,8 +206,7 @@ class _InvestDetailState extends State<InvestDetail>
                 PrimaryButton(
                     text: 'Invest',
                     onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) {
                         return InvestorPage(
                           startup: widget.item,
                         );

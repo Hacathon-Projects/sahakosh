@@ -11,7 +11,7 @@ class InvestorModel {
   final String category;
   final bool targetReached;
   final bool amountWithdrawn;
-  final double valuation;
+  final int valuation;
   var raisingAmount;
 
   InvestorModel(
