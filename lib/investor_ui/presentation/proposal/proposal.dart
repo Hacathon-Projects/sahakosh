@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:sahakosh/core/chat_ui/chatlistscreen.dart';
-import 'package:sahakosh/startup_ui/domain/startupmodel.dart';
+import 'package:sahakosh/core/routes/routes_constant.dart';
+import 'package:sahakosh/investor_ui/domain/investor_model.dart';
 import 'package:sahakosh/widgets/primary_button.dart';
 
-class ProposalPage extends StatelessWidget {
-  StartupModel startup;
-  ProposalPage({super.key, required this.startup});
+class InvestorPage extends StatelessWidget {
+  InvestorModel startup;
+  InvestorPage({super.key, required this.startup});
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,7 @@ class ProposalPage extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const Text("Investor Details",
+                              const Text("Startup Details",
                                   style: TextStyle(
                                     fontWeight: FontWeight.w600,
                                     fontSize: 20,
@@ -53,21 +53,28 @@ class ProposalPage extends StatelessWidget {
                                         text: TextSpan(children: [
                                       const TextSpan(
                                           text: 'Name : ', style: TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.w500)),
-                                      TextSpan(text: startup.personalDetails!.name, style: const TextStyle(fontSize: 16, color: Colors.black)),
+                                      TextSpan(text: startup.name, style: const TextStyle(fontSize: 16, color: Colors.black)),
                                     ])),
                                     const SizedBox(height: 5),
                                     RichText(
                                         text: TextSpan(children: [
                                       const TextSpan(
                                           text: 'Category : ', style: TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.w500)),
-                                      TextSpan(text: startup.investmentCategory, style: const TextStyle(fontSize: 16, color: Colors.black)),
+                                      TextSpan(text: startup.category, style: const TextStyle(fontSize: 16, color: Colors.black)),
                                     ])),
                                     const SizedBox(height: 5),
                                     RichText(
                                         text: TextSpan(children: [
                                       const TextSpan(
-                                          text: 'Profession : ', style: TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.w500)),
-                                      TextSpan(text: startup.profession, style: const TextStyle(fontSize: 16, color: Colors.black)),
+                                          text: 'Address : ', style: TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.w500)),
+                                      TextSpan(text: startup.address, style: const TextStyle(fontSize: 16, color: Colors.black)),
+                                    ])),
+                                    const SizedBox(height: 5),
+                                    RichText(
+                                        text: TextSpan(children: [
+                                      const TextSpan(
+                                          text: 'Valuation : ', style: TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.w500)),
+                                      TextSpan(text: startup.valuation.toString(), style: const TextStyle(fontSize: 16, color: Colors.black)),
                                     ])),
                                   ],
                                 ),
@@ -81,7 +88,7 @@ class ProposalPage extends StatelessWidget {
                                   children: [
                                     Container(
                                       padding: const EdgeInsets.only(left: 5),
-                                      child: const Text('Investment', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
+                                      child: const Text('Raising Amount', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
                                     ),
                                     const SizedBox(height: 4),
                                     SizedBox(
@@ -89,7 +96,7 @@ class ProposalPage extends StatelessWidget {
                                       width: MediaQuery.of(context).size.width / 1.12,
                                       child: TextFormField(
                                         readOnly: true,
-                                        initialValue: "Rs. ${startup.totalBudget}",
+                                        initialValue: "Rs. ${startup.raisingAmount}",
                                         decoration: const InputDecoration(
                                           border: OutlineInputBorder(),
                                         ),
@@ -129,9 +136,25 @@ class ProposalPage extends StatelessWidget {
                   child: PrimaryButton(
                       text: 'Send Proposal',
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) {
-                          return ChatListScreen();
-                        }));
+                        void showDialogBox(BuildContext context, String title) {
+                          AlertDialog dialog = AlertDialog(
+                            title: Text(title),
+                            content: const Text("Proposal sent to the Startup. He will reply you soon !"),
+                            actions: <Widget>[
+                              ElevatedButton(
+                                child: const Text("OK"),
+                                onPressed: () {
+                                  Navigator.of(context)
+                                      .pushNamedAndRemoveUntil(RouteConstant.homeRoute, (Route<dynamic> route) => false, arguments: false);
+                                },
+                              ),
+                            ],
+                          );
+
+                          showDialog(context: context, builder: (BuildContext context) => dialog);
+                        }
+
+                        showDialogBox(context, "Succesful !");
                       })),
             ]),
           ),

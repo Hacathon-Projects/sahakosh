@@ -60,11 +60,8 @@ class _ChatPageState extends State<ChatPage> {
                 GestureDetector(
                   onTap: () async {
                     String url = "mailto:subarnapdl@gmail.com?subject=Proposal&=Hello%20";
-                    if (await canLaunchUrl(Uri.parse(url))) {
-                      await launchUrl(Uri.parse(url));
-                    } else {
-                      throw 'Could not launch $url';
-                    }
+
+                    await launchUrl(Uri.parse(url));
                   },
                   child: const Icon(
                     CupertinoIcons.mail,
@@ -75,7 +72,7 @@ class _ChatPageState extends State<ChatPage> {
                   width: 15,
                 ),
                 GestureDetector(
-                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ScheduleMeetingPage())),
+                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const ScheduleMeetingPage())),
                   child: const Icon(
                     CupertinoIcons.calendar,
                     color: Colors.white,

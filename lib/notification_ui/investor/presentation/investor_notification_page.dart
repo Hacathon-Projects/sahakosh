@@ -16,22 +16,7 @@ class InvestorNotificationPage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            const SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.all(5.0),
-              child: Row(children: [
-                const SizedBox(width: 5),
-                IconButton(
-                    icon: const Icon(Icons.arrow_back),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    }),
-                const SizedBox(width: 15),
-                const Text("Notifications",
-                    style: TextStyle(fontSize: 20, fontFamily: "latobold")),
-                const SizedBox(width: 40),
-              ]),
-            ),
+    
             const SizedBox(height: 5),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 5.0),
@@ -63,17 +48,11 @@ class InvestorNotificationPage extends StatelessWidget {
                                       alignment: Alignment.center,
                                       child: ListTile(
                                         leading: const CircleAvatar(
-                                          backgroundImage:
-                                              AssetImage("assets/logo.png"),
+                                          backgroundImage: AssetImage("assets/logo.png"),
                                         ),
-                                        title: Text(items[index].notification!,
-                                            style: const TextStyle(
-                                                fontWeight: FontWeight.w500,
-                                                fontSize: 13)),
+                                        title: Text(items[index].notification!, style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 15)),
                                         minVerticalPadding: 5,
-                                        subtitle: Text(items[index].time!,
-                                            style:
-                                                const TextStyle(fontSize: 13)),
+                                        subtitle: Text(items[index].time!, style: const TextStyle(fontSize: 13)),
                                         onTap: () {},
                                       ),
                                     ),

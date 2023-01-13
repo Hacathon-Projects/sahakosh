@@ -51,25 +51,16 @@ class ChatListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blue[800],
+        title: const Text("Conversations"),
+        elevation: 0,
+      ),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            SafeArea(
-              child: Padding(
-                padding: const EdgeInsets.only(left: 16, right: 16, top: 10),
-                child: Row(
-                  children: <Widget>[
-                    IconButton(onPressed: () => Navigator.pop(context), icon: const Icon(Icons.arrow_back)),
-                    const SizedBox(
-                      width: 20,
-                    ),
-                    const Text("Conversations", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
-                  ],
-                ),
-              ),
-            ),
             Padding(
               padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
               child: TextField(

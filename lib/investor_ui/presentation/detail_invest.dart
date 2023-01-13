@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
-import 'package:sahakosh/core/chat_ui/chatlistscreen.dart';
 import 'package:sahakosh/investor_ui/domain/investor_model.dart';
 import 'package:sahakosh/widgets/investor_ui/collab_details.dart';
 import 'package:sahakosh/widgets/investor_ui/invest_tab.dart';
 import 'package:sahakosh/widgets/investor_ui/startup_details.dart';
 import 'package:sahakosh/widgets/primary_button.dart';
+
+import 'proposal/proposal.dart';
 
 class InvestDetail extends StatefulWidget {
   final InvestorModel item;
@@ -177,7 +178,9 @@ class _InvestDetailState extends State<InvestDetail> with TickerProviderStateMix
                     text: 'Invest',
                     onTap: () {
                       Navigator.push(context, MaterialPageRoute(builder: (context) {
-                        return ChatListScreen();
+                        return InvestorPage(
+                          startup: widget.item,
+                        );
                       }));
                     }),
               ],
