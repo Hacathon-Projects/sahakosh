@@ -8,15 +8,15 @@ import 'package:sahakosh/widgets/drawer.dart';
 class InvestorChatListScreen extends StatelessWidget {
   List<ChatUsers> chatUsers = [
     ChatUsers(
+        text: "Subarna Poudel",
+        secondaryText: "Digital Innovators",
+        image: "https://avatars.githubusercontent.com/u/82575511?v=4",
+        time: "Now"),
+    ChatUsers(
         text: "Subina Shrestha",
         secondaryText: "Naamche Tech",
         image:
             "https://www.mayoclinic.org/-/media/kcms/employees/2020/06/02/15/25/patress-persons-15375439.jpg",
-        time: "Now"),
-    ChatUsers(
-        text: "Ritesh Poudel",
-        secondaryText: "Digital Innovators",
-        image: "https://avatars.githubusercontent.com/u/82575511?v=4",
         time: "Yesterday"),
   ];
   InvestorChatListScreen({super.key});

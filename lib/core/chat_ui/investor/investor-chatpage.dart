@@ -13,15 +13,13 @@ class InvestorChatScreen extends StatefulWidget {
 
 class _InvestorChatScreenState extends State<InvestorChatScreen> {
   List<ChatMessage> messages = [
-    ChatMessage(messageContent: "Hello, Will", messageType: "receiver"),
-    ChatMessage(messageContent: "How have you been?", messageType: "receiver"),
+    ChatMessage(messageContent: "Hello, sir", messageType: "receiver"),
     ChatMessage(
-        messageContent: "Hey Kriss, I am doing fine dude. wbu?",
-        messageType: "sender"),
-    ChatMessage(messageContent: "ehhhh, doing OK.", messageType: "receiver"),
-    ChatMessage(
-        messageContent: "Is there any thing wrong?", messageType: "sender"),
+        messageContent: "Would you like to invest in our company?",
+        messageType: "receiver"),
   ];
+
+  TextEditingController _textEditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,7 +53,7 @@ class _InvestorChatScreenState extends State<InvestorChatScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: const <Widget>[
                       Text(
-                        "Subina Shrestha",
+                        "Subarna Poudel",
                         style: TextStyle(
                             fontSize: 16,
                             color: Colors.white,
@@ -69,7 +67,7 @@ class _InvestorChatScreenState extends State<InvestorChatScreen> {
                 ),
                 GestureDetector(
                   onTap: () async {
-                    String url = "mailto:subarnapdl@gmail.com?subject=Proposal";
+                    String url = "mailto:subarnapdl@gmail.com";
                     await launchUrl(Uri.parse(url));
                   },
                   child: const Icon(
@@ -155,9 +153,10 @@ class _InvestorChatScreenState extends State<InvestorChatScreen> {
                   const SizedBox(
                     width: 15,
                   ),
-                  const Expanded(
+                  Expanded(
                     child: TextField(
-                      decoration: InputDecoration(
+                      controller: _textEditingController,
+                      decoration: const InputDecoration(
                           hintText: "Write message...",
                           hintStyle: TextStyle(color: Colors.black54),
                           border: InputBorder.none),
@@ -167,7 +166,15 @@ class _InvestorChatScreenState extends State<InvestorChatScreen> {
                     width: 15,
                   ),
                   FloatingActionButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        messages.add(ChatMessage(
+                            messageContent: _textEditingController.text,
+                            messageType: "sender"));
+                        _textEditingController.clear();
+                        FocusManager.instance.primaryFocus!.unfocus();
+                      });
+                    },
                     backgroundColor: Colors.blue,
                     elevation: 0,
                     child: const Icon(
