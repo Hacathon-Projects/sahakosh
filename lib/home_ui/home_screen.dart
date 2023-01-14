@@ -59,8 +59,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 : const InvestorHomeScreen()
             : _selectedIndex == 1
                 ? widget.isStartup
-                    ? const PortfolioManagementScreen()
-                    : const LaterScreen()
+                    ? const LaterScreen()
+                    : const PortfolioManagementScreen()
                 : _selectedIndex == 2
                     ? widget.isStartup
                         ? StartupChatListScreen()

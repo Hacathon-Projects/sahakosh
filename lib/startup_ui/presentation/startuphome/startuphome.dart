@@ -56,7 +56,7 @@ class StartupHomeScreen extends StatelessWidget {
                       } else if (data.hasData) {
                         var items = data.data as List<StartupModel>;
                         return ListView.builder(
-                            physics: BouncingScrollPhysics(),
+                            physics: const BouncingScrollPhysics(),
                             shrinkWrap: true,
                             scrollDirection: Axis.horizontal,
                             // ignore: unnecessary_null_comparison
