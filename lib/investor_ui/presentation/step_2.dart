@@ -1,9 +1,7 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
+import 'package:sahakosh/core/routes/routes_constant.dart';
 import 'package:sahakosh/widgets/simple_button.dart';
-import 'package:sahakosh/widgets/button.dart';
-import 'package:image_picker/image_picker.dart';
+import 'package:sahakosh/widgets/primary_button.dart';
 
 class InvestorRegisterStep2Route extends StatefulWidget {
   const InvestorRegisterStep2Route({super.key});
@@ -18,6 +16,7 @@ class _InvestorRegisterStep2RouteState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Padding(
         padding: const EdgeInsets.all(30.0),
         child: Column(
@@ -47,11 +46,12 @@ class _InvestorRegisterStep2RouteState
                   // TODO: Upload VAT document function
                 }),
             const Spacer(flex: 2),
-            MyButton(
-                text: 'Finish',
-                onTap: () {
-                  // TODO : State after startup registration complete
-                }),
+            PrimaryButton(
+              text: 'Finish',
+              onTap: () => Navigator.of(context).pushNamedAndRemoveUntil(
+                  RouteConstant.investorHomeScreen,
+                  (Route<dynamic> route) => false),
+            ),
             const Spacer(flex: 2),
           ],
         ),

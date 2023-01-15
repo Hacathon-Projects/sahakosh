@@ -1,6 +1,10 @@
 class RouteConstant {
+  static const splashScreen = '/splash-screen';
   static const landingScreen = '/landing-screen';
   static const createAccountScreen = '/create-account';
+
+  // Home
+  static const homeRoute = '/home';
 
   // Investor auth
   static const investorLoginRoute = '/investor/login';
@@ -17,14 +21,19 @@ class RouteConstant {
   static const startupRegisterStep3Route = '/startup/register/step-3';
 
   //Inverstor_Screen
-  static const startupHomePage = '/startup/home';
-  static const startupDetailsPage = '/statupdetail';
+  static const startupHomeScreen = '/startup/home';
+  static const startupDetailsPage = '/startup/detail';
+  static const startupNotificationPage = '/startup/notifications';
 
   //Startup_Screen
-  static const investorHomePage = '/inverstor/home';
+  static const investorHomeScreen = '/inverstor/home';
   static const inverstorDetailsPage = '/investor/detail';
+  static const investorNotificationPage = '/investor/notifications';
 
   //Profile_Screen
   static const investorProfilePage = '/investor/profile';
   static const startupProfilePage = '/startup/profile';
+
+  //Portfolio_Management_Screen
+  static const portfolioManagementScreen = '/portfolio';
 }

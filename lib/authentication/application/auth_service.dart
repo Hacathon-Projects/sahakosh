@@ -14,7 +14,8 @@ class AuthService extends AuthBase {
   static void registerAsInvestor({
     required String name,
     required String password,
-    required String email,
+    required String email, 
+    
   }) {}
   static void registerAsStartup({
     required String name,
